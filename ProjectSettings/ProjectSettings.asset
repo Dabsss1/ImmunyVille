@@ -44,8 +44,6 @@ PlayerSettings:
     duration: 3
   - logo: {fileID: 21300000, guid: 5e03ea135e2639c4d851efefab21e331, type: 3}
     duration: 3
-  - logo: {fileID: 21300000, guid: 109377c0f185cf74f8a5429bfd038860, type: 3}
-    duration: 3
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -745,7 +743,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 1
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
