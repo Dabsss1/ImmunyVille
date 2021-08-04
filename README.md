@@ -2,11 +2,19 @@
 
 ## Main Objectives
 
-1. Main Menu
-2. Healthy Lifestyle Tips
-3. Storyline
-4. Mini-games
-5. Stats System
+1. Main Menu - done
+2. Character Selection - done
+3. Explorable village - 50%
+4. Healthy immune-system focused storyline - 0%
+5. Non-player characters and pets - 0%
+6. Healthy immune-system lifestyle tips and information - 0%
+7. Hunger and thirst system - 50%
+8. In-game time - done
+9. Inventory system - 10%
+10. Stats system - 10%
+11. Hidden Objects Minigame (grocery) - done
+12. Tasks system - 0%
+13. Rhythm minigame (gym) - 0%
 
 ## Features
 
