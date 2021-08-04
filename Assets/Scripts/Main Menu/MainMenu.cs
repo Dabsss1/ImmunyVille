@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string newGameScene = "CharacterCreation";
+    public string continueGameScene = "PlayerLot";
+
     public void NewGame ()
     {
-        SceneManager.LoadScene("CharacterCreation");
+        SceneManager.LoadScene(newGameScene);
     }
 
     public void Continue ()
     {
-        Debug.Log("Not Done yet but working");
+        SceneLoaderManager.OnSceneLoad(continueGameScene, SaveSystem.LoadPlayer());
     }
 }

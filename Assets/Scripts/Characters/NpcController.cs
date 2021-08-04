@@ -7,6 +7,7 @@ public class NpcController : MonoBehaviour, Interactable
     [SerializeField] Dialogs dialog;
     public void Interact()
     {
+        Debug.Log("talked to npc");
         DialogManager.Instance.showDialog(dialog);
     }
 

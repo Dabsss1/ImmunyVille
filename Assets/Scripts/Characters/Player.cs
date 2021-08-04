@@ -5,129 +5,96 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //player stats
+    public string gender;
+    public string playerName;
+
+    //character controller
+    public CharacterController character;
+
+    //input
     Vector2 inputPos;
 
-    public float moveSpeed = 5f;
-    public bool isMoving;
-
+    //dialog
     public GameObject dialogBox;
-
-    public LayerMask buildingsLayer;
-    public LayerMask portalLayer;
-    public LayerMask interactableLayer;
-    private Animator animator;
-
     public static Action<Dialogs> NextDialog;
-    public bool enteringPortal;
-   
     public Dialogs dialog;
+
+    private void Start()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        gender = data.gender;
+        playerName = data.playerName;
+    }
+
+    void Awake()
+    {
+        character = GetComponent<CharacterController>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-                
-        if (!isMoving)
+        if (!character.isMoving)
         {
             if (inputPos != Vector2.zero)
             {
-                animator.SetFloat("moveX", inputPos.x);
-                animator.SetFloat("moveY", inputPos.y);
-                
-                Vector3 targetPos = transform.position;
-                targetPos.x += inputPos.x;
-                targetPos.y += inputPos.y;
-
-                if (IsWalkable(new Vector3(targetPos.x, targetPos.y - 0.5f)))
-                {
-                    StartCoroutine(Move(targetPos));
-                }
-                else if (IsPortal(targetPos))
+                if (IsPortal(inputPos))
                 {
                     StartCoroutine(EnterPortal());
                 }
-                    
+                StartCoroutine(character.Move(inputPos));
             }
         }
-
-        animator.SetBool("isMoving", isMoving);
-        
+        character.animator.SetBool("isMoving", character.isMoving);
+        ChangeScenes();
     }
     IEnumerator EnterPortal()
     {
         Debug.Log("Change Scenes");
-        yield return null;
+        yield return null
+            ;
     }
 
-    public bool IsPortal(Vector3 targetPos)
+    public bool IsPortal(Vector2 inputPos)
     {
-        if (Physics2D.OverlapCircle(new Vector3(targetPos.x, targetPos.y - .5f), .2f, portalLayer) != null)
-        {
-            Debug.Log("true");
+        Vector3 targetPos = transform.position;
+        targetPos.x += inputPos.x;
+        targetPos.y += inputPos.y;
+
+        if (Physics2D.OverlapCircle(new Vector3(targetPos.x, targetPos.y - .5f), .2f, GameLayers.Instance.DoorPortal) != null)
             return true;
-        }
         else
-        {
             return false;
-        }
     }
-    void interact ()
+    
+    
+    void Interact (string button)
     {
         Debug.Log("Button Pressed");
-        Vector3 facingDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        Vector3 facingDir = new Vector3(character.animator.GetFloat("moveX"), character.animator.GetFloat("moveY"));
         Vector3 interactPos = transform.position + facingDir;
-        interactPos.y -= .5f;
-        Collider2D collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer);
+        interactPos.y -= .5f;   
+        Debug.Log(interactPos.x +"" + interactPos.y);
+
+        Collider2D collider = Physics2D.OverlapCircle(interactPos, 0.2f, GameLayers.Instance.Interactable);
         if (collider != null)
         {
-            collider.GetComponent<Interactable>()?.Interact();
             
+            collider.GetComponent<Interactable>()?.Interact();
         }
     }
-
+    
     public void ChangeScenes()
     {
 
-        if (Physics2D.OverlapCircle(new Vector3(transform.position.x, transform.position.y - .5f), .2f, portalLayer) != null)
+        if (Physics2D.OverlapCircle(new Vector3(transform.position.x, transform.position.y - .5f), .2f, GameLayers.Instance.Portal) != null)
         {
             Debug.Log("Changed Scene");
         }
     }
 
-    public bool IsWalkable (Vector3 targetPos)
-    {
-        if (Physics2D.OverlapCircle(targetPos, .2f, buildingsLayer | interactableLayer) != null)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
-
-    IEnumerator Move(Vector3 targetPos)
-    {
-        isMoving = true;
-
-        while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-        transform.position = targetPos;
-
-        isMoving = false;
-        
-        ChangeScenes();
-    }
-
-
-
-    void Awake()
-    {
-        animator = GetComponent<Animator>();
-
-    }
-
+    /*
     void XButtonPress()
     {
         if (!dialogBox.active)
@@ -140,6 +107,7 @@ public class Player : MonoBehaviour
             //NextDialog?.Invoke(dialog);
         }
     }
+    */
     void OnEnable()
     {
 
@@ -148,7 +116,10 @@ public class Player : MonoBehaviour
         UIInputManager.OnDpadLeft += MoveInput;
         UIInputManager.OnDpadRight += MoveInput;
 
+        UIInputManager.OnCrossButton += Interact;
+
         UIInputManager.OnDpadCancelled += MoveInput;
+
     }
 
     void OnDisable()
@@ -158,8 +129,10 @@ public class Player : MonoBehaviour
         UIInputManager.OnDpadLeft -= MoveInput;
         UIInputManager.OnDpadRight -= MoveInput;
 
+        UIInputManager.OnCrossButton -= Interact;
+
         UIInputManager.OnDpadCancelled -= MoveInput;
-        //controls.Player.Disable();
+
     }
 
 
@@ -188,4 +161,5 @@ public class Player : MonoBehaviour
         }
 
     }
+
 }

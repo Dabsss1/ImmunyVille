@@ -13,5 +13,4 @@ public class Dialogs
         get { return lines; }
     }
 
-    
 }

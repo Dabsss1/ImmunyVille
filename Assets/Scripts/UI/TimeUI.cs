@@ -10,6 +10,9 @@ public class TimeUI : MonoBehaviour
     //public TextMeshProUGUI timeText;
     public Text timeText;
 
+    public Text PhoneDate, PhoneTime;
+
+
     private void OnEnable()
     {
         TimeManager.OnMinuteChanged += UpdateTime;
@@ -24,6 +27,11 @@ public class TimeUI : MonoBehaviour
 
     private void UpdateTime()
     {
+        if (PhoneTime.IsActive())
+        {
+            PhoneTime.text = $"Time:{TimeManager.hour:00}:{TimeManager.minute:00}";
+        }
         timeText.text = $"Spr Day 1    {TimeManager.hour:00}:{TimeManager.minute:00}";
     }
+
 }

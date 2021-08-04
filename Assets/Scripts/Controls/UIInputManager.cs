@@ -38,7 +38,7 @@ public class UIInputManager : MonoBehaviour
         controls.Player.Square.performed += ctx => OnSquareButton?.Invoke("Square");
 
         controls.Player.Start.performed += ctx => OnStartButton?.Invoke("Start");
-        //controls.Player.X.started += ctx => CrossButton?.Invoke("X");
+        
     }
 
     private void OnEnable()

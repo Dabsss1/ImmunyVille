@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 8512ff153df5633458f746cf5f22dd1e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CharacterCreation.unity
     guid: 1a840199f0692794083814b4b4a01290
-  - enabled: 1
-    path: Assets/Scenes/NewGame.unity
+  - enabled: 0
+    path: Assets/Scenes/PlayerLot.unity
     guid: 114f2fe98932c27489c37f6c46a3e3f8
+  - enabled: 1
+    path: Assets/Scenes/Minigames/GroceryGame.unity
+    guid: a1320017c8b1c84439d5d4f1f2e59caf
   m_configObjects: {}
