@@ -55,26 +55,34 @@ public class Player : MonoBehaviour
 
         
     }
-    IEnumerator EnterPortal()
-    {
-        Debug.Log("Change Scenes");
-        yield return null
-            ;
-    }
 
+
+   
+
+    //chech if the character is trying to enter a door portal
     public bool IsPortal(Vector2 inputPos)
     {
         Vector3 targetPos = transform.position;
         targetPos.x += inputPos.x;
         targetPos.y += inputPos.y;
 
-        if (Physics2D.OverlapCircle(new Vector3(targetPos.x, targetPos.y - .5f), .2f, GameLayers.Instance.DoorPortal) != null)
+        if (Physics2D.OverlapCircle(new Vector3(targetPos.x, targetPos.y - .5f), .2f, GameLayers.Instance.Portal) != null)
+
             return true;
         else
             return false;
     }
-    
-    
+
+    IEnumerator EnterPortal()
+    {
+        if (GameManagerScript.state != OpenWorldState.SCENECHANGING)
+            Debug.Log("Change Scenes");
+        GameManagerScript.state = OpenWorldState.SCENECHANGING;
+        yield return null;
+    }
+
+
+    //interact the tile on front
     void Interact (string button)
     {
         Debug.Log("Button Pressed");
@@ -86,11 +94,12 @@ public class Player : MonoBehaviour
         Collider2D collider = Physics2D.OverlapCircle(interactPos, 0.2f, GameLayers.Instance.Interactable);
         if (collider != null)
         {
-            
+            //call the interact function on the interactable
             collider.GetComponent<Interactable>()?.Interact();
         }
     }
     
+    //change scene after moving into a portal
     public void ChangeScenes()
     {
         if (Physics2D.OverlapCircle(new Vector3(transform.position.x, transform.position.y - .5f), .2f, GameLayers.Instance.Portal) != null)
@@ -99,21 +108,6 @@ public class Player : MonoBehaviour
             Debug.Log("Changed Scene");
         }
     }
-
-    /*
-    void XButtonPress()
-    {
-        if (!dialogBox.active)
-        {
-            interact();
-        }
-        else
-        {
-            dialogBox.SetActive(false);
-            //NextDialog?.Invoke(dialog);
-        }
-    }
-    */
     void OnEnable()
     {
 
@@ -165,7 +159,6 @@ public class Player : MonoBehaviour
                 Debug.Log("Input not registered");
                 break;
         }
-
     }
 
 }
