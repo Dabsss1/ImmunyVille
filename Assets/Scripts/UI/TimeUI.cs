@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TimeUI : MonoBehaviour
 {
-
-    //public TextMeshProUGUI timeText;
-    public Text timeText;
-
-    public Text PhoneDate, PhoneTime;
+    [SerializeField] TextMeshProUGUI dateTime;
+    [SerializeField] TextMeshProUGUI phoneDateTime;
 
 
     private void OnEnable()
@@ -27,11 +25,11 @@ public class TimeUI : MonoBehaviour
 
     private void UpdateTime()
     {
-        if (PhoneTime.IsActive())
+        if (phoneDateTime.IsActive())
         {
-            PhoneTime.text = $"Time:{TimeManager.hour:00}:{TimeManager.minute:00}";
+            phoneDateTime.text = $"Day: {TimeManager.day}   Time: {TimeManager.hour:00}:{TimeManager.minute:00}";
         }
-        timeText.text = $"Spr Day 1    {TimeManager.hour:00}:{TimeManager.minute:00}";
+        dateTime.text = $"{TimeManager.getSeason(TimeManager.seasonCounter)} Day:{TimeManager.day}   {TimeManager.hour:00}:{TimeManager.minute:00}";
     }
 
 }

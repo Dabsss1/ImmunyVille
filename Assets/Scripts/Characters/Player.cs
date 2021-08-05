@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     public static Action<Dialogs> NextDialog;
     public Dialogs dialog;
 
+
+
     private void Start()
     {
         PlayerData data = SaveSystem.LoadPlayer();
@@ -44,10 +46,14 @@ public class Player : MonoBehaviour
                     StartCoroutine(EnterPortal());
                 }
                 StartCoroutine(character.Move(inputPos));
+
+                if (GameManagerScript.state != OpenWorldState.SCENECHANGING)
+                    ChangeScenes();
             }
         }
         character.animator.SetBool("isMoving", character.isMoving);
-        ChangeScenes();
+
+        
     }
     IEnumerator EnterPortal()
     {
@@ -87,9 +93,9 @@ public class Player : MonoBehaviour
     
     public void ChangeScenes()
     {
-
         if (Physics2D.OverlapCircle(new Vector3(transform.position.x, transform.position.y - .5f), .2f, GameLayers.Instance.Portal) != null)
         {
+            GameManagerScript.state = OpenWorldState.SCENECHANGING;
             Debug.Log("Changed Scene");
         }
     }
