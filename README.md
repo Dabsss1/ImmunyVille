@@ -10,10 +10,10 @@
 6. Healthy immune-system lifestyle tips and information - 0%
 7. Hunger and thirst system - 50%
 8. In-game time - done
-9. Inventory system - 10%
-10. Stats system - 10%
+9. Inventory system - 50%
+10. Stats system - 40%
 11. Hidden Objects Minigame (grocery) - done
-12. Tasks system - 0%
+12. Tasks system - 30%
 13. Rhythm minigame (gym) - 0%
 
 ## Features
@@ -25,9 +25,9 @@
   c. UI controls - in progress
 4. UI
   a. Phone - done
-  b. Thirst & hunger - displayed but no function
-  c. Phone button - displayed but no function
-  d. Inventory - displayed but no function
+  b. Thirst & hunger - UI done
+  c. Phone button - UI done
+  d. Inventory - UI done 
 5. Map
   a. Town Square - done
   b. Player Lot - done
@@ -37,7 +37,7 @@
 7. Minigames
   a. Grocery - done
   b. Gym
-9. Npc - currently none
+8. Npc - currently none
 
 Map plan
 ![MapPlan2](https://user-images.githubusercontent.com/87693389/128253948-947d5f91-cb8f-4f15-986d-3cc605a316d2.png)
