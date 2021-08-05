@@ -17,7 +17,7 @@ public class SupermarketTimer : MonoBehaviour
 
     private float timer;
 
-    [SerializeField] Text timerText;
+    [SerializeField] TextMeshProUGUI timerText;
     // Start is called before the first frame update
     void Start()
     {
