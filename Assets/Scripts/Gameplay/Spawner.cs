@@ -7,7 +7,9 @@ public class Spawner : MonoBehaviour
     public GameObject malePlayer;
     public GameObject femalePlayer;
 
-    public List<GameObject> spawnPoint;
+    public GameObject[] spawnPoint;
+
+    public static string previousScene { get; set; }
 
     public static Action<PlayerData> OnStartScene;
 
@@ -29,14 +31,41 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        if (data.gender == "male")
+
+        GamePreferencesManager.OnLoadPrefs?.Invoke();
+        
+        foreach (GameObject i in spawnPoint)
         {
-            Instantiate(malePlayer);
+            if (i.name == previousScene)
+            {
+                Transform spawnPlace = i.GetComponent<Transform>();
+                if (data.gender == "male")
+                {
+                    Instantiate(malePlayer,spawnPlace.position, Quaternion.identity);
+                }
+                else if (data.gender == "female")
+                {
+                    Instantiate(femalePlayer,spawnPlace);
+                }
+                else
+                {
+                    Debug.Log("Error Instatiating player");
+                    Debug.Log("Spawning Female Player temporarily");
+                    Instantiate(femalePlayer, spawnPlace.position, Quaternion.identity);
+                }
+                GameManagerScript.state = OpenWorldState.EXPLORE;
+                return;
+            }
+            Debug.Log(i.name + "!=" +previousScene);
         }
-        else if (data.gender == "female")
-        {
-            Instantiate(femalePlayer);
-        }
+
+        Debug.Log("SpawnPoint not found");
+        Debug.Log("Error Instatiating player");
+        Debug.Log("Spawning Female Player and default spawn temporarily");
+        Instantiate(femalePlayer, new Vector3(.5f,0f), Quaternion.identity);
+
+        GameManagerScript.state = OpenWorldState.EXPLORE;
+
     }
     void SpawnPlayer(PlayerData data)
     {
