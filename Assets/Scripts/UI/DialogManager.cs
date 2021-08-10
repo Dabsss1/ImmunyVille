@@ -19,8 +19,18 @@ public class DialogManager : MonoBehaviour
     }
     public void showDialog(Dialogs dialog)
     {
+
+        if (currentline>=dialog.Lines.Count)
+        {
+            GameManagerScript.state = OpenWorldState.EXPLORE;
+            dialogBox.SetActive(false);
+            currentline = 0;
+            return;
+        }
+            
         dialogBox.SetActive(true);
         StartCoroutine(TypeDialog(dialog.Lines[currentline]));
+        currentline++;
     }
 
     public IEnumerator TypeDialog(string line)
@@ -30,17 +40,6 @@ public class DialogManager : MonoBehaviour
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(1f / lettersPerSecond);
-        }
-    }
-
-    public void NextDialog(Dialogs dialog)
-    {
-        currentline++;
-        if(currentline< dialog.Lines.Count)
-            StartCoroutine(TypeDialog(dialog.Lines[0]));
-        else
-        {
-            dialogBox.SetActive(false);
         }
     }
             

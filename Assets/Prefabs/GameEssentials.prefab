@@ -2313,6 +2313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adabbc2f7be7bdf42b7aae0dbefbfa1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allUI: {fileID: 1095409960752354962}
   PhonePanel: {fileID: 1095409959886908732}
 --- !u!114 &2609948922987257604
 MonoBehaviour:

@@ -12,9 +12,10 @@ public class CharacterController : MonoBehaviour
     public void Awake()
     {
         animator = GetComponent<Animator>();
-
         animator.SetFloat("moveY",-1);
     }
+
+
 
     //move character
     public IEnumerator Move(Vector2 moveVector)
@@ -30,7 +31,6 @@ public class CharacterController : MonoBehaviour
             yield break;
 
         isMoving = true;
-
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
