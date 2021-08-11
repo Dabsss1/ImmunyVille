@@ -75,7 +75,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: CharacterCreation
-    clip: {fileID: 8300000, guid: b030aae98ed3f8343a3503cc6bebff8a, type: 3}
+    clip: {fileID: 8300000, guid: 4980469d7aa320c47af4ffec3d48eea1, type: 3}
     volume: 1
     pitch: 1
     loop: 1

@@ -21,7 +21,7 @@ public class TimeManager : MonoBehaviour
     private void Start()
     {
         //set minute
-        if (PlayerData.minute == null)
+        if (PlayerData.minute == 0)
             minute = 0;
         else
             minute = PlayerData.minute;

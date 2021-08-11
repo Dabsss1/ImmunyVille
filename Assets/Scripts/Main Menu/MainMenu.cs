@@ -23,8 +23,4 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    private void Start()
-    {
-        AudioManager.PlaySound?.Invoke("Main Menu");
-    }
 }

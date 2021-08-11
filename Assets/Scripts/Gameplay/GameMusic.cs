@@ -10,4 +10,9 @@ public class GameMusic : MonoBehaviour
     {
         AudioManager.PlaySound?.Invoke(backgroundMusic);
     }
+
+    private void OnDisable()
+    {
+        AudioManager.StopSound?.Invoke(backgroundMusic);
+    }
 }

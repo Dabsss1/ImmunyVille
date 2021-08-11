@@ -30,7 +30,7 @@ public class CutsceneManager : MonoBehaviour
     int currentDialogArray = 0;
 
     string currentSound;
-    bool isPlaying=false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -114,7 +114,8 @@ public class CutsceneManager : MonoBehaviour
                 }
             case 4:
                 {
-                    AudioManager.StopSound("Calm");
+                    AudioManager.Instance.Stop("Calm");
+                    currentSound = "";
                     currentDialogArray++;
                     state = CutsceneState.DIALOG;
                     callDialog();
@@ -122,7 +123,8 @@ public class CutsceneManager : MonoBehaviour
                 }
             case 5:
                 {
-                    AudioManager.PlaySound("Flashback");
+                    AudioManager.Instance.Play("Flashback");
+                    currentSound = "Flashback";
                     currentDialogArray++;
                     state = CutsceneState.DIALOG;
                     callDialog();
@@ -173,8 +175,7 @@ public class CutsceneManager : MonoBehaviour
                 }
             case 13:
                 {
-                    AudioManager.StopSound("Flashback");
-                    AudioManager.PlaySound("Motivational");
+                    PlaySound("Motivational");
                     currentDialogArray++;
                     state = CutsceneState.DIALOG;
                     callDialog();
@@ -182,6 +183,7 @@ public class CutsceneManager : MonoBehaviour
                 }
             case 14:
                 {
+                    AudioManager.Instance.Stop("Motivational");
                     SceneLoaderManager.OnSceneLoad(nextScene);
                     break;
                 }
@@ -337,9 +339,9 @@ public class CutsceneManager : MonoBehaviour
     {
         if (currentSound != sound)
         {
-            AudioManager.StopSound(currentSound);
+            AudioManager.Instance.Stop(currentSound);
             currentSound = sound;
-            AudioManager.PlaySound(currentSound);
+            AudioManager.Instance.Play(sound);
         }
     }
 }
