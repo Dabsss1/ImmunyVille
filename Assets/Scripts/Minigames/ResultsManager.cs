@@ -11,8 +11,7 @@ public class ResultsManager : MonoBehaviour
 
     public void GameFinish()
     {
-        PlayerData data = new PlayerData();
         playerPrefs.SavePrefs(prevScene);
-        SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination, data);
+        SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }
 }

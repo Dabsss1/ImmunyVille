@@ -15,18 +15,37 @@ public class TimeManager : MonoBehaviour
 
     public static int seasonCounter;
 
-    private float secondToOneMinuteRT = 2f;
+    private float secondToOneMinuteRT = 1f;
     private float timer;
 
     private void Start()
     {
-        minute = 0;
-        hour = 7;
-        day = 1;
+        //set minute
+        if (PlayerData.minute == null)
+            minute = 0;
+        else
+            minute = PlayerData.minute;
+        //set hour
+        if (PlayerData.hour == 0)
+            hour = 7;
+        else
+            hour = PlayerData.hour;
+        //set day
+        if (PlayerData.day == 0)
+            day = 1;
+        else
+            day = PlayerData.day;
+
         seasonCounter = 1;
         timer = secondToOneMinuteRT;
     }
 
+    private void OnDestroy()
+    {
+        PlayerData.minute = minute;
+        PlayerData.hour = hour;
+        PlayerData.day = day;
+    }
     public static string getSeason (int counter)
     {
         return season[counter];

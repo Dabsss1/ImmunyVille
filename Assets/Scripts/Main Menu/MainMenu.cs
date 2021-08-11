@@ -15,6 +15,16 @@ public class MainMenu : MonoBehaviour
 
     public void Continue ()
     {
-        SceneLoaderManager.OnSceneLoad(continueGameScene, SaveSystem.LoadPlayer());
+        SceneLoaderManager.OnSceneLoad(continueGameScene);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    private void Start()
+    {
+        AudioManager.PlaySound?.Invoke("Main Menu");
     }
 }

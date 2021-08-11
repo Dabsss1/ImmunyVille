@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
 
     public static string previousScene { get; set; }
 
-    public static Action<PlayerData> OnStartScene;
+    public static Action OnStartScene;
 
 
     void OnEnable()
@@ -24,48 +24,56 @@ public class Spawner : MonoBehaviour
         OnStartScene -= SpawnPlayer;
     }
 
+    private void Awake()
+    {
+        SaveSystem.LoadPlayer();
+    }
+
     private void Start()
     {
-        PlayerData data = SaveSystem.LoadPlayer();
 
         GamePreferencesManager.OnLoadPrefs?.Invoke();
 
-        SpawnPlayer(data);
-
-        
-
+        SpawnPlayer();
     }
-    void SpawnPlayer(PlayerData data)
+    void SpawnPlayer()
     {
         foreach (GameObject i in spawnPoint)
         {
             if (i.name == previousScene)
             {
                 Transform spawnPlace = i.GetComponent<Transform>();
-                if (data.gender == "male")
-                {
-                    Instantiate(malePlayer, spawnPlace.position, Quaternion.identity);
-                }
-                else if (data.gender == "female")
-                {
-                    Instantiate(femalePlayer, spawnPlace);
-                }
-                else
-                {
-                    Debug.Log("Error Instatiating player");
-                    Debug.Log("Spawning Female Player temporarily");
-                    Instantiate(femalePlayer, spawnPlace.position, Quaternion.identity);
-                }
+
+                spawnCharacter(spawnPlace.position);
+
                 GameManagerScript.state = OpenWorldState.EXPLORE;
                 return;
             }
-            Debug.Log(i.name + "!=" + previousScene);
         }
 
         Debug.Log("SpawnPoint not found");
-        Debug.Log("Spawning Female Player and default spawn temporarily");
-        Instantiate(femalePlayer, new Vector3(.5f, 0f), Quaternion.identity);
+        Debug.Log("Spawning default spawn temporarily");
+
+        spawnCharacter(new Vector3(.5f, 0f));
 
         GameManagerScript.state = OpenWorldState.EXPLORE;
+    }
+
+    void spawnCharacter(Vector3 spawnPlace)
+    {
+        if (PlayerData.gender == "male")
+        {
+            Instantiate(malePlayer, spawnPlace, Quaternion.identity);
+        }
+        else if (PlayerData.gender == "female")
+        {
+            Instantiate(femalePlayer, spawnPlace, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Error Instatiating player");
+            Debug.Log("Spawning Female Player temporarily");
+            Instantiate(femalePlayer, spawnPlace, Quaternion.identity);
+        }
     }
 }

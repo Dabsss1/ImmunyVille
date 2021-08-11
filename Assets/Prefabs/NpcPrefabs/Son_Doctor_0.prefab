@@ -146,10 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c6ced4358a9e4e8a2870cd8920683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: Arthemus
   dialog:
     lines:
-    - Test
-    - mga takot valo na
+    - Good After noon beautiful and handsome panels
+    - 'Did you know? '
 --- !u!114 &6933520864638963469
 MonoBehaviour:
   m_ObjectHideFlags: 0

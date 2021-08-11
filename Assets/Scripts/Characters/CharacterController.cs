@@ -6,7 +6,10 @@ using System;
 public class CharacterController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    [HideInInspector]
     public bool isMoving;
+
+    [HideInInspector]
     public Animator animator;
 
     public void Awake()
@@ -55,4 +58,14 @@ public class CharacterController : MonoBehaviour
             return true;
     }
 
+    private void Update()
+    {
+        animator.SetBool("isMoving", isMoving);
+    }
+
+    public void setFaceDir(int x, int y)
+    {
+        animator.SetFloat("moveX", x);
+        animator.SetFloat("moveY", y);
+    }
 }

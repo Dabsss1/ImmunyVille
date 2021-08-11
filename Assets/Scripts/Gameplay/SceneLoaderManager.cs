@@ -9,8 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderManager : MonoBehaviour
 {
-    public static Action<string,PlayerData> OnSceneLoad;
-    public static Action<string> OnMinigameLoad;
+    public static Action<string> OnMinigameLoad,OnSceneLoad;
     public Animator sceneTransition;
         
 
@@ -35,9 +34,8 @@ public class SceneLoaderManager : MonoBehaviour
         OnMinigameLoad -= AsyncLoadScene;
     }
 
-    private void LoadNextScene(string sceneName,PlayerData data)
+    private void LoadNextScene(string sceneName)
     {
-        SaveSystem.SavePlayer(data);
         StartCoroutine(LoadScene(sceneName));
     }
 

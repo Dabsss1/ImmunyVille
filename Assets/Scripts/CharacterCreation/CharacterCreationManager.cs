@@ -14,9 +14,8 @@ public class CharacterCreationManager : MonoBehaviour
     public GameObject maleController, femaleController;
     public InputField nameField;
 
-    public string nextScene = "PlayerLot";
+    public string nextScene = "Introduction";
 
-    PlayerData data = new PlayerData();
 
     void setActivePanel(string button)
     {
@@ -52,9 +51,10 @@ public class CharacterCreationManager : MonoBehaviour
         }
         else
         {
-            data.gender = gender;
-            data.playerName = playerName;
-            SceneLoaderManager.OnSceneLoad(nextScene, data);
+            PlayerData.gender = gender;
+            PlayerData.playerName = playerName;
+            SaveSystem.SavePlayer();
+            SceneLoaderManager.OnSceneLoad(nextScene);
         }
     }
 

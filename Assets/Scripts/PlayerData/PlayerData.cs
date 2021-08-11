@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerData
+public static class PlayerData
 {
-    public string gender="", playerName="";
+    public static string gender = "", playerName = "";
+    public static string scene = "";
 
-    public string scene="";
+    //game data
+    public static int hour, minute, day; 
 
-    public PlayerData()
-    {
-
-    }
-
-    public PlayerData(Player player)
-    {
-
-    }
 }

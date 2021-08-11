@@ -61344,7 +61344,7 @@ Transform:
   - {fileID: 1673710623}
   - {fileID: 1896636003}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360373017
 GameObject:
@@ -61422,7 +61422,7 @@ Transform:
   - {fileID: 1013462373}
   - {fileID: 901184984}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369964034
 GameObject:
@@ -61453,7 +61453,7 @@ Transform:
   m_Children:
   - {fileID: 1720132182}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1396343767
 GameObject:
@@ -61485,7 +61485,7 @@ Transform:
   - {fileID: 2058098718}
   - {fileID: 1990115678}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673710622
 GameObject:
@@ -73823,6 +73823,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &2042475645
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038339, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381547648331038365, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 770ed50cce1ea5f408f04e15bd772820, type: 3}
 --- !u!1 &2058098717
 GameObject:
   m_ObjectHideFlags: 0
@@ -73927,7 +73984,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1095409960457127632, guid: 8b9a6474b5320d4409966935b4069cb6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1095409960457127632, guid: 8b9a6474b5320d4409966935b4069cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73973,6 +74030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameEssentials
       objectReference: {fileID: 0}
+    - target: {fileID: 1095409960457127633, guid: 8b9a6474b5320d4409966935b4069cb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1095409961403103364, guid: 8b9a6474b5320d4409966935b4069cb6, type: 3}
       propertyPath: spawnPoint.Array.size
       value: 2
@@ -73985,6 +74046,10 @@ PrefabInstance:
       propertyPath: spawnPoint.Array.data[1]
       value: 
       objectReference: {fileID: 1896636002}
+    - target: {fileID: 4350814365258681403, guid: 8b9a6474b5320d4409966935b4069cb6, type: 3}
+      propertyPath: backgroundMusic
+      value: PlayerLot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b9a6474b5320d4409966935b4069cb6, type: 3}
 --- !u!114 &1095409959837045254 stripped
@@ -74005,6 +74070,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1369964035}
     m_Modifications:
+    - target: {fileID: 6933520864638963464, guid: ff2a3a3509121ef45ae0ba3039ca2e3e, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: Good afternoon handsome and beautiful panels
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933520864638963464, guid: ff2a3a3509121ef45ae0ba3039ca2e3e, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: Did you know? The immune system protects your body from harmful substances,
+        germs and cell changes that could make you ill.
+      objectReference: {fileID: 0}
     - target: {fileID: 6933520864638963467, guid: ff2a3a3509121ef45ae0ba3039ca2e3e, type: 3}
       propertyPath: m_Name
       value: Son_Doctor_0

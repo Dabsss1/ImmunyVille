@@ -6,27 +6,28 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //player stats
+    [HideInInspector]
     public string gender;
+    [HideInInspector]
     public string playerName;
 
     //character controller
+    [HideInInspector]
     public CharacterController character;
 
     //input
     Vector2 inputPos;
 
     //dialog
+    [HideInInspector]
     public GameObject dialogBox;
-    public static Action<Dialogs> NextDialog;
-    public Dialogs dialog;
 
 
 
     private void Start()
     {
-        PlayerData data = SaveSystem.LoadPlayer();
-        gender = data.gender;
-        playerName = data.playerName;
+        gender = PlayerData.gender;
+        playerName = PlayerData.playerName;
     }
 
     void Awake()

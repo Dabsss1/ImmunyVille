@@ -7,13 +7,14 @@ public class NpcController : MonoBehaviour, Interactable
 {
     public static Action OnInteractNpc;
 
+    [SerializeField] string characterName;
     [SerializeField] Dialogs dialog;
     public void Interact()
     {
         Debug.Log("talked to npc");
         GameManagerScript.state = OpenWorldState.DIALOG;
         OnInteractNpc?.Invoke();
-        DialogManager.Instance.showDialog(dialog);
+        DialogManager.Instance.showDialog(dialog,characterName);
 
     }
 }
