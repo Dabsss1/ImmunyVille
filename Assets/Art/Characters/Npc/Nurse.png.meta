@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: 830465bd8b0dfd141a52336ea6709ac0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -117381706063063591
+    second: Nurse_0
+  - first:
+      213: -2485396139504666667
+    second: Nurse_1
+  - first:
+      213: 4092900413391077312
+    second: Nurse_2
+  - first:
+      213: -2696276799329505137
+    second: Nurse_3
+  - first:
+      213: -3700732746682867817
+    second: Nurse_4
+  - first:
+      213: 769672534776658403
+    second: Nurse_5
+  - first:
+      213: -8513766348802723112
+    second: Nurse_6
+  - first:
+      213: -3238546731716990750
+    second: Nurse_7
+  - first:
+      213: 1771608074404558146
+    second: Nurse_8
+  - first:
+      213: -8226183345463150382
+    second: Nurse_9
+  - first:
+      213: 7759140259652854285
+    second: Nurse_10
+  - first:
+      213: -8648231105221830770
+    second: Nurse_11
+  - first:
+      213: 4855499234996197796
+    second: Nurse_12
+  - first:
+      213: 2235163276334528378
+    second: Nurse_13
+  - first:
+      213: 3601615624225641796
+    second: Nurse_14
+  - first:
+      213: -7355826842438451617
+    second: Nurse_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +149,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Nurse_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 102
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d55bf2d5f9fe5ef0800000000000000
+      internalID: -117381706063063591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 102
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d772ba1169128dd0800000000000000
+      internalID: -2485396139504666667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 102
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf7939ad37ecc830800000000000000
+      internalID: 4092900413391077312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 102
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8076d75986e49ad0800000000000000
+      internalID: -2696276799329505137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 70
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fdf499c2b54acc0800000000000000
+      internalID: -3700732746682867817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 70
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9bcbca71d6eaa00800000000000000
+      internalID: 769672534776658403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_6
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 70
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d270f61d9609d980800000000000000
+      internalID: -8513766348802723112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_7
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 70
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8a183f7ee5e03d0800000000000000
+      internalID: -3238546731716990750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 38
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245f8144824069810800000000000000
+      internalID: 1771608074404558146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_9
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 38
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d83f6cd4d9b6dd80800000000000000
+      internalID: -8226183345463150382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_10
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 38
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d026a0bd4f00eab60800000000000000
+      internalID: 7759140259652854285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_11
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 38
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87d4cd41af4bf780800000000000000
+      internalID: -8648231105221830770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9112524d2326340800000000000000
+      internalID: 4855499234996197796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_13
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 6
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77faec4825e40f10800000000000000
+      internalID: 2235163276334528378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_14
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 6
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445577bf3528bf130800000000000000
+      internalID: 3601615624225641796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nurse_15
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 6
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e3c2ba57adae990800000000000000
+      internalID: -7355826842438451617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

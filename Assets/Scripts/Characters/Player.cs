@@ -6,45 +6,48 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //player stats
+    [HideInInspector]
     public string gender;
+    [HideInInspector]
     public string playerName;
 
     //character controller
+    [HideInInspector]
     public CharacterController character;
 
     //input
     Vector2 inputPos;
 
     //dialog
+    [HideInInspector]
     public GameObject dialogBox;
-    public static Action<Dialogs> NextDialog;
-    public Dialogs dialog;
 
-
+    public static Player Instance { get; private set; }
 
     private void Start()
     {
-        PlayerData data = SaveSystem.LoadPlayer();
-        gender = data.gender;
-        playerName = data.playerName;
+        gender = PlayerData.gender;
+        playerName = PlayerData.playerName;
     }
 
     void Awake()
     {
         character = GetComponent<CharacterController>();
+
+        Instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManagerScript.state == OpenWorldState.SCENECHANGING)
+            return;
         if (!character.isMoving)
         {
             if (inputPos != Vector2.zero)
             {
-                if (IsPortal(inputPos))
-                {
-                    StartCoroutine(EnterPortal());
-                }
+                IsPortal(inputPos);
+
                 StartCoroutine(character.Move(inputPos));
 
                 if (GameManagerScript.state != OpenWorldState.SCENECHANGING)
@@ -52,31 +55,30 @@ public class Player : MonoBehaviour
             }
         }
         character.animator.SetBool("isMoving", character.isMoving);
-
-        
     }
 
 
-   
-
-    //chech if the character is trying to enter a door portal
-    public bool IsPortal(Vector2 inputPos)
+    public void IsPortal(Vector2 inputPos)
     {
         Vector3 targetPos = transform.position;
         targetPos.x += inputPos.x;
         targetPos.y += inputPos.y;
 
-        if (Physics2D.OverlapCircle(new Vector3(targetPos.x, targetPos.y - .5f), .2f, GameLayers.Instance.Portal) != null)
-
-            return true;
+        targetPos.y -= .5f;
+        Collider2D portalCollider = Physics2D.OverlapCircle(targetPos, .2f, GameLayers.Instance.Portal);
+        if (portalCollider != null)
+            StartCoroutine(EnterPortal(portalCollider));
         else
-            return false;
+            return;
     }
-
-    IEnumerator EnterPortal()
+    IEnumerator EnterPortal(Collider2D portalCollider)
     {
         if (GameManagerScript.state != OpenWorldState.SCENECHANGING)
-            Debug.Log("Change Scenes");
+        {
+            Debug.Log("Entering");
+            portalCollider.GetComponent<PortalController>().OnInteractPortal();
+        }
+            
         GameManagerScript.state = OpenWorldState.SCENECHANGING;
         yield return null;
     }
@@ -102,10 +104,11 @@ public class Player : MonoBehaviour
     //change scene after moving into a portal
     public void ChangeScenes()
     {
-        if (Physics2D.OverlapCircle(new Vector3(transform.position.x, transform.position.y - .5f), .2f, GameLayers.Instance.Portal) != null)
+        Collider2D portalCollider = Physics2D.OverlapCircle(new Vector3(transform.position.x, transform.position.y - .5f), .2f, GameLayers.Instance.Portal);
+        if (portalCollider != null)
         {
             GameManagerScript.state = OpenWorldState.SCENECHANGING;
-            Debug.Log("Changed Scene");
+            portalCollider.GetComponent<PortalController>().OnInteractPortal();
         }
     }
     void OnEnable()

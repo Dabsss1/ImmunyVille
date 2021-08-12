@@ -6,15 +6,19 @@ using System;
 public class CharacterController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    [HideInInspector]
     public bool isMoving;
+
+    [HideInInspector]
     public Animator animator;
 
     public void Awake()
     {
         animator = GetComponent<Animator>();
-
         animator.SetFloat("moveY",-1);
     }
+
+
 
     //move character
     public IEnumerator Move(Vector2 moveVector)
@@ -30,7 +34,6 @@ public class CharacterController : MonoBehaviour
             yield break;
 
         isMoving = true;
-
 
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
@@ -55,4 +58,14 @@ public class CharacterController : MonoBehaviour
             return true;
     }
 
+    private void Update()
+    {
+        animator.SetBool("isMoving", isMoving);
+    }
+
+    public void setFaceDir(int x, int y)
+    {
+        animator.SetFloat("moveX", Mathf.Clamp(x, -1, 1));
+        animator.SetFloat("moveY", Mathf.Clamp(y, -1, 1));
+    }
 }
