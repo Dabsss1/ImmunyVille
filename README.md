@@ -5,9 +5,9 @@
 1. Main Menu - done
 2. Character Selection - done
 3. Explorable village - 50%
-4. Healthy immune-system focused storyline - 0%
-5. Non-player characters and pets - 0%
-6. Healthy immune-system lifestyle tips and information - 0%
+4. Healthy immune-system focused storyline - 70%
+5. Non-player characters and pets - 5%
+6. Healthy immune-system lifestyle tips and information - 50%
 7. Hunger and thirst system - 50%
 8. In-game time - done
 9. Inventory system - 50%
@@ -33,11 +33,11 @@
   b. Player Lot - done
   c. Gym area
   d. Lower area (path to mountain and beach if continued)
-6. Save System - in progress
+6. Save System - done
 7. Minigames
   a. Grocery - done
   b. Gym
-8. Npc - currently none
+8. Npc - one
 
 Map plan
 ![MapPlan2](https://user-images.githubusercontent.com/87693389/128253948-947d5f91-cb8f-4f15-986d-3cc605a316d2.png)
