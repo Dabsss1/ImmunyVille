@@ -2,11 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
+    public AudioMixer audioMixer;
+
+    public AudioMixerGroup master;
     public static AudioManager Instance { get; private set; }
     public static Action<string> PlaySound,StopSound;
 
@@ -43,7 +47,10 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
 
-            s.source.loop = s.loop;
+            s.source.loop = s.loop;;
+
+            s.source.outputAudioMixerGroup = master;
+
         }
     }
 

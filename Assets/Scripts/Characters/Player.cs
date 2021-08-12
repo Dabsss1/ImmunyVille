@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public GameObject dialogBox;
 
-
+    public static Player Instance { get; private set; }
 
     private void Start()
     {
@@ -33,11 +33,15 @@ public class Player : MonoBehaviour
     void Awake()
     {
         character = GetComponent<CharacterController>();
+
+        Instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManagerScript.state == OpenWorldState.SCENECHANGING)
+            return;
         if (!character.isMoving)
         {
             if (inputPos != Vector2.zero)
@@ -51,8 +55,6 @@ public class Player : MonoBehaviour
             }
         }
         character.animator.SetBool("isMoving", character.isMoving);
-
-        
     }
 
 

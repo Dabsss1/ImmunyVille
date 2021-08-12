@@ -104,3 +104,5 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 4a2aa8678b60a1c4caa1545a5e80f222, type: 2}
+  master: {fileID: 24300002, guid: 4a2aa8678b60a1c4caa1545a5e80f222, type: 2}

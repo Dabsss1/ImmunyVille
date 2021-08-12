@@ -65,7 +65,7 @@ public class CharacterController : MonoBehaviour
 
     public void setFaceDir(int x, int y)
     {
-        animator.SetFloat("moveX", x);
-        animator.SetFloat("moveY", y);
+        animator.SetFloat("moveX", Mathf.Clamp(x, -1, 1));
+        animator.SetFloat("moveY", Mathf.Clamp(y, -1, 1));
     }
 }

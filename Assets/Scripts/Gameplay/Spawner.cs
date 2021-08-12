@@ -26,14 +26,19 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        SaveSystem.LoadPlayer();
+        //SaveSystem.LoadPlayer();
     }
 
     private void Start()
     {
-
+        
         GamePreferencesManager.OnLoadPrefs?.Invoke();
-
+        Debug.Log("Spawn prev" + previousScene);
+        if (previousScene=="MainMenu")
+        {
+            LoadQuickSave();
+            return;
+        }
         SpawnPlayer();
     }
     void SpawnPlayer()
@@ -75,5 +80,12 @@ public class Spawner : MonoBehaviour
             Debug.Log("Spawning Female Player temporarily");
             Instantiate(femalePlayer, spawnPlace, Quaternion.identity);
         }
+    }
+
+    void LoadQuickSave()
+    {
+        Vector3 spawnPosition = new Vector3(PlayerData.position[0], PlayerData.position[1], PlayerData.position[2]);
+        spawnCharacter(spawnPosition);
+        GameManagerScript.state = OpenWorldState.EXPLORE;
     }
 }

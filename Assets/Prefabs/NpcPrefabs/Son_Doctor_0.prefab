@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6933520864638963465}
   - component: {fileID: 6933520864638963464}
   - component: {fileID: 6933520864638963469}
-  - component: {fileID: 1794574367668334972}
   m_Layer: 8
   m_Name: Son_Doctor_0
   m_TagString: Untagged
@@ -152,21 +151,6 @@ MonoBehaviour:
     - Good After noon beautiful and handsome panels
     - 'Did you know? '
 --- !u!114 &6933520864638963469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6933520864638963467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8557ff5224f15e74fb88c2e2a72ab89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  isMoving: 0
-  animator: {fileID: 0}
---- !u!114 &1794574367668334972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -20,6 +20,8 @@ public class SceneLoaderManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI informationText;
     [SerializeField] GameObject tapButton;
 
+    [SerializeField] GameObject faderPanel;
+
     AsyncOperation operation;
 
     private void OnEnable()
@@ -60,10 +62,9 @@ public class SceneLoaderManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        
         loadingScreen.SetActive(true);
 
-        informationText.text = "Did you know?\n\n" + tips.getTip;
+        informationText.text = tips.getTip;
 
         yield return new WaitForSeconds(1f);
 

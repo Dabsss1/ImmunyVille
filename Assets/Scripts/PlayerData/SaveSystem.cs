@@ -24,6 +24,7 @@ public static class SaveSystem
         }
 
         stream.Close();
+        Debug.Log("Saved: " + PlayerData.gender + " " + PlayerData.playerName);
     }
 
     public static void LoadPlayer ()
@@ -44,10 +45,12 @@ public static class SaveSystem
                 Debug.Log(e.StackTrace);
             }
             stream.Close();
+            Debug.Log("Loaded: " + PlayerData.gender + " " + PlayerData.playerName);
         }
         else
         {
             Debug.LogError("Save not found" + path);
         }
     }
+
 }

@@ -28,7 +28,7 @@ public class TimeUI : MonoBehaviour
         {
             phoneDateTime.text = $"Day: {TimeManager.day}   Time: {TimeManager.hour:00}:{TimeManager.minute:00}";
         }
-        dateTime.text = $"{TimeManager.getSeason(TimeManager.seasonCounter)} Day:{TimeManager.day}   {TimeManager.hour:00}:{TimeManager.minute:00}";
+        dateTime.text = $"{TimeManager.getSeason(TimeManager.seasonCounter)} Season  Day:{TimeManager.day}   {TimeManager.hour:00}:{TimeManager.minute:00}";
     }
 
 }

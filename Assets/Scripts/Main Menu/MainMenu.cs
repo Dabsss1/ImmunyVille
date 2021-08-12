@@ -8,6 +8,18 @@ public class MainMenu : MonoBehaviour
     public string newGameScene = "CharacterCreation";
     public string continueGameScene = "PlayerLot";
 
+
+    private void Awake()
+    {
+        SaveSystem.LoadPlayer();
+    }
+
+    private void Start()
+    {
+        Debug.Log(PlayerData.scene);
+        continueGameScene = PlayerData.scene;
+    }
+
     public void NewGame ()
     {
         SceneManager.LoadScene(newGameScene);
@@ -15,6 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void Continue ()
     {
+        GamePreferencesManager.OnSavePrefs?.Invoke("MainMenu");
         SceneLoaderManager.OnSceneLoad(continueGameScene);
     }
 

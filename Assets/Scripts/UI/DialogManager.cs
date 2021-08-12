@@ -14,6 +14,8 @@ public class DialogManager : MonoBehaviour
 
     int currentline=0;
     bool isTyping=false;
+    private IEnumerator typingCoroutine;
+
     public static DialogManager Instance { get; private set; }
 
 
@@ -25,6 +27,9 @@ public class DialogManager : MonoBehaviour
     {
         if (isTyping)
         {
+            StopCoroutine(typingCoroutine);
+            dialogText.text = dialog.Lines[currentline - 1];
+            isTyping = false;
             return;
         }
         if (currentline>=dialog.Lines.Count)
@@ -37,7 +42,8 @@ public class DialogManager : MonoBehaviour
             
         dialogBox.SetActive(true);
         name.text = characterName;
-        StartCoroutine(TypeDialog(dialog.Lines[currentline]));
+        typingCoroutine = TypeDialog(dialog.Lines[currentline]);
+        StartCoroutine(typingCoroutine);
         currentline++;
     }
 

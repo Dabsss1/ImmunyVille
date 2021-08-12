@@ -1767,15 +1767,15 @@ MonoBehaviour:
     - b:I can't see anything. Agghh!! my head hurts!
   - lines:
     - n:Oh! You're finally awake!
-    - n:Give me a minute. I'll call the doctor immedietely
+    - n:Give me a minute. I'll call the doctor immediately
   - lines:
     - b:Why am I in a hospital? This is bad. I can't remember anything
     - b:I hope mom doesn't know about this or else she'll worry about me
   - lines:
-    - a:Billy!!! How are you? You're finally awake.
+    - a:playerName!!! How are you? You're finally awake.
     - a:I'm so worried about you. How're you feeling?
-    - b:Oh hi Alice, What are you doing here? I'm fine don't worry. I only feel a
-      mild headache right now.
+    - b:Oh hi partner, What are you doing here? I'm fine don't worry. I only feel
+      a mild headache right now.
     - b:I don't remember what happened. Did the nurse say anything?
     - a:They said that you suddenly collapsed a few meters away from your house.
     - b:Oh I remember I'm on my way to buy some snacks in the supermarket but I don't
@@ -1800,8 +1800,8 @@ MonoBehaviour:
     - d:What we know as of now is that this disease is more likely to be caught by
       people that have unhealthy lifestyles
     - d:And a weak immune system.
-    - d:It looks like you have a weak immune system Billy. How's your lifestyle going?
-      is it unhealthy?
+    - d:It looks like you have a weak immune system playerName. How's your lifestyle
+      going? is it unhealthy?
     - b:My lifestyle huh
   - lines:
     - b:Come to think of it. I'm really living an unhealthy lifestyle
@@ -1816,8 +1816,8 @@ MonoBehaviour:
     - b:If only I lived a good healthy lifestyle and have a stronger immune system,
       This probably wouldn't have happened
   - lines:
-    - b:I miss the time when I used to play outside with Alice as kids and have a
-      healthier body.
+    - b:I miss the time when I used to play outside with partner as kids and have
+      a healthier body.
   - lines:
     - a:This can't be. There is a cure for this right doctor?
     - d:Sadly, since this is a rare disease and pretty much unknown as of now
@@ -1858,6 +1858,7 @@ MonoBehaviour:
   flashbackCamera1: {fileID: 1937335502}
   flashbackCamera2: {fileID: 1264935650}
   flashbackCamera3: {fileID: 1699462033}
+  currentSound: 
 --- !u!4 &786753240
 Transform:
   m_ObjectHideFlags: 0
@@ -1887,7 +1888,7 @@ MonoBehaviour:
   dialogBox: {fileID: 2104144277}
   dialogText: {fileID: 290320724}
   name: {fileID: 596862047}
-  lettersPerSecond: 100
+  lettersPerSecond: 35
 --- !u!114 &786753243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,6 +2172,7 @@ GameObject:
   - component: {fileID: 859488447}
   - component: {fileID: 859488446}
   - component: {fileID: 859488445}
+  - component: {fileID: 859488449}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2253,6 +2255,7 @@ RectTransform:
   - {fileID: 1212732631}
   - {fileID: 2104144278}
   - {fileID: 1541210994}
+  - {fileID: 2087448191}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2261,6 +2264,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &859488449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859488444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8725dd71d9f211429b9cdc3423cc53e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: PlayerLot
 --- !u!1 &918861503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,6 +3196,140 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1699939612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699939613}
+  - component: {fileID: 1699939615}
+  - component: {fileID: 1699939614}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1699939613
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699939612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2087448191}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1699939614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699939612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Skip
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 39.65
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1699939615
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699939612}
+  m_CullTransparentMesh: 1
 --- !u!1 &1768120869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3552,6 +3702,139 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2087448190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087448191}
+  - component: {fileID: 2087448194}
+  - component: {fileID: 2087448193}
+  - component: {fileID: 2087448192}
+  m_Layer: 5
+  m_Name: SkipButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2087448191
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087448190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1699939613}
+  m_Father: {fileID: 859488448}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -71.4425, y: -37.9325}
+  m_SizeDelta: {x: 92.8851, y: 42.2027}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2087448192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087448190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2087448193}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 786753239}
+        m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
+        m_MethodName: SkipCutscene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2087448193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087448190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2087448194
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087448190}
+  m_CullTransparentMesh: 1
 --- !u!1 &2088564703
 GameObject:
   m_ObjectHideFlags: 0
@@ -13663,9 +13946,9 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 26cff36468a2dbf48a7f5a800fbd4dc4, type: 2}
+    m_Data: {fileID: 11400000, guid: 7682eac3cd4c0d1429bb0e8e2aa6e07c, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 133a05e04aec3914dbbde212e361a6d1, type: 2}
+    m_Data: {fileID: 11400000, guid: cb4d1a3b95ff2a344bba77aae68ba70f, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c71ad70023411894cac67206c8b7fa45, type: 2}
   - m_RefCount: 1
@@ -13792,9 +14075,9 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 6266575198723192573, guid: 572c98b13b50f264fa7015e92f63b5e7, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -1827775100025981480, guid: 9ead6cb575a54ff499378cee56414f0f, type: 3}
+    m_Data: {fileID: 8026386037072822760, guid: f9adf424631bb0e4cbf18774c3ef57e1, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -6091414894495783417, guid: 9ead6cb575a54ff499378cee56414f0f, type: 3}
+    m_Data: {fileID: 2585862352318748124, guid: f9adf424631bb0e4cbf18774c3ef57e1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -6676458484093332608, guid: e10aa8b7590ad2c4cbe2fc874b364f7a, type: 3}
   - m_RefCount: 1

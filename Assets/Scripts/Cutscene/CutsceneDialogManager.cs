@@ -12,6 +12,7 @@ public class CutsceneDialogManager : MonoBehaviour
 
     [SerializeField] int lettersPerSecond = 1;
 
+    private IEnumerator typingCoroutine;
     int currentline = 0;
     bool isTyping = false;
 
@@ -27,6 +28,9 @@ public class CutsceneDialogManager : MonoBehaviour
     {
         if (isTyping)
         {
+            StopCoroutine(typingCoroutine);
+            dialogText.text = replaceNames(dialog.Lines[currentline-1].Substring(2));
+            isTyping = false;
             return;
         }
         if (currentline >= dialog.Lines.Count)
@@ -40,14 +44,13 @@ public class CutsceneDialogManager : MonoBehaviour
 
         dialogBox.SetActive(true);
         name.text = setDialogName(dialog.Lines[currentline]);
-        StartCoroutine(TypeDialog(replaceNames(dialog.Lines[currentline].Substring(2))));
+        typingCoroutine = TypeDialog(replaceNames(dialog.Lines[currentline].Substring(2)));
+        StartCoroutine(typingCoroutine);
         currentline++;
     }
 
     public IEnumerator TypeDialog(string line)
     {
-        
-
         isTyping = true;
         dialogText.text = "";
         foreach (char letter in line.ToCharArray())
@@ -80,10 +83,13 @@ public class CutsceneDialogManager : MonoBehaviour
 
     string replaceNames(string line)
     {
-        line = line.Replace("Billy", PlayerData.playerName);
-
+        Debug.Log("old line: " + line);
+        line = line.Replace("playerName", PlayerData.playerName);
+        Debug.Log("new line: " + line);
         if (PlayerData.gender == "female")
-            line = line.Replace("Alice", "Billy");
+            line = line.Replace("partner", "Billy");
+        else if(PlayerData.gender == "male")
+            line = line.Replace("partner", "Alice");
 
         return line;
     }

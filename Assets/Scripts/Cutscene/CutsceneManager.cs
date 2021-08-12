@@ -29,7 +29,7 @@ public class CutsceneManager : MonoBehaviour
     Vector2 npcSpawn = new Vector2(-8.5f,2f);
     int currentDialogArray = 0;
 
-    string currentSound;
+    public string currentSound;
 
     // Start is called before the first frame update
     void Awake()
@@ -343,6 +343,12 @@ public class CutsceneManager : MonoBehaviour
             currentSound = sound;
             AudioManager.Instance.Play(sound);
         }
+    }
+
+    public void SkipCutscene()
+    {
+        AudioManager.Instance.Stop(currentSound);
+        SceneLoaderManager.OnSceneLoad(nextScene);
     }
 }
 

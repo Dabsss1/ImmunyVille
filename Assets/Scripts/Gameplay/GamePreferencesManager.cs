@@ -9,14 +9,18 @@ public class GamePreferencesManager : MonoBehaviour
 
     public static Action OnLoadPrefs;
 
+    public static Action<string> OnSavePrefs;
+
     private void OnEnable()
     {
         OnLoadPrefs += LoadPrefs;
+        OnSavePrefs += SavePrefs;
     }
 
     private void OnDisable()
     {
         OnLoadPrefs -= LoadPrefs;
+        OnSavePrefs -= SavePrefs;
     }
     // Start is called before the first frame update
     void Start()

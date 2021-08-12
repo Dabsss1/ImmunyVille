@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CharacterCreationManager : MonoBehaviour
 {
     //player data
-    public string gender, playerName;
+    public string gender="", playerName;
 
     public GameObject malePanel,femalePanel,
         maleSprite,femaleSprite;
@@ -41,16 +41,20 @@ public class CharacterCreationManager : MonoBehaviour
     void confirm(string button)
     {
         playerName = nameField.text;
-        if (gender == null)
+        if (gender == "")
         {
             Debug.Log("Gender not set");
         }
-        else if (string.IsNullOrWhiteSpace(name))
-        {
-            Debug.Log("Input Name");
-        }
         else
         {
+            if (string.IsNullOrWhiteSpace(playerName))
+            {
+                if (gender == "male")
+                    playerName = "Billy";
+                else if (gender == "female")
+                    playerName = "Alice";
+            }
+
             PlayerData.gender = gender;
             PlayerData.playerName = playerName;
             SaveSystem.SavePlayer();

@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour
     public static int hour { get; private set; }
     public static int day { get; private set; }
 
-    private static string[] season = { "Dry(Cool)", "Dry2(Hot)", "Rainy1", "Rainy2" };
+    private static string[] season = { "Dry", "Rainy"};
 
     public static int seasonCounter;
 
@@ -36,7 +36,7 @@ public class TimeManager : MonoBehaviour
         else
             day = PlayerData.day;
 
-        seasonCounter = 1;
+        seasonCounter = 0;
         timer = secondToOneMinuteRT;
     }
 
