@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public GameObject dialogBox;
 
+    //status
+    public bool isSpawned = false;
+    public string lastScene = "PlayerLot";
     public static Player Instance { get; private set; }
 
     private void Start()
@@ -35,13 +38,29 @@ public class Player : MonoBehaviour
         character = GetComponent<CharacterController>();
 
         Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //check if the state is in open world before moving
+        if (GameManagerScript.sceneState == SceneState.MINIGAME)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        else if (GameManagerScript.sceneState != SceneState.OPENWORLD)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        //stop any movement when player is changing scenes
         if (GameManagerScript.state == OpenWorldState.SCENECHANGING)
             return;
+
         if (!character.isMoving)
         {
             if (inputPos != Vector2.zero)

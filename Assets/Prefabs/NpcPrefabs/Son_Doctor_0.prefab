@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6933520864638963465}
   - component: {fileID: 6933520864638963464}
   - component: {fileID: 6933520864638963469}
+  - component: {fileID: 5547703022402078904}
   m_Layer: 8
   m_Name: Son_Doctor_0
   m_TagString: Untagged
@@ -148,8 +149,9 @@ MonoBehaviour:
   characterName: Arthemus
   dialog:
     lines:
-    - Good After noon beautiful and handsome panels
-    - 'Did you know? '
+    - Good afternoon handsome and beautiful panels
+    - Did you know? The immune system protects your body from harmful substances,
+      germs and cell changes that could make you ill.
 --- !u!114 &6933520864638963469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +167,22 @@ MonoBehaviour:
   moveSpeed: 5
   isMoving: 0
   animator: {fileID: 0}
+--- !u!95 &5547703022402078904
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933520864638963467}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1783ef6a07b19254893341a3e862125b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
