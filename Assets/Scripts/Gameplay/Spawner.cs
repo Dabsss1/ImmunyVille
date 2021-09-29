@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour
 
     public static Action OnStartScene;
 
-
     void OnEnable()
     {
         OnStartScene += SpawnPlayer;
@@ -31,9 +30,18 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        
-        GamePreferencesManager.OnLoadPrefs?.Invoke();
-        Debug.Log("Spawn prev" + previousScene);
+        //previousScene = Player.Instance.currentScene;
+        //GamePreferencesManager.OnLoadPrefs?.Invoke();
+
+        if (Player.Instance == null)
+            previousScene = "PlayerLot";
+        else
+            previousScene = Player.Instance.lastScene;
+
+        Debug.Log("Previous Scene: " + previousScene);
+
+        GameManagerScript.sceneState = SceneState.OPENWORLD;
+
         if (previousScene=="MainMenu")
         {
             LoadQuickSave();
@@ -43,25 +51,49 @@ public class Spawner : MonoBehaviour
     }
     void SpawnPlayer()
     {
-        foreach (GameObject i in spawnPoint)
+        if (Player.Instance != null && !Player.Instance.gameObject.activeSelf)
         {
-            if (i.name == previousScene)
+            Player.Instance.gameObject.SetActive(true);
+        }
+
+        if (Player.Instance == null)
+        {
+            foreach (GameObject i in spawnPoint)
             {
-                Transform spawnPlace = i.GetComponent<Transform>();
+                if (i.name == previousScene)
+                {
+                    Transform spawnPlace = i.GetComponent<Transform>();
 
-                spawnCharacter(spawnPlace.position);
+                    spawnCharacter(spawnPlace.position);
 
-                GameManagerScript.state = OpenWorldState.EXPLORE;
-                return;
+                    GameManagerScript.state = OpenWorldState.EXPLORE;
+                    Player.Instance.isSpawned = true;
+
+                    return;
+                }
+            }
+
+            Debug.Log("SpawnPoint not found\n" +
+                "Spawning default spawn temporarily");
+
+            spawnCharacter(new Vector3(.5f, 0f));
+        }
+        else
+        {
+            foreach (GameObject i in spawnPoint)
+            {
+                if (i.name == previousScene)
+                {
+                    Transform spawnPlace = i.GetComponent<Transform>();
+
+                    Player.Instance.transform.position = spawnPlace.position;
+
+                    GameManagerScript.state = OpenWorldState.EXPLORE;
+                    return;
+                }
             }
         }
 
-        Debug.Log("SpawnPoint not found");
-        Debug.Log("Spawning default spawn temporarily");
-
-        spawnCharacter(new Vector3(.5f, 0f));
-
-        GameManagerScript.state = OpenWorldState.EXPLORE;
     }
 
     void spawnCharacter(Vector3 spawnPlace)
@@ -76,8 +108,8 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Error Instatiating player");
-            Debug.Log("Spawning Female Player temporarily");
+            Debug.Log("Gender not specified\n" +
+                "Spawning Female Player temporarily");
             Instantiate(femalePlayer, spawnPlace, Quaternion.identity);
         }
     }

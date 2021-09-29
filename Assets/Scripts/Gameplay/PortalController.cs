@@ -11,7 +11,8 @@ public class PortalController : MonoBehaviour
 
     public void OnInteractPortal()
     {
-        playerPrefs.SavePrefs(prevScene);
+        //playerPrefs.SavePrefs(prevScene); 
+        Player.Instance.lastScene = prevScene;
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }
 }

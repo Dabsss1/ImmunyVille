@@ -35,4 +35,23 @@ public class UIManager : MonoBehaviour
     {
         allUI.SetActive(false);
     }
+
+    public void QuickSaveShowConfirmation(GameObject prompt)
+    {
+        StartCoroutine(showPrompt(prompt));
+        Saving.Instance.QuickSave();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneLoaderManager.OnSceneLoad?.Invoke("MainMenu");
+        Saving.Instance.QuickSave();
+    }
+
+    public IEnumerator showPrompt(GameObject prompt)
+    {
+        prompt.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        prompt.SetActive(false);
+    }
 }

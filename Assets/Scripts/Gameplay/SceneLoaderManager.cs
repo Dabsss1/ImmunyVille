@@ -83,6 +83,7 @@ public class SceneLoaderManager : MonoBehaviour
         
     }
 
+    //Start scene after loading screen screen is tapped
     public void activateScene()
     {
         Debug.Log("Screen Tapped");

@@ -76,5 +76,8 @@ public class CharacterCreationManager : MonoBehaviour
         UIInputManager.OnStartButton -= confirm;
     }
 
-
+    public void Return()
+    {
+        SceneLoaderManager.OnSceneLoad("MainMenu");
+    }
 }

@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        GameManagerScript.sceneState = SceneState.MAINMENU;
         Debug.Log(PlayerData.scene);
         continueGameScene = PlayerData.scene;
     }
@@ -29,6 +30,7 @@ public class MainMenu : MonoBehaviour
     {
         GamePreferencesManager.OnSavePrefs?.Invoke("MainMenu");
         SceneLoaderManager.OnSceneLoad(continueGameScene);
+
     }
 
     public void ExitGame()

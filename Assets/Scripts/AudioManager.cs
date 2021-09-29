@@ -50,10 +50,14 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;;
 
             s.source.outputAudioMixerGroup = master;
-
         }
     }
 
+    private void Start()
+    {
+        GamePreferencesManager.OnLoadSettings?.Invoke();
+        //SettingsMenu.OnVolumeLoad?.Invoke();
+    }
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound=> sound.name == name);
