@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Introduction.unity
     guid: 784392aa5cb5eec4ca2c7287521f977e
   - enabled: 1
-    path: Assets/Scenes/PlayerLot.unity
+    path: Assets/Scenes/OpenWorld/PlayerLot.unity
     guid: 114f2fe98932c27489c37f6c46a3e3f8
   - enabled: 1
-    path: Assets/Scenes/TownSquare.unity
+    path: Assets/Scenes/OpenWorld/TownSquare.unity
     guid: 146cb637ffe964149863384328260c87
   - enabled: 1
     path: Assets/Scenes/Buildings/Supermarket.unity
