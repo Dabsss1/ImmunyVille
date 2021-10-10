@@ -30,7 +30,6 @@ public class CookingResults : MonoBehaviour
     {
         Instance = this;
     }
-
     
     public void ShowResults()
     {
