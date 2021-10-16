@@ -6,7 +6,7 @@
 2. Character Selection - done
 3. Explorable village - 90%
 4. Healthy immune-system focused storyline - 70%
-5. Non-player characters and pets - 5%
+5. Non-player characters and pets - 60%
 6. Healthy immune-system lifestyle tips and information - 50%
 7. Hunger and thirst system - 50%
 8. In-game time - done
@@ -14,7 +14,7 @@
 10. Stats system - 40%
 11. Hidden Objects Minigame (grocery) - done
 12. Tasks system - 30%
-13. Rhythm minigame (gym) - 50%
+13. Rhythm minigame (gym) - 90%
 
 ## Features
 

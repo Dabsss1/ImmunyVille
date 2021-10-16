@@ -67,7 +67,6 @@ public class TimeManager : MonoBehaviour
     void UpdateGlobalLight()
     {
         float hoursInFloat = (float) hour + ((float)minute/60);
-        Debug.Log(hoursInFloat);
         float v = nightTimeCurve.Evaluate(hoursInFloat);
         Color c = Color.Lerp(nightTimeColor, dayTimeColor, v);
         globalLight.color = c;

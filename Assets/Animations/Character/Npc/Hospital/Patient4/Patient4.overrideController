@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Patient4
+  m_Controller: {fileID: 9100000, guid: e5c4bb4a9038cd44587eea169b351df4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 053abd8b3001578428272ac8b687dd04, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 136b9402a30bb4444b640a015fdb0545, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f0da17458a314ee40bfa0159c66a6411, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cf1d0cd15338ff247b02f81f6595daee, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b6896ffb37aab5448b8b4584f9399d4a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e8767cf0bcc151e45b35f7b153c6a145, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 86e7d2c26bd13744cb072b497f2165e8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 25b5a267c23d07e4c8ad5e40e055d3ad, type: 2}
