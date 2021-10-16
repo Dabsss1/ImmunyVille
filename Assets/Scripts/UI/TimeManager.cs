@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
@@ -15,9 +16,15 @@ public class TimeManager : MonoBehaviour
 
     public static int seasonCounter;
 
+    [SerializeField]
     private float secondToOneMinuteRT = 1f;
     private float timer;
 
+    [SerializeField] Color nightTimeColor;
+    [SerializeField] AnimationCurve nightTimeCurve;
+    [SerializeField] Color dayTimeColor;
+
+    [SerializeField] Light2D globalLight;
     private void Start()
     {
         //set minute
@@ -53,13 +60,28 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
+        UpdateTime();
+        UpdateGlobalLight();
+    }
+
+    void UpdateGlobalLight()
+    {
+        float hoursInFloat = (float) hour + ((float)minute/60);
+        Debug.Log(hoursInFloat);
+        float v = nightTimeCurve.Evaluate(hoursInFloat);
+        Color c = Color.Lerp(nightTimeColor, dayTimeColor, v);
+        globalLight.color = c;
+    }
+
+    void UpdateTime()
+    {
         timer -= Time.deltaTime;
         OnMinuteChanged?.Invoke();
 
-        if (timer <= 0) 
+        if (timer <= 0)
         {
             minute++;
-            if (minute>=60)
+            if (minute >= 60)
             {
                 hour++;
                 if (hour == 24)

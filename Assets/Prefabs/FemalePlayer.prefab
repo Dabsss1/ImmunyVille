@@ -137,7 +137,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
   playerName: 
   character: {fileID: 0}
   dialogBox: {fileID: 0}
-  dialog:
-    lines: []
+  isSpawned: 0
+  lastScene: PlayerLot
 --- !u!95 &3962650834286590996
 Animator:
   serializedVersion: 3
