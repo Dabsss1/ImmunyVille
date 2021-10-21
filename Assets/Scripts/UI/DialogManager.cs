@@ -34,7 +34,7 @@ public class DialogManager : MonoBehaviour
         }
         if (currentline>=dialog.Lines.Count)
         {
-            GameManagerScript.state = OpenWorldState.EXPLORE;
+            GameStateManager.state = OpenWorldState.EXPLORE;
             dialogBox.SetActive(false);
             currentline = 0;
             return;

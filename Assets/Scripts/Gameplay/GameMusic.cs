@@ -8,11 +8,11 @@ public class GameMusic : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.PlaySound?.Invoke(backgroundMusic);
+        AudioManager.Instance.Play(backgroundMusic);
     }
 
     private void OnDisable()
     {
-        AudioManager.StopSound?.Invoke(backgroundMusic);
+        AudioManager.Instance.Stop(backgroundMusic);
     }
 }

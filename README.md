@@ -4,13 +4,13 @@
 
 1. Main Menu - done
 2. Character Selection - done
-3. Explorable village - 90%
+3. Explorable village - done
 4. Healthy immune-system focused storyline - 70%
 5. Non-player characters and pets - 60%
 6. Healthy immune-system lifestyle tips and information - 50%
 7. Hunger and thirst system - 50%
 8. In-game time - done
-9. Inventory system - 50%
+9. Inventory system - done
 10. Stats system - 40%
 11. Hidden Objects Minigame (grocery) - done
 12. Tasks system - 30%

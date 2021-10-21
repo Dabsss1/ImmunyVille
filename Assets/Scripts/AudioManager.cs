@@ -12,19 +12,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixerGroup master;
     public static AudioManager Instance { get; private set; }
-    public static Action<string> PlaySound,StopSound;
-
-    private void OnEnable()
-    {
-        PlaySound += Play;
-        StopSound += Stop;
-    }
-
-    private void OnDisable()
-    {
-        PlaySound -= Play;
-        StopSound += Stop;
-    }
 
     private void Awake()
     {

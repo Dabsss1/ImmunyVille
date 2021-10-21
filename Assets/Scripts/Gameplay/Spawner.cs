@@ -9,91 +9,39 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] spawnPoint;
 
-    public static string previousScene { get; set; }
-
-    public static Action OnStartScene;
-
-    void OnEnable()
-    {
-        OnStartScene += SpawnPlayer;
-    }
-
-    private void OnDisable()
-    {
-        OnStartScene -= SpawnPlayer;
-    }
+    public static Spawner Instance { get; private set; }
 
     private void Awake()
     {
-        //SaveSystem.LoadPlayer();
+        if (Instance != null)
+            Destroy(Instance.gameObject);
+
+        Instance = this;
     }
 
-    private void Start()
+    public void SpawnPlayer()
     {
-        //previousScene = Player.Instance.currentScene;
-        //GamePreferencesManager.OnLoadPrefs?.Invoke();
-
-        if (Player.Instance == null)
-            previousScene = "PlayerLot";
-        else
-            previousScene = Player.Instance.lastScene;
-
-        Debug.Log("Previous Scene: " + previousScene);
-
-        GameManagerScript.sceneState = SceneState.OPENWORLD;
-
-        if (previousScene=="MainMenu")
+        Debug.Log("called");
+        foreach (GameObject i in spawnPoint)
         {
-            LoadQuickSave();
-            return;
-        }
-        SpawnPlayer();
-    }
-    void SpawnPlayer()
-    {
-        if (Player.Instance != null && !Player.Instance.gameObject.activeSelf)
-        {
-            Player.Instance.gameObject.SetActive(true);
-        }
+            Debug.Log("called1");
 
-        if (Player.Instance == null)
-        {
-            foreach (GameObject i in spawnPoint)
+            if (i.name == PlayerSceneInformation.Instance.previousScene)
             {
-                if (i.name == previousScene)
-                {
-                    Transform spawnPlace = i.GetComponent<Transform>();
+                //get spawn point coordinates
+                Transform spawnPlace = i.GetComponent<Transform>();
 
-                    spawnCharacter(spawnPlace.position);
+                //spawn player on coordinates
+                spawnCharacter(spawnPlace.position);
 
-                    GameManagerScript.state = OpenWorldState.EXPLORE;
-                    Player.Instance.isSpawned = true;
-
-                    return;
-                }
-            }
-
-            Debug.Log("SpawnPoint not found\n" +
-                "Spawning default spawn temporarily");
-
-            spawnCharacter(new Vector3(.5f, 0f));
-        }
-        else
-        {
-            foreach (GameObject i in spawnPoint)
-            {
-                if (i.name == previousScene)
-                {
-                    Transform spawnPlace = i.GetComponent<Transform>();
-
-                    Player.Instance.transform.position = spawnPlace.position;
-
-                    GameManagerScript.state = OpenWorldState.EXPLORE;
-                    return;
-                }
+                return;
             }
         }
-
+        
+        Debug.Log("SpawnPoint not found\n" +
+            "Spawning character from "+spawnPoint[0].name+" temporarily.");
+        Transform defaultSpawnPlace = spawnPoint[0].GetComponent<Transform>();
+        spawnCharacter(defaultSpawnPlace.position);
     }
 
     void spawnCharacter(Vector3 spawnPlace)
@@ -108,16 +56,31 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Gender not specified\n" +
+            Debug.Log("Gender not detected\n" +
                 "Spawning Female Player temporarily");
             Instantiate(femalePlayer, spawnPlace, Quaternion.identity);
         }
     }
 
-    void LoadQuickSave()
+    public void LoadQuickSave()
     {
         Vector3 spawnPosition = new Vector3(PlayerData.position[0], PlayerData.position[1], PlayerData.position[2]);
         spawnCharacter(spawnPosition);
-        GameManagerScript.state = OpenWorldState.EXPLORE;
+    }
+
+   public void RepositionPlayer()
+    {
+        Debug.Log("repositioning from "+ PlayerSceneInformation.Instance.previousScene);
+        foreach (GameObject i in spawnPoint)
+        {
+            if (i.name == PlayerSceneInformation.Instance.previousScene)
+            {
+                Transform spawnPlace = i.GetComponent<Transform>();
+
+                Player.Instance.transform.position = spawnPlace.position;
+
+                return;
+            }
+        }
     }
 }

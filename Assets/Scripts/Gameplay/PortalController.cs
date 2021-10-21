@@ -5,14 +5,11 @@ using UnityEngine;
 public class PortalController : MonoBehaviour
 {
     [SerializeField] string portalDestination;
-    [SerializeField] public string prevScene;
 
-    [SerializeField] GamePreferencesManager playerPrefs;
 
     public void OnInteractPortal()
     {
-        //playerPrefs.SavePrefs(prevScene); 
-        Player.Instance.lastScene = prevScene;
+        PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }
 }

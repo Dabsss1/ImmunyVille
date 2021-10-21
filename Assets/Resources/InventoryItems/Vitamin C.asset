@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a002c4f5f04864d9897cbbe2b06500, type: 3}
+  m_Name: Vitamin C
+  m_EditorClassIdentifier: 
+  itemName: Vitamin C
+  itemDescription: The benefits of vitamin C (ascorbic acid) may include protection
+    against immune system deficiencies, cardiovascular disease, prenatal health problems,
+    eye disease, and even skin wrinkling.
+  itemIcon: {fileID: 21300000, guid: 0c68729d7eb01534fb807c5c3482122f, type: 3}
+  consumable: 1
+  health: 3
+  body: 0
+  confidence: 0
+  strength: 0
+  hunger: 0
+  thirst: 0

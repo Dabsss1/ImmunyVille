@@ -18,15 +18,30 @@ EditorBuildSettings:
     path: Assets/Scenes/OpenWorld/PlayerLot.unity
     guid: 114f2fe98932c27489c37f6c46a3e3f8
   - enabled: 1
+    path: Assets/Scenes/OpenWorld/GymArea.unity
+    guid: 7a45b89595f39da458f9b8a00c6f9ec1
+  - enabled: 1
     path: Assets/Scenes/OpenWorld/TownSquare.unity
     guid: 146cb637ffe964149863384328260c87
+  - enabled: 1
+    path: Assets/Scenes/OpenWorld/Mountain.unity
+    guid: c436fde81f366514082e165377a3acf0
   - enabled: 1
     path: Assets/Scenes/Buildings/Supermarket.unity
     guid: 6fd528b8c3bb2a642863fcd5197e2215
   - enabled: 1
-    path: Assets/Scenes/Minigames/GroceryGame.unity
-    guid: a1320017c8b1c84439d5d4f1f2e59caf
-  - enabled: 1
     path: Assets/Scenes/Buildings/PlayerHouse.unity
     guid: 01e734fe027db2b4eb86e8259252af6e
+  - enabled: 1
+    path: Assets/Scenes/Buildings/Hospital.unity
+    guid: d3eba401590078c4ead2aa8e85a41e00
+  - enabled: 1
+    path: Assets/Scenes/Buildings/Gym.unity
+    guid: 96accbe881dadb04c9e8c543a312bc95
+  - enabled: 1
+    path: Assets/Scenes/Buildings/CityHall.unity
+    guid: e947025178c0c0c468bcac8f6938d93f
+  - enabled: 1
+    path: Assets/Scenes/Minigames/GroceryGame.unity
+    guid: a1320017c8b1c84439d5d4f1f2e59caf
   m_configObjects: {}

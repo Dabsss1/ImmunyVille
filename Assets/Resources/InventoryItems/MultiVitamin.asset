@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a002c4f5f04864d9897cbbe2b06500, type: 3}
+  m_Name: MultiVitamin
+  m_EditorClassIdentifier: 
+  itemName: MultiVitamin
+  itemDescription: Multivitamins could assist you in improving your memory and mood.
+    Furthermore, antioxidant vitamins and minerals may help in the prevention of
+    blindness by reducing the development of certain diseases.
+  itemIcon: {fileID: 21300000, guid: 15b9237b25f50b94aaec904c4fffcc97, type: 3}
+  consumable: 1
+  health: 3
+  body: 3
+  confidence: 3
+  strength: 3
+  hunger: 0
+  thirst: 0

@@ -6,7 +6,6 @@ using UnityEngine.Audio;
 
 public class GamePreferencesManager : MonoBehaviour
 {
-    const string previousScene = "prevScene";
     const string musicVol = "musicVol";
 
     public static Action OnLoadPrefs,OnLoadSettings;
@@ -14,11 +13,8 @@ public class GamePreferencesManager : MonoBehaviour
     public static Action<string> OnSavePrefs;
 
     public static Action<float> OnSaveSettings;
-
     private void OnEnable()
     {
-        OnLoadPrefs += LoadPrefs;
-        OnSavePrefs += SavePrefs;
 
         OnSaveSettings += SaveSettingsPrefs;
         OnLoadSettings += LoadSettingsPrefs;
@@ -26,28 +22,12 @@ public class GamePreferencesManager : MonoBehaviour
 
     private void OnDisable()
     {
-        OnLoadPrefs -= LoadPrefs;
-        OnSavePrefs -= SavePrefs;
 
         OnLoadSettings -= LoadSettingsPrefs;
     }
     // Start is called before the first frame update
     void Start()
     {
-        //LoadPrefs();
-    }
-
-
-    public void SavePrefs(string prevScene)
-    {
-        PlayerPrefs.SetString(previousScene,prevScene);
-        PlayerPrefs.Save();
-        Debug.Log("Saved prev scene "+prevScene);
-    }
-
-    public void LoadPrefs()
-    {
-        Spawner.previousScene = PlayerPrefs.GetString(previousScene,"PlayerLot");
     }
 
     public void SaveSettingsPrefs(float musicValue)

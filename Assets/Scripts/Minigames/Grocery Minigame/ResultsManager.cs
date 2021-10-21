@@ -5,13 +5,10 @@ using UnityEngine;
 public class ResultsManager : MonoBehaviour
 {
     [SerializeField] string portalDestination;
-    [SerializeField] public string prevScene;
-
-    [SerializeField] GamePreferencesManager playerPrefs;
 
     public void GameFinish()
     {
-        playerPrefs.SavePrefs(prevScene);
+        PlayerSceneInformation.Instance.previousScene = "GroceryGame";
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }
 }

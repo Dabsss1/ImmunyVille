@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        GameManagerScript.sceneState = SceneState.MAINMENU;
+        GameStateManager.sceneState = SceneState.MAINMENU;
         Debug.Log(PlayerData.scene);
         continueGameScene = PlayerData.scene;
     }
