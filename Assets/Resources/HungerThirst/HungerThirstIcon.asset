@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7a5f2f5aa270449aa6aede6329a8db, type: 3}
+  m_Name: HungerThirstIcon
+  m_EditorClassIdentifier: 
+  hungerFilledIcon: {fileID: 21300000, guid: 2272c492f48ad7d4c83b9d6e78ea2268, type: 3}
+  hungerEmptyIcon: {fileID: 21300000, guid: 8403f109b45de634fb283fcc2414b796, type: 3}
+  thirstFilledIcon: {fileID: 21300000, guid: d67388508258ce7469b753451b04f275, type: 3}
+  thirstEmptyIcon: {fileID: 21300000, guid: d92b7cd5c5d0c534dbb0fb3c39c6ad1b, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cb47a231ffdd84185c42bf1d15d772, type: 3}
+  m_Name: Dumbell
+  m_EditorClassIdentifier: 
+  badgeName: Dumbell
+  bronzeIcon: {fileID: 21300000, guid: c0d9a1218988e4641a4c18d512a4ff5a, type: 3}
+  bronzeDescription: 
+  silverIcon: {fileID: 21300000, guid: a425c37c17d4b2d4b961c75c6b363b2f, type: 3}
+  silverDescription: 
+  goldIcon: {fileID: 21300000, guid: e82a26b1b31f6264e8b3b74a8a71be07, type: 3}
+  goldDescription: 

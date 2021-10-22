@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cb47a231ffdd84185c42bf1d15d772, type: 3}
+  m_Name: Barbell
+  m_EditorClassIdentifier: 
+  badgeName: Barbell
+  bronzeIcon: {fileID: 21300000, guid: afd494d8419fb854096aa16e8267d676, type: 3}
+  bronzeDescription: 
+  silverIcon: {fileID: 21300000, guid: a52335cad3009e440986ff517c89887b, type: 3}
+  silverDescription: 
+  goldIcon: {fileID: 21300000, guid: 2cfc329e840f12d47957e5b73e89b8cf, type: 3}
+  goldDescription: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -8,12 +9,22 @@ public class InventoryUI : MonoBehaviour
 
     public ItemBlueprint itemBlueprint;
 
-    void Start()
+    public TextMeshProUGUI itemDescription;
+
+    public static InventoryUI Instance { get; private set; }
+
+    private void Awake()
     {
-        UpdateInventory();
+        if (Instance == null)
+            Instance = this;
     }
 
-    void UpdateInventory()
+    void Start()
+    {
+        UpdateInventoryUI();
+    }
+
+    void UpdateInventoryUI()
     {
         foreach (Transform child in contentGO.transform)
         {
@@ -30,9 +41,4 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cb47a231ffdd84185c42bf1d15d772, type: 3}
+  m_Name: Dog
+  m_EditorClassIdentifier: 
+  badgeName: Dog
+  bronzeIcon: {fileID: 21300000, guid: 1ee84259f8a586049a9c5a85ff1765bc, type: 3}
+  bronzeDescription: 
+  silverIcon: {fileID: 21300000, guid: 9029f80f8d9747648ad83ce7289c44ed, type: 3}
+  silverDescription: 
+  goldIcon: {fileID: 21300000, guid: a06cc0ed0d060c94d9e60ef0e6a31494, type: 3}
+  goldDescription: 
