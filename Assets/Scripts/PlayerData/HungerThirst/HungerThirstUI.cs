@@ -17,7 +17,7 @@ public class HungerThirstUI : MonoBehaviour
 
     private void Update()
     {
-        hungerCount = HungerThirst.Instance.hungerStat % 10;
+        hungerCount = HungerThirst.Instance.hungerStat % 10;                                                                                                                           
         thirstCount = HungerThirst.Instance.thirstStat % 10;
 
         UpdateHungerThirstUI();

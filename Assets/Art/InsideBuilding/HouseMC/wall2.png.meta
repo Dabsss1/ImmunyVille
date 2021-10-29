@@ -20,12 +20,6 @@ TextureImporter:
   - first:
       213: -7462610077065264136
     second: wall2_5
-  - first:
-      213: 6950014534635555584
-    second: wall2_6
-  - first:
-      213: 8000962598487189886
-    second: wall2_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -131,7 +125,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -152,7 +146,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -173,7 +167,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -194,7 +188,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -215,7 +209,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -236,7 +230,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -248,48 +242,6 @@ TextureImporter:
       bones: []
       spriteID: 8f3464b6cab7f6890800000000000000
       internalID: -7462610077065264136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall2_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00b01c08569637060800000000000000
-      internalID: 6950014534635555584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall2_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e79e308a711290f60800000000000000
-      internalID: 8000962598487189886
       vertices: []
       indices: 
       edges: []

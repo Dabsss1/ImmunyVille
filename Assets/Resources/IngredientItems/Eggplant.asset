@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50878538e424e6d4a954795d52a02aac, type: 3}
+  m_Name: Eggplant
+  m_EditorClassIdentifier: 
+  ExtraItem: 0
+  icon: {fileID: 21300000, guid: fb278e0c511041e4abb197f48f5317d0, type: 3}
+  ingredientName: Eggplant
+  ingredientDescription: Eggplant has antioxidants like vitamins A and C, which help
+    protect your cells against damage. It's also high in natural plant chemicals
+    called polyphenols, which may help cells do a better job of processing sugar
+    if you have diabetes.

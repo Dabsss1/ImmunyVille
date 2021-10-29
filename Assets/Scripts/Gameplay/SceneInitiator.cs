@@ -61,6 +61,8 @@ public class SceneInitiator : MonoBehaviour
 
     void DestroyPlayerGameObject()
     {
+        if (Player.Instance == null)
+            return;
         Destroy(Player.Instance.gameObject);
     }
 

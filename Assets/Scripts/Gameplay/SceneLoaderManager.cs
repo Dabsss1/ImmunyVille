@@ -11,14 +11,16 @@ public class SceneLoaderManager : MonoBehaviour
 {
     public static Action<string> OnMinigameLoad,OnSceneLoad;
     public Animator sceneTransition;
-        
 
-    [SerializeField] IngredientsTips tips;
+    
+    [Header("LoadingScreen")]
+    [SerializeField] List<IngredientItem> ingredientTips;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider loadingBar;
-    [SerializeField] GameObject tapText;
     [SerializeField] TextMeshProUGUI informationText;
+    [SerializeField] Image informationIcon;
     [SerializeField] GameObject tapButton;
+    [SerializeField] GameObject tapText;
 
     [SerializeField] GameObject faderPanel;
 
@@ -64,7 +66,10 @@ public class SceneLoaderManager : MonoBehaviour
 
         loadingScreen.SetActive(true);
 
-        informationText.text = tips.getTip;
+        int rnd = UnityEngine.Random.Range(0, ingredientTips.Count);
+
+        informationText.text = ingredientTips[rnd].ingredientDescription;
+        informationIcon.sprite = ingredientTips[rnd].icon;
 
         yield return new WaitForSeconds(1f);
 

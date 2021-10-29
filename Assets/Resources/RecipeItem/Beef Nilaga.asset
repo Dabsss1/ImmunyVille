@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e2b4a17c937c043ba62bd96abe3f50, type: 3}
+  m_Name: Beef Nilaga
+  m_EditorClassIdentifier: 
+  recipeName: Beef Nilaga
+  ingredients:
+  - {fileID: 11400000, guid: c0bd8616f0a390c48890bb5f8825c3cd, type: 2}
+  - {fileID: 11400000, guid: 1be093efaec7d284c810b43f17619a63, type: 2}
+  - {fileID: 11400000, guid: 0e02c9507327d464d9f8e625dcee732f, type: 2}
+  - {fileID: 11400000, guid: 5526a56e47d90704dad8490dae7076f8, type: 2}
+  - {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
+  - {fileID: 11400000, guid: d9840b690a75e5247b26bf3307727525, type: 2}
+  - {fileID: 11400000, guid: e8aef1c218987394dadee3df87b3d5e7, type: 2}

@@ -6,28 +6,23 @@ using TMPro;
 public enum pickingState {COUNTDOWN, PLAYING, DONE}
 public class PickingIngredients : MonoBehaviour
 {
+    [Header("Next Scene")]
     [SerializeField]
     GameObject cookingScene;
     [SerializeField]
     GameObject transition;
 
-    [HideInInspector]
-    //Store selected recipe name from picking
-    public string selectedRecipe;
-
     pickingState state;
 
     [HideInInspector]
-    //Main Recipe Object
-    public Recipe mainRecipe;
+    public CookingRecipeItem recipe;
 
-    //ingredient scaler
-    public int[] ingredientsSize = new int[2];
-
+    [Header("UI")]
     //Text Informations
     public TextMeshProUGUI recipeInfoText;
     public TextMeshProUGUI ingredientInfoText;
 
+    [Header("Timer")]
     //timer
     public GameObject countdownGO;
     public TextMeshProUGUI countdownText;
@@ -38,8 +33,12 @@ public class PickingIngredients : MonoBehaviour
     [SerializeField]
     float timePenalty;
 
+    [Header("Ingredients")]
     //extra ingredients List (main recipe ingredients will be removed at start)
-    public List<GameObject> extraIngredients = new List<GameObject>();
+    [SerializeField] List<IngredientItem> extraIngredients = new List<IngredientItem>();
+    List<IngredientItem> recipeIngredientsCopy;
+
+    [SerializeField] CookingIngredientBlueprint ingredientBluePrint;
 
     //placeholders of ingredients
     public Transform[] placeholders = new Transform[2];
@@ -47,16 +46,13 @@ public class PickingIngredients : MonoBehaviour
     //ingredient counter
     int ingredientCounter = 0;
     //current main ingredient
-    GameObject currentMainIngredient;
+    [SerializeField]
+    CookingIngredientBlueprint currentMainIngredient;
     //current extra ingredients
-    GameObject[] currentExtraIngredient = new GameObject[2];
+    CookingIngredientBlueprint[] currentExtraIngredient = new CookingIngredientBlueprint[2];
 
     //extra ingredient counter
     int extraCounter = 0;
-
-    //data
-    int selectedIngredients=0;
-    int mistakes=0;
 
     //touch inputs
     [SerializeField]
@@ -64,20 +60,31 @@ public class PickingIngredients : MonoBehaviour
     [SerializeField]
     LayerMask trayLayer;
     [SerializeField]
-    GameObject selectedIngredient; //selected ingredient
+    CookingIngredientBlueprint selectedIngredient; //selected ingredient
     Vector3 selectedIngredientOriginalPos;
 
+    //data
+    int selectedIngredients = 0;
+    int mistakes = 0;
+
+    public static PickingIngredients Instance { get; private set; }
     private void OnEnable()
     {
         InputTouch.OnFingerDown += CheckForIngredient;
         InputTouch.OnFingerMove += DragIngredient;
         InputTouch.OnFingerUp += ReleaseIngredient;
     }
-        private void OnDisable()
+    private void OnDisable()
     {
         InputTouch.OnFingerDown -= CheckForIngredient;
         InputTouch.OnFingerMove -= DragIngredient;
         InputTouch.OnFingerUp -= ReleaseIngredient;
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
     }
 
     void Start()
@@ -85,11 +92,11 @@ public class PickingIngredients : MonoBehaviour
         //set state to countdown
         state = pickingState.COUNTDOWN;
 
-        //get selected main recipe from recipe manager
-        mainRecipe = RecipeManager.Instance.getRecipe(selectedRecipe);
-
         //display recipe on panel
         SetRecipeInfoText();
+
+        //get a copy of ingredients list
+        recipeIngredientsCopy = recipe.ingredients;
 
         //remove main recipe ingredients from extra list
         RemoveMainRecipeIngredients();
@@ -98,7 +105,7 @@ public class PickingIngredients : MonoBehaviour
         Shuffle(extraIngredients);
 
         //shuffle main ingredients
-        Shuffle(mainRecipe.recipeIngredients);
+        Shuffle(recipeIngredientsCopy);
 
         //spawn 1st 3 ingredients
         SpawnIngredients();
@@ -137,35 +144,42 @@ public class PickingIngredients : MonoBehaviour
     void SetRecipeInfoText()
     {
         //Display Recipe Name
-        recipeInfoText.text = mainRecipe.recipeName;
+        recipeInfoText.text = recipe.recipeName;
 
         //Add space
         recipeInfoText.text += "\n";
 
         //Display Recipe Ingredients
-        foreach (GameObject i in mainRecipe.recipeIngredients)
+        for (int i=0; i<recipe.ingredients.Count; i++)
         {
-            recipeInfoText.text += "\n" + i.name;
+            recipeInfoText.text += "\n" + recipe.ingredients[i].ingredientName;
+        }
+        
+    }
+    void RemoveMainRecipeIngredients()
+    {
+        foreach (IngredientItem i in recipe.ingredients)
+        {
+            extraIngredients.Remove(i);
         }
     }
-
     void SpawnIngredients()
     {
         int rnd = UnityEngine.Random.Range(0, placeholders.Length);
-
-        Vector3 scale = new Vector3();
 
         int extraIngredientCounter = 0;
 
         for (int i = 0; i < placeholders.Length; i++)
         {
-            GameObject spawnedGO;
+            CookingIngredientBlueprint spawnedIngredient;
 
-            if (selectedIngredients >= mainRecipe.recipeIngredients.Length)
+            if (selectedIngredients >= recipeIngredientsCopy.Count)
             {
                 OpenCookingPanel();
                 return;
             }
+
+            spawnedIngredient = Instantiate(ingredientBluePrint, placeholders[i]);
 
             if (i != rnd)
             {
@@ -173,19 +187,18 @@ public class PickingIngredients : MonoBehaviour
                 {
                     extraCounter = 0;
                 }
-                spawnedGO = Instantiate(extraIngredients[extraCounter], placeholders[i]);
-                currentExtraIngredient[extraIngredientCounter] = spawnedGO;
+                spawnedIngredient.SetData(extraIngredients[extraCounter]);
+                currentExtraIngredient[extraIngredientCounter] = spawnedIngredient;
                 extraIngredientCounter++;
                 extraCounter++;
             }
             else
             {
-                spawnedGO = Instantiate(mainRecipe.recipeIngredients[ingredientCounter], placeholders[i]);
-                currentMainIngredient = spawnedGO;
+                spawnedIngredient.SetData(recipeIngredientsCopy[ingredientCounter]);
+                currentMainIngredient = spawnedIngredient;
                 ingredientCounter++;
             }
 
-            spawnedGO.transform.localScale = new Vector3(ingredientsSize[0], ingredientsSize[1], 1);
         }
     }
 
@@ -198,14 +211,12 @@ public class PickingIngredients : MonoBehaviour
         if (ingredientCollider != null)
         {
             selectedIngredientOriginalPos = ingredientCollider.gameObject.transform.position;
-            string ingredientInfo;
-            ingredientInfo = ingredientCollider.GetComponent<IngredientController>().ingredient.ingredientName;
 
-            ingredientInfo += "\n" + ingredientCollider.GetComponent<IngredientController>().ingredient.ingredientInfo;
+            ingredientInfoText.text = ingredientCollider.GetComponent<CookingIngredientBlueprint>().ingredient.ingredientName;
 
-            ingredientInfoText.text = ingredientInfo;
+            ingredientInfoText.text += "\n" + ingredientCollider.GetComponent<CookingIngredientBlueprint>().ingredient.ingredientDescription;
 
-            selectedIngredient = ingredientCollider.gameObject;
+            selectedIngredient = ingredientCollider.GetComponent<CookingIngredientBlueprint>();
         }
     }
     
@@ -226,9 +237,9 @@ public class PickingIngredients : MonoBehaviour
                 selectedIngredients++;
 
                 //spawn new ingredients
-                foreach (GameObject i in currentExtraIngredient)
+                foreach (CookingIngredientBlueprint i in currentExtraIngredient)
                 {
-                    Destroy(i);
+                    Destroy(i.gameObject);
                 }
                 SpawnIngredients();
             }
@@ -268,13 +279,7 @@ public class PickingIngredients : MonoBehaviour
             seconds = 60 - temp;
         }
     }
-    void RemoveMainRecipeIngredients()
-    {
-        foreach (GameObject i in mainRecipe.recipeIngredients)
-        {
-            extraIngredients.Remove(i);
-        }
-    }
+    
 
     void OpenCookingPanel()
     {
@@ -312,36 +317,29 @@ public class PickingIngredients : MonoBehaviour
 
         state = pickingState.PLAYING;
     }
-    public void Shuffle(GameObject[] gameObject)
+
+    public void Shuffle(List<IngredientItem> item)
     {
-        GameObject tempGameObject;
+        IngredientItem temp;
 
-        for (int i = 0; i < gameObject.Length; i++)
+        for (int i = 0; i < item.Count; i++)
         {
-            int rnd = UnityEngine.Random.Range(0, gameObject.Length);
-            tempGameObject = gameObject[rnd];
-            gameObject[rnd] = gameObject[i];
-            gameObject[i] = tempGameObject;
-        }
-    }
-
-    public void Shuffle(List<GameObject> gameObject)
-    {
-        GameObject tempGameObject;
-
-        for (int i = 0; i < gameObject.Count; i++)
-        {
-            int rnd = UnityEngine.Random.Range(0, gameObject.Count);
-            tempGameObject = gameObject[rnd];
-            gameObject[rnd] = gameObject[i];
-            gameObject[i] = tempGameObject;
+            int rnd = UnityEngine.Random.Range(0, item.Count);
+            temp = item[rnd];
+            item[rnd] = item[i];
+            item[i] = temp;
         }
     }
     
     public void SendResults()
     {
         CookingResults.Instance.pickingTimeLeft = $"{minutes}:{seconds:00}";
-        CookingResults.Instance.pickingIngredients = selectedIngredients.ToString() + "/" + mainRecipe.recipeIngredients.Length.ToString();
-        CookingResults.Instance.mistakes = mistakes.ToString();
+        CookingResults.Instance.pickingIngredients = selectedIngredients.ToString() + "/" + recipeIngredientsCopy.Count.ToString();
+        CookingResults.Instance.mistakes = mistakes;
+
+        if (selectedIngredients == recipeIngredientsCopy.Count)
+            CookingResults.Instance.perfectIngredients = true;
+        else
+            CookingResults.Instance.perfectIngredients = false;
     }
 }

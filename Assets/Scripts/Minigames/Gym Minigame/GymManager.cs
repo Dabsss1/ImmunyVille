@@ -7,53 +7,41 @@ using TMPro;
 public enum gymState { COUNTDOWN, PLAYING, DONE}
 public class GymManager : MonoBehaviour
 {
-    [SerializeField]
-    Slider barSlider;
+    [Header("Settings")]
+    [SerializeField] float sliderSpeed;
+    [SerializeField] float goodRepValue;
+    [SerializeField] float perfectRepValue;
+    [SerializeField] int reps;
 
-    [SerializeField]
-    float sliderSpeed;
 
-    [SerializeField]
-    Sprite highlightedIcon;
-    [SerializeField]
-    Sprite normalIcon;
+    [Header("UI")]
+    [SerializeField] Slider barSlider;
+    [SerializeField] Sprite highlightedIcon;
+    [SerializeField] Sprite normalIcon;
+    [SerializeField] Sprite avatar1;
+    [SerializeField] Sprite avatar2;
+    [SerializeField] Sprite avatar3;
+    [SerializeField] Image barSliderImage;
+    [SerializeField] Image avatarImage;
+    [SerializeField] TextMeshProUGUI infoText;
 
-    [SerializeField]
-    Sprite avatar1;
-    [SerializeField]
-    Sprite avatar2;
-    [SerializeField]
-    Sprite avatar3;
-
-    [SerializeField]
-    float goodRepValue;
-    [SerializeField]
-    float perfectRepValue;
-
-    [SerializeField]
-    Image barSliderImage;
-    [SerializeField]
-    Image avatarImage;
-
-    [SerializeField]
-    int reps;
     int remainingReps;
     int goodReps = 0;
     int perfectReps = 0;
     int badReps = 0;
-
-    [SerializeField]
-    TextMeshProUGUI infoText;
+      
 
     private void Start()
     {
         remainingReps = reps;
+        UpdateInfoText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateInfoText();
+        if (remainingReps <= 0)
+            return;
         MoveSlider();
         AnimateAvatar();
     }
@@ -109,6 +97,14 @@ public class GymManager : MonoBehaviour
 
     public void UpdateInfoText()
     {
+        if (remainingReps == 0)
+        {
+            GymResultsManager.Instance.perfectReps = perfectReps;
+            GymResultsManager.Instance.goodReps = goodReps;
+            GymResultsManager.Instance.badReps = badReps;
+
+            GymResultsManager.Instance.DisplayResultsScreen();
+        }
         infoText.text = "" + 
             "Remaining Reps: " + remainingReps + "\n" + 
             "Perfect Reps: "+ perfectReps +"\n" +

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50878538e424e6d4a954795d52a02aac, type: 3}
+  m_Name: Chicken
+  m_EditorClassIdentifier: 
+  ExtraItem: 0
+  icon: {fileID: 21300000, guid: edbf9fe1135afbb40851612659b0bd71, type: 3}
+  ingredientName: Chicken
+  ingredientDescription: Chicken is highly nutritious and a good source of protein.
+    Adding chicken to your diet may help support weight loss, muscle growth, and
+    bone health.

@@ -14,12 +14,6 @@ TextureImporter:
   - first:
       213: 7514723708981738730
     second: mirror_3
-  - first:
-      213: -1512646765486763753
-    second: mirror_4
-  - first:
-      213: -1622585199689968317
-    second: mirror_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +119,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -146,7 +140,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -167,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -188,7 +182,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -200,48 +194,6 @@ TextureImporter:
       bones: []
       spriteID: aecff0b0669a94860800000000000000
       internalID: 7514723708981738730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mirror_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7119488f7cff10be0800000000000000
-      internalID: -1512646765486763753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mirror_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3455ca29b5b6b79e0800000000000000
-      internalID: -1622585199689968317
       vertices: []
       indices: 
       edges: []

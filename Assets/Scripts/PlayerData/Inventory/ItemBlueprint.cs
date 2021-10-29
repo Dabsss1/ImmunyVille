@@ -19,6 +19,7 @@ public class ItemBlueprint : MonoBehaviour
         quantity.text = $"X: {item.count}";
 
         itemDescription = item.item.itemDescription;
+
     }
 
     public void SelectItem()

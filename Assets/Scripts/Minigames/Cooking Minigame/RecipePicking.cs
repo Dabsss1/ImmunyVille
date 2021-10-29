@@ -10,25 +10,26 @@ public class RecipePicking : MonoBehaviour
     [SerializeField]
     GameObject transition;
 
-    public void RecipeSelected(string recipeName)
+    public void RecipeSelected(CookingRecipeItem recipe)
     {
-        OpenPickingIngredientsPanel(recipeName);
+        OpenPickingIngredientsPanel(recipe);
     }
 
-    void OpenPickingIngredientsPanel(string recipeName)
+    void OpenPickingIngredientsPanel(CookingRecipeItem recipe)
     {
-        StartCoroutine(OpenNextPanel(recipeName));
+        StartCoroutine(OpenNextPanel(recipe));
     }
 
-    IEnumerator OpenNextPanel(string recipeName)
+    IEnumerator OpenNextPanel(CookingRecipeItem recipe)
     {
         transition.SetActive(true);
         yield return new WaitForSeconds(1f);
 
+
         gameObject.SetActive(false);
         pickingIngredientsPanel.SetActive(true);
-        pickingIngredientsPanel.GetComponent<PickingIngredients>().selectedRecipe = recipeName;
-        CookingResults.Instance.recipeName = recipeName;
+        PickingIngredients.Instance.recipe = recipe;
+        CookingResults.Instance.recipeName = recipe.recipeName;
 
         transition.GetComponent<Animator>().SetTrigger("Exit");
     }

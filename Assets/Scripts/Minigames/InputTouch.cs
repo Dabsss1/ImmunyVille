@@ -20,7 +20,6 @@ public class InputTouch : MonoBehaviour
 
     private void OnDisable()
     {
-        
         TouchSimulation.Disable();
         EnhancedTouchSupport.Disable();
         UnityEngine.InputSystem.EnhancedTouch.Touch.onFingerDown -= FingerDown;

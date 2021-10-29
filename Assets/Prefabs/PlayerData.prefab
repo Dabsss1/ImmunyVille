@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8831496133074952837}
   - component: {fileID: 2616019510915465961}
   - component: {fileID: 416019968017682493}
+  - component: {fileID: 7264762120736395646}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -128,42 +129,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   badgeSlots:
   - badge: {fileID: 11400000, guid: aaf9a16a811ec8145b7fd84ec9499292, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: 6b841eed8dbbc6a49ad286512e4a4346, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: faf6f547b9db67245bf532253ae235d5, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: 7af7a88c8ff2eb744a9d3009a49e03f7, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: 6192c391b6617204f83a3acd4b5d492d, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: 1a7234127b1c015478ef4bbd76f8e09a, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: acf5adb1132e49e40b3d4d17e8051c72, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: 8fce672810292f548b54c01fcf3343f9, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: d030ed1bf9f31984e823d72847f624d6, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
   - badge: {fileID: 11400000, guid: 2ea1664bb59b582418605d3566e59558, type: 2}
-    bronze: 0
-    silver: 0
-    gold: 0
+    tier: 0
+--- !u!114 &7264762120736395646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2596789140476371228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b93e85b6df6b3549809c5349f6745e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerStat: 2
+  thirstStat: 5

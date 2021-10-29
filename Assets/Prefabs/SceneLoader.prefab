@@ -451,78 +451,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTransition: {fileID: 1465009568953795898}
-  tips:
-    informationTips:
-    - Eggs are an excellent source of minerals including vitamin D, zinc, selenium,
-      and vitamin E, which the body need for proper immune function. Eggs contain
-      all the nutrients that the body needs to produce energy. And it contains protein
-      to make make your muscles strong.
-    - Cabbage is an excellent source of the vitamin C and maintaining immune system.
-      Cabbage is high in fiber and contains zero fat.It will help the people who
-      want to lose weight.
-    - Papayas contain high levels of antioxidants vitamin A, vitamin C, and vitamin
-      E. Diets high in antioxidants may reduce the risk of heart disease.
-    - Onions are packed with immune-boosting nutrients like selenium, sulfur compounds,
-      zinc, and vitamin C. Eating onions may help control blood sugar, which is especially
-      significant for people with diabetes or prediabetes.
-    - "Spinach is one of the most nutritionally dense vegetables. It\u2019s loaded
-      with vitamins, minerals and antioxidants, and is incredibly low in calories.
-      It has two antioxidants which is lutein and zeaxanthin that will help you protect
-      your eyes from damaging UV light and other harmful light wavelengths."
-    - "Chicken is high in vitamin B-6. Vitamin B-6 is an important player in many
-      of the chemical reactions that happen in the body. It\u2019s also vital to
-      the formation of new and healthy red blood cells."
-    - Red meat such as beef and lamb provide iron, zinc, vitamins B12 and B6 that
-      all play an important role in keeping your immune system in check, not to mention
-      zinc helps with wound healing and protein aids in tissue building and repair
-      after an injury.
-    - Pechay, like all types of cabbage, is a good source of protein, vitamin A,
-      vitamin C, Vitamin B6, calcium, iron, potassium, vitamin K, and more. It may
-      help to lower your risk of developing heart disease
-    - Garlic produces a chemical called allicin. Allicin also makes garlic smell,
-      and it helps to protect you against atherosclerosis and stroke.
-    - Ginger may have anti-inflammatory, antibacterial, antiviral, and other healthful
-      properties. Ginger contains chemicals that may reduce nausea and inflammation.
-    - Potato is a moderate source of iron, and its high vitamin C content promotes
-      iron absorption. It is a good source of vitamins B1, B3 and B6 and minerals
-      such as potassium, phosphorus and magnesium, and contains folate, pantothenic
-      acid and riboflavin.Potatoes are a good source of fiber, which can help you
-      lose weight.
-    - Carrots are rich in vitamins, minerals, and fiber. They are also a good source
-      of antioxidants. Carrots is rich in beta-carotene, a compound your body changes
-      into vitamin A, which helps keep your eyes healthy.
-    - Radish are a good source of antioxidants like catechin, pyrogallol, vanillic
-      acid, and other phenolic compounds. These root vegetables also have a good
-      amount of vitamin C, which acts as an antioxidant to protect your cells from
-      damage.
-    - Eggplant has antioxidants like vitamins A and C, which help protect your cells
-      against damage. It's also high in natural plant chemicals called polyphenols,
-      which may help cells do a better job of processing sugar if you have diabetes.
-    - Okra is low in calories but packed full of nutrients. The vitamin C in okra
-      helps support healthy immune function. Okra is also rich in vitamin K, which
-      helps your body clot blood.
-    - Spinach contains minerals such as potassium, magnesium, copper, zinc, and manganese.
-      These help the body regulate body fluids, cell functions, heart rate, and blood
-      pressure. Spinach is particularly beneficial in treating iron deficiency (anemia)
-      because it is rich in this micronutrient.
-    - Green beans are high in vitamin K, and they also contain a decent amount of
-      calcium. These nutrients are important for maintaining strong, healthy bones
-      and reducing your risk of fractures.
-    - Lettuce is also a good source of fiber, iron, folate, and vitamin C. Lettuce
-      is a source of vitamin A too, which plays a role in eye health.
-    - Fish is rich in calcium and phosphorus and a great source of minerals, such
-      as iron, zinc, iodine, magnesium, and potassium. Fish is packed with protein,
-      vitamins, and nutrients that can lower blood pressure and help reduce the risk
-      of a heart attack or stroke.
-    - Lemons contain a high amount of vitamin C, soluble fiber, and plant compounds
-      that give them a number of health benefits. Lemons may aid weight loss and
-      reduce your risk of heart disease, anemia, kidney stones, digestive issues,
-      and cancer.
+  ingredientTips:
+  - {fileID: 11400000, guid: 05569d513ab995942bd008d1fc1ed102, type: 2}
+  - {fileID: 11400000, guid: c0bd8616f0a390c48890bb5f8825c3cd, type: 2}
+  - {fileID: 11400000, guid: 669c476d78c815e4f80ddd81f18ad311, type: 2}
+  - {fileID: 11400000, guid: 26154a789e3b5194eaa16dbd9e13fb6c, type: 2}
+  - {fileID: 11400000, guid: 05670c730f4716942bab5e8f558e7804, type: 2}
+  - {fileID: 11400000, guid: d9840b690a75e5247b26bf3307727525, type: 2}
+  - {fileID: 11400000, guid: f89b92a1a17750d428b9a92b7ff0155d, type: 2}
+  - {fileID: 11400000, guid: 43be835adc7cb614abaa016aa773e168, type: 2}
+  - {fileID: 11400000, guid: 12bf3f28166423342a128522d8b722c0, type: 2}
+  - {fileID: 11400000, guid: bb89487ba5228324992486a1239d2948, type: 2}
+  - {fileID: 11400000, guid: 8dac148eaec300040aec56a6af4e14c1, type: 2}
+  - {fileID: 11400000, guid: a37b64b5b7caaef41875bbe17e4e44a1, type: 2}
+  - {fileID: 11400000, guid: 2f26925037bd3d949ad47b00f5b2a057, type: 2}
+  - {fileID: 11400000, guid: d22e56e79e59a5c4d88174e837216a70, type: 2}
+  - {fileID: 11400000, guid: b8de83bedfaafa046aaa40b993f5e850, type: 2}
+  - {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
+  - {fileID: 11400000, guid: f05690ce21f845f4dbd4b7745ff4e733, type: 2}
+  - {fileID: 11400000, guid: 1be093efaec7d284c810b43f17619a63, type: 2}
+  - {fileID: 11400000, guid: c61802890f0d2054a96ad3650ec3746d, type: 2}
+  - {fileID: 11400000, guid: 5526a56e47d90704dad8490dae7076f8, type: 2}
+  - {fileID: 11400000, guid: ea0d68d0ccfb5914f909e9a873c7c761, type: 2}
+  - {fileID: 11400000, guid: 0e02c9507327d464d9f8e625dcee732f, type: 2}
+  - {fileID: 11400000, guid: da2ee172680689a498d48ed26954a1a7, type: 2}
+  - {fileID: 11400000, guid: e8aef1c218987394dadee3df87b3d5e7, type: 2}
+  - {fileID: 11400000, guid: 4c982f483b9f79f48a55fd92119165fa, type: 2}
+  - {fileID: 11400000, guid: bb99853cfaf76a44c9b34d6739581845, type: 2}
+  - {fileID: 11400000, guid: f89672cac44b6884087ddbbaebc669a5, type: 2}
   loadingScreen: {fileID: 6558098612676395463}
   loadingBar: {fileID: 8527902985310020784}
-  tapText: {fileID: 898166909685206735}
   informationText: {fileID: 2289080726742949420}
+  informationIcon: {fileID: 4805891114336309373}
   tapButton: {fileID: 258997427117212804}
+  tapText: {fileID: 898166909685206735}
   faderPanel: {fileID: 1465009567293519174}
 --- !u!1 &1465009568953795896
 GameObject:
@@ -766,6 +728,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2979540496124578150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2153869034680036406}
+  - component: {fileID: 5929249817955623133}
+  - component: {fileID: 4805891114336309373}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2153869034680036406
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979540496124578150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 935931700634460098}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -189, y: -57}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5929249817955623133
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979540496124578150}
+  m_CullTransparentMesh: 1
+--- !u!114 &4805891114336309373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979540496124578150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2979586156116415530
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0909119, y: -44.6297}
+  m_AnchoredPosition: {x: -1, y: -36}
   m_SizeDelta: {x: 516.5285, y: 114.77811}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6626947066436792104
@@ -985,7 +1022,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 15, y: 15, z: 15, w: 15}
+  m_margin: {x: 136.26077, y: 15, z: 15, w: -28.41436}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1152,7 +1189,6 @@ GameObject:
   - component: {fileID: 935931700634460098}
   - component: {fileID: 416521924904771645}
   - component: {fileID: 4270038387720882159}
-  - component: {fileID: 6835221190598278281}
   m_Layer: 5
   m_Name: LoadingScreen
   m_TagString: Untagged
@@ -1173,6 +1209,7 @@ RectTransform:
   m_Children:
   - {fileID: 241755585480727083}
   - {fileID: 4946492581359719205}
+  - {fileID: 2153869034680036406}
   m_Father: {fileID: 1465009568953795897}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1219,62 +1256,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6835221190598278281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6558098612676395463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 4270038387720882159}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1465009568183599675}
-        m_TargetAssemblyTypeName: SceneLoaderManager, Assembly-CSharp
-        m_MethodName: activateScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8916157615591788379
 GameObject:
   m_ObjectHideFlags: 0

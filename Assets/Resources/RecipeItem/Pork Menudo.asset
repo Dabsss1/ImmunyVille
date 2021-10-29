@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e2b4a17c937c043ba62bd96abe3f50, type: 3}
+  m_Name: Pork Menudo
+  m_EditorClassIdentifier: 
+  recipeName: Pork Menudo
+  ingredients:
+  - {fileID: 11400000, guid: 5526a56e47d90704dad8490dae7076f8, type: 2}
+  - {fileID: 11400000, guid: c61802890f0d2054a96ad3650ec3746d, type: 2}
+  - {fileID: 11400000, guid: d22e56e79e59a5c4d88174e837216a70, type: 2}
+  - {fileID: 11400000, guid: f89672cac44b6884087ddbbaebc669a5, type: 2}
+  - {fileID: 11400000, guid: 8dac148eaec300040aec56a6af4e14c1, type: 2}
+  - {fileID: 11400000, guid: 05670c730f4716942bab5e8f558e7804, type: 2}
+  - {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
