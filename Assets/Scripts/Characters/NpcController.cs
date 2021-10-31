@@ -18,7 +18,7 @@ public class NpcController : MonoBehaviour, Interactable
 
     public void Interact()
     {
-        GameStateManager.state = OpenWorldState.DIALOG;
+        GameStateManager.Instance.ChangeGameState(OpenWorldState.DIALOG);
         OnInteractNpc?.Invoke();
         DialogManager.Instance.showDialog(dialog,characterName);
 

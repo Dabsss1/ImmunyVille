@@ -98,6 +98,9 @@ public class CookingResults : MonoBehaviour
 
     public void MinigameDone()
     {
+        TimeManager.Instance.hour++;
+        HungerThirst.Instance.IncreaseHunger(100);
+        HungerThirst.Instance.IncreaseThirst(100);
         PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }

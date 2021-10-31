@@ -8,7 +8,7 @@ public class CutsceneDialogManager : MonoBehaviour
 {
     [SerializeField] GameObject dialogBox;
     [SerializeField] Text dialogText;
-    [SerializeField] TextMeshProUGUI name;
+    [SerializeField] TextMeshProUGUI characterName;
 
     [SerializeField] int lettersPerSecond = 1;
 
@@ -35,7 +35,7 @@ public class CutsceneDialogManager : MonoBehaviour
         }
         if (currentline >= dialog.Lines.Count)
         {
-            GameStateManager.state = OpenWorldState.EXPLORE;
+            GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
             dialogBox.SetActive(false);
             currentline = 0;
             CutsceneManager.OnDialogEnd?.Invoke();
@@ -43,7 +43,7 @@ public class CutsceneDialogManager : MonoBehaviour
         }
 
         dialogBox.SetActive(true);
-        name.text = setDialogName(dialog.Lines[currentline]);
+        characterName.text = setDialogName(dialog.Lines[currentline]);
         typingCoroutine = TypeDialog(replaceNames(dialog.Lines[currentline].Substring(2)));
         StartCoroutine(typingCoroutine);
         currentline++;
@@ -64,14 +64,14 @@ public class CutsceneDialogManager : MonoBehaviour
     string setDialogName(string line)
     {
         if (line.StartsWith("b:"))
-            return PlayerData.playerName;
+            return PlayerDataManager.Instance.playerName;
         else if (line.StartsWith("n:"))
             return "Nurse";
         else if (line.StartsWith("d:"))
             return "Doctor";
         else if (line.StartsWith("a:"))
         {
-            if (PlayerData.gender == "male")
+            if (PlayerDataManager.Instance.gender == "male")
                 return "Alice";
             else
                 return "Billy";
@@ -84,11 +84,11 @@ public class CutsceneDialogManager : MonoBehaviour
     string replaceNames(string line)
     {
         Debug.Log("old line: " + line);
-        line = line.Replace("playerName", PlayerData.playerName);
+        line = line.Replace("playerName", PlayerDataManager.Instance.playerName);
         Debug.Log("new line: " + line);
-        if (PlayerData.gender == "female")
+        if (PlayerDataManager.Instance.gender == "female")
             line = line.Replace("partner", "Billy");
-        else if(PlayerData.gender == "male")
+        else if(PlayerDataManager.Instance.gender == "male")
             line = line.Replace("partner", "Alice");
 
         return line;

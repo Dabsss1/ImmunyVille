@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8045748689232e24fb22db994c91d863, type: 3}
+  m_Name: Quotes
+  m_EditorClassIdentifier: 
+  tips:
+  - An apple a day keeps the doctor away
+  - "\u201CLet food be thy medicine and medicine be thy food.\u201D \u2013 Hippocrates"
+  - "\u201CHealth is not valued until sickness comes.\u201D \u2013 Thomas Fuller"
+  - "\u201CThe way you think, the way you behave, the way you eat, can influence
+    your life by 30 to 50 years.\u201D \u2013 Deepak Chopra"
+  - "\u201CPhysical fitness is the first requisite of happiness.\u201D \u2013 Joseph
+    Pilates"
+  - "\u201CA fit body, a calm mind, a house full of love. These things cannot be
+    bought \u2013 they must be earned.\u201D \u2013 Naval Ravikant"
+  - "\u201CI believe that the greatest gift you can give your family and the world
+    is a healthy you.\u201D \u2013 Joyce Meyer"
+  - "\u201CThe first wealth is health.\u201D \u2013 Ralph Waldo Emerson"
+  - "\u201CIf you're happy, if you're feeling good, then nothing else matters.\u201D
+    \u2013 Robin Wright"
+  - "\u201CA healthy outside starts from the inside.\u201D  \u2013 Robert Urich"
+  - "\u201CTo ensure good health: eat lightly, breathe deeply, live moderately, cultivate
+    cheerfulness, and maintain an interest in life.\u201D \u2013 William Londen"
+  - "\u201CHealthy citizens are the greatest asset any country can have.\u201D \u2013
+    Winston Churchill"
+  - "\"A fit, healthy body \u2014 that is the best fashion statement.\" \u2013 Jess
+    C. Scott"
+  - "\u201CToo much of anything is bad\u201D"
+  - "\u201CIf you're not a good shot today, don't worry. There are other ways to
+    be useful\u201D"

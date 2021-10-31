@@ -36,19 +36,18 @@ public class UIManager : MonoBehaviour
         allUI.SetActive(false);
     }
 
-    public void QuickSaveShowConfirmation(GameObject prompt)
+    public void QuickSave(GameObject prompt)
     {
-        StartCoroutine(showPrompt(prompt));
-        Saving.Instance.QuickSave();
+        StartCoroutine(ShowPrompt(prompt));
+        SaveSystem.SavePlayer();
     }
 
     public void ReturnToMainMenu()
     {
         SceneLoaderManager.OnSceneLoad?.Invoke("MainMenu");
-        Saving.Instance.QuickSave();
     }
 
-    public IEnumerator showPrompt(GameObject prompt)
+    public IEnumerator ShowPrompt(GameObject prompt)
     {
         prompt.SetActive(true);
         yield return new WaitForSeconds(1f);

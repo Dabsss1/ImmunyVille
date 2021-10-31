@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerDataManager : MonoBehaviour
 {
+    public string gender = "";
+    public string playerName = "";
+
+    public string savedScene = "";
+    public float[] position = { 0,0,0};
+
     public static PlayerDataManager Instance { get; private set; }
 
     // Update is called once per frame
@@ -18,6 +24,16 @@ public class PlayerDataManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
+
+    public void ResetData()
+    {
+        gender = "";
+        playerName = "";
+        savedScene = "";
+        position[0] = 0;
+        position[1] = 0;
+        position[2] = 0;
     }
 
 }

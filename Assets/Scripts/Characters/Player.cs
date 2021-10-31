@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //player stats
-    [HideInInspector]
-    public string gender;
-    [HideInInspector]
-    public string playerName;
-
     //character controller
     [HideInInspector]
     public CharacterController character;
@@ -25,12 +19,6 @@ public class Player : MonoBehaviour
     //status
     public static Player Instance { get; private set; }
 
-    private void Start()
-    {
-        gender = PlayerData.gender;
-        playerName = PlayerData.playerName;
-    }
-
     void Awake()
     {
         character = GetComponent<CharacterController>();
@@ -43,8 +31,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //stop any movement when player is changing scenes
-        if (GameStateManager.state == OpenWorldState.SCENECHANGING)
+        //stop any movement when player is not in Explore state
+        if (!GameStateManager.Instance.EqualsState(OpenWorldState.EXPLORE))
             return;
 
         if (!character.isMoving)
@@ -55,7 +43,7 @@ public class Player : MonoBehaviour
 
                 StartCoroutine(character.Move(inputPos));
 
-                if (GameStateManager.state != OpenWorldState.SCENECHANGING)
+                if (!GameStateManager.Instance.EqualsState(OpenWorldState.SCENECHANGING))
                     ChangeScenes();
             }
         }
@@ -78,11 +66,11 @@ public class Player : MonoBehaviour
     }
     IEnumerator EnterPortal(Collider2D portalCollider)
     {
-        if (GameStateManager.state != OpenWorldState.SCENECHANGING)
+        if (!GameStateManager.Instance.EqualsState(OpenWorldState.SCENECHANGING))
         {
             portalCollider.GetComponent<PortalController>().OnInteractPortal();
         }
-        GameStateManager.state = OpenWorldState.SCENECHANGING;
+        GameStateManager.Instance.ChangeGameState(OpenWorldState.SCENECHANGING);
         yield return null;
     }
 
@@ -110,7 +98,7 @@ public class Player : MonoBehaviour
         Collider2D portalCollider = Physics2D.OverlapCircle(new Vector3(transform.position.x, transform.position.y - .5f), .2f, GameLayers.Instance.Portal);
         if (portalCollider != null)
         {
-            GameStateManager.state = OpenWorldState.SCENECHANGING;
+            GameStateManager.Instance.openWorldState = OpenWorldState.SCENECHANGING;
             portalCollider.GetComponent<PortalController>().OnInteractPortal();
         }
     }

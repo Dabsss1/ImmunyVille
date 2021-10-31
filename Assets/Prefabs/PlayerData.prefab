@@ -160,5 +160,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b93e85b6df6b3549809c5349f6745e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hungerStat: 2
-  thirstStat: 5
+  hungerStat: 100
+  thirstStat: 100

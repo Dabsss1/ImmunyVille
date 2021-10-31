@@ -20,8 +20,8 @@ public class CutsceneManager : MonoBehaviour
 
     [SerializeField] GameObject mainCamera,flashbackCamera1,flashbackCamera2,flashbackCamera3;
 
-    private string nextScene="PlayerLot";
-
+    [SerializeField] string nextScene="Bedroom";
+    
     CutsceneState state;
 
     public static Action OnDialogEnd;
@@ -34,7 +34,7 @@ public class CutsceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        SaveSystem.LoadPlayer();
+        //SaveSystem.LoadPlayer();
     }
 
     private void OnEnable()
@@ -53,7 +53,7 @@ public class CutsceneManager : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerData.gender == "male")
+        if (PlayerDataManager.Instance.gender == "male")
         {
             foreach(GameObject p in player)
                 p.GetComponent<SpriteRenderer>().sprite = maleSprite;
@@ -61,7 +61,7 @@ public class CutsceneManager : MonoBehaviour
             partnerSprite.GetComponent<SpriteRenderer>().sprite = femaleSprite;
             partner = Instantiate(npcFemale, npcSpawn, Quaternion.identity);
         }
-        else if (PlayerData.gender == "female")
+        else if (PlayerDataManager.Instance.gender == "female")
         {
             foreach (GameObject p in player)
                 p.GetComponent<SpriteRenderer>().sprite = femaleSprite;

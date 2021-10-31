@@ -1480,6 +1480,10 @@ PrefabInstance:
       value: SceneInformation
       objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: sceneName
       value: CookingGame
       objectReference: {fileID: 0}

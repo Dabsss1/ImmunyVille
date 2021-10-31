@@ -91,6 +91,9 @@ public class GymResultsManager : MonoBehaviour
 
     public void MinigameDone()
     {
+        TimeManager.Instance.hour++;
+        HungerThirst.Instance.DecreaseHunger(30);
+        HungerThirst.Instance.DecreaseThirst(70);
         PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }

@@ -23,7 +23,8 @@ public class GroceryResults : MonoBehaviour
     [SerializeField] Image badgeIcon;
     [SerializeField] TextMeshProUGUI badgeName;
 
-
+    [Header("NextScene")]
+    [SerializeField] string portalDestination;
 
     //tiers: 3 - gold, 2 - silver, 1 - bronze, 0 - none
     int resultTier;
@@ -124,4 +125,14 @@ public class GroceryResults : MonoBehaviour
                 break;
         }
     }
+
+    public void GameFinish()
+    {
+        TimeManager.Instance.hour++;
+        HungerThirst.Instance.DecreaseHunger(30);
+        HungerThirst.Instance.DecreaseThirst(50);
+        PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
+        SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
+    }
+
 }

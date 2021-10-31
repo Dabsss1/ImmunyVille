@@ -55,9 +55,8 @@ public class CharacterCreationManager : MonoBehaviour
                     playerName = "Alice";
             }
 
-            PlayerData.gender = gender;
-            PlayerData.playerName = playerName;
-            SaveSystem.SavePlayer();
+            PlayerDataManager.Instance.gender = gender;
+            PlayerDataManager.Instance.playerName = playerName;
             SceneLoaderManager.OnSceneLoad(nextScene);
         }
     }

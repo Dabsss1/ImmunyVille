@@ -9,7 +9,6 @@ public class PortalController : MonoBehaviour
 
     public void OnInteractPortal()
     {
-        PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }
 }

@@ -7,7 +7,6 @@ using System;
 
 public static class SaveSystem
 {
-
     public static void SavePlayer ()
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -24,7 +23,7 @@ public static class SaveSystem
         }
 
         stream.Close();
-        Debug.Log("Saved: " + PlayerData.gender + " " + PlayerData.playerName);
+        Debug.Log("Saved: " + PlayerDataManager.Instance.gender + " " + PlayerDataManager.Instance.playerName);
     }
 
     public static void LoadPlayer ()
@@ -32,20 +31,22 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/player.imv";
         if (File.Exists(path))
         {
-            SaveFile data = new SaveFile();
+            SaveFile data = new SaveFile("empty");
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
             try
             {
                 data = formatter.Deserialize(stream) as SaveFile;
-                data.setPlayerData();
+                data.DistributeData();
+                Debug.Log("Loaded Data file");
             }
             catch (Exception e)
             {
+                Debug.Log("Loading file error");
                 Debug.Log(e.StackTrace);
             }
             stream.Close();
-            Debug.Log("Loaded: " + PlayerData.gender + " " + PlayerData.playerName);
+            Debug.Log("Loaded: " + PlayerDataManager.Instance.gender + " " + PlayerDataManager.Instance.playerName);
         }
         else
         {

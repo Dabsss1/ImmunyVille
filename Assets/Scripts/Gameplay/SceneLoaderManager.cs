@@ -40,6 +40,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     private void LoadNextScene(string sceneName)
     {
+        PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         StartCoroutine(LoadScene(sceneName));
     }
 
@@ -54,6 +55,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     void AsyncLoadScene (string sceneName)
     {
+        PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         StartCoroutine(LoadAsynchronously(sceneName));
     }
 

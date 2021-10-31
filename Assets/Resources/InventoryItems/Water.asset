@@ -21,4 +21,4 @@ MonoBehaviour:
   confidence: 0
   strength: 0
   hunger: 0
-  thirst: 10
+  thirst: 100

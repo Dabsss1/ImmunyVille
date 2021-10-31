@@ -46,11 +46,11 @@ public class Spawner : MonoBehaviour
 
     void spawnCharacter(Vector3 spawnPlace)
     {
-        if (PlayerData.gender == "male")
+        if (PlayerDataManager.Instance.gender == "male")
         {
             Instantiate(malePlayer, spawnPlace, Quaternion.identity);
         }
-        else if (PlayerData.gender == "female")
+        else if (PlayerDataManager.Instance.gender == "female")
         {
             Instantiate(femalePlayer, spawnPlace, Quaternion.identity);
         }
@@ -62,9 +62,9 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void LoadQuickSave()
+    public void LoadSavePlayer()
     {
-        Vector3 spawnPosition = new Vector3(PlayerData.position[0], PlayerData.position[1], PlayerData.position[2]);
+        Vector3 spawnPosition = new Vector3(PlayerDataManager.Instance.position[0], PlayerDataManager.Instance.position[1], PlayerDataManager.Instance.position[2]);
         spawnCharacter(spawnPosition);
     }
 

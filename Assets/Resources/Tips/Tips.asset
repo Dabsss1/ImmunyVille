@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8045748689232e24fb22db994c91d863, type: 3}
+  m_Name: Tips
+  m_EditorClassIdentifier: 
+  tips:
+  - Regular exercise will make you feel less tired in the long run, so you'll have
+    more energy.
+  - Laughing is a great way to release tension, relax and naturally improve the function
+    of your blood vessels to increase blood flow.
+  - A lack of exercise now causes as many deaths as smoking.
+  - Life expectancy across the globe has increased by five years since 2000. The
+    fastest rise in lifespans since the 1960s, but health inequalities persist, according
+    to the World Health Organization (WHO).
+  - Learning a new language or playing a musical instrument gives your brain a boost.
+  - Maintaining good relationships with your friends and family, reduces harmful
+    levels of stress and boosts your immune system.
+  - Chewing gum makes you more alert, relieves stress and reduces anxiety levels.
+  - Yoga can boost your cognitive function and lower stress.
+  - Outdoor experiences may help fight depression and anxiety.
+  - A surprising potential benefit of eating dark chocolate is that it may provide
+    some protection against the sun.
+  - "Almonds, avocados and arugula (the three \u2018A\u2019s) can boost your sex
+    drive and improve fertility."
+  - "Tea can lower risks of heart attack, certain cancers, type 2 Diabetes and Parkinson\u2019s
+    disease. Just make sure your tea isn\u2019t too sweet!"
+  - Although it only takes you a few minutes to eat a meal, it takes your body hours
+    to completely digest the food.
+  - A nutrient found in spinach and eggs could help sharpen reflexes and therefore
+    improve road safety.
+  - Vitamin D allows your body to absorb calcium. Calcium is necessary for building
+    strong, healthy bones.
+  - Without enough vitamin D and calcium, bones may not form properly in childhood
+    and can lose mass, become weak, and break easily in adulthood.
+  - "There are five main components of fitness: the body\u2019s ability to use oxygen,
+    muscular strength, endurance, flexibility, and body composition."
+  - The body has more than 650 muscles.
+  - Running can improve your knees and back.
+  - Running helps you lose weight and keep it off.
+  - Running improves your immunity.
+  - Regular exercise can positively influence cognitive ability, reduce the rate
+    of cognitive aging, and even reduce the risk of Alzheimer's disease (AD) and
+    other dementias.
+  - The average moderately active person takes around 7,500 step/day. If you maintain
+    that daily average and live until 80 years of age, you'll have walked about 216,262,500
+    steps in your lifetime.
+  - Stretching increases the blood flow to your muscles and helps avoid injuries.
+  - 'Dehydration can have a negative impact on your mood and energy levels. '
+  - "Drink enough water to ensure you\u2019re always at your best."
+  - Repeatedly using plastic water bottles can release chemicals into your water.
+  - A lack of water can cause a range of problems, such as constipation, asthma,
+    allergy and migraines.
+  - Your muscles and joints require water in order to stay energized, lubricated
+    and healthy.
+  - Want to slow the aging process? Meditation is proven to help!
+  - The blue light from your phone can be harmful to your eyes.
+  - "\u2018Gymnasium\u2019 comes from the Greek word \u2018gymnazein\u2019, meaning
+    \u2018to exercise naked\u2019."
+  - Your nose can remember 50,000 scents.
+  - The eye muscles are the most active in the body, moving more than 100,000 times
+    a day!
+  - Although bodies stop growing, noses and ears will not.
+  - 'Milk offers a rich source of calcium. '
+  - Calcium is an essential nutrient for strong bones and teeth, muscle movement,
+    and nerve signals.
+  - Eating vegetables every day is good for health.
+  - Researcher found that people who eat at least 5 servings of vegetables a day
+    have the lowest risk of many diseases, including cancer and heart disease.
+  - The recommended daily calories intake is 2,000 calories a day for women and 2,500
+    for men.
+  - Vitamin D is also critical for your immune system, and with consistent exposure
+    to sunlight, you can help strengthen it.
+  - Water helps to carry oxygen to your body cells, which results in properly functioning
+    systems.
+  - Getting sufficient hours of high-quality sleep enables a well-balanced immune
+    defense that features strong innate and adaptive immunity, efficient response
+    to vaccines, and less severe allergic reactions.
+  - Brown nuts are rich in iron which is essential for immune health.
+  - Immune system protects your body from outside invaders, such as bacteria, viruses,
+    fungi, and toxins.

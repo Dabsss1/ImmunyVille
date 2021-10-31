@@ -13,6 +13,14 @@ public class Badges : MonoBehaviour
         if (Instance == null)
             Instance = this;
     }
+
+    public void ResetData()
+    {
+        foreach (BadgeSlot slot in badgeSlots)
+        {
+            slot.tier = 0;
+        }
+    }
 }
 
 [System.Serializable]

@@ -7,8 +7,8 @@
 3. Explorable village - done
 4. Healthy immune-system focused storyline - 70%
 5. Non-player characters and pets - 60%
-6. Healthy immune-system lifestyle tips and information - 50%
-7. Hunger and thirst system - 95%
+6. Healthy immune-system lifestyle tips and information - done
+7. Hunger and thirst system - done
 8. In-game time - done
 9. Inventory system - done
 10. Stats system - done

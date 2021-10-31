@@ -10,8 +10,6 @@ public class GamePreferencesManager : MonoBehaviour
 
     public static Action OnLoadPrefs,OnLoadSettings;
 
-    public static Action<string> OnSavePrefs;
-
     public static Action<float> OnSaveSettings;
     private void OnEnable()
     {
@@ -22,7 +20,6 @@ public class GamePreferencesManager : MonoBehaviour
 
     private void OnDisable()
     {
-
         OnLoadSettings -= LoadSettingsPrefs;
     }
     // Start is called before the first frame update

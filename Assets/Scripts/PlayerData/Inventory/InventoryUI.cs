@@ -11,6 +11,8 @@ public class InventoryUI : MonoBehaviour
 
     public TextMeshProUGUI itemDescription;
 
+    public InventoryItem selectedItem;
+
     public static InventoryUI Instance { get; private set; }
 
     private void Awake()
@@ -19,12 +21,18 @@ public class InventoryUI : MonoBehaviour
             Instance = this;
     }
 
-    void Start()
+    private void OnEnable()
     {
         UpdateInventoryUI();
     }
 
-    void UpdateInventoryUI()
+    private void OnDisable()
+    {
+        selectedItem = null;
+        itemDescription.text = "";
+    }
+
+    public void UpdateInventoryUI()
     {
         foreach (Transform child in contentGO.transform)
         {
@@ -41,4 +49,8 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    public void UseItem()
+    {
+        Inventory.Instance.ConsumeItem(selectedItem);
+    }
 }

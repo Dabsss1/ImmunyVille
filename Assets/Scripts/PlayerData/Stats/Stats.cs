@@ -15,4 +15,12 @@ public class Stats : MonoBehaviour
         if (Instance == null)
             Instance = this;
     }
+
+    public void ResetData()
+    {
+        health = 0;
+        confidence = 0;
+        strength = 0;
+        body = 0;
+    }
 }

@@ -8,13 +8,15 @@ public class DialogManager : MonoBehaviour
 {
     [SerializeField] GameObject dialogBox;
     [SerializeField] Text dialogText;
-    [SerializeField] TextMeshProUGUI name;
+    [SerializeField] TextMeshProUGUI characterName;
 
     [SerializeField] int lettersPerSecond = 1;
 
     int currentline=0;
     bool isTyping=false;
     private IEnumerator typingCoroutine;
+
+    string currentInformation = "";
 
     public static DialogManager Instance { get; private set; }
 
@@ -34,14 +36,14 @@ public class DialogManager : MonoBehaviour
         }
         if (currentline>=dialog.Lines.Count)
         {
-            GameStateManager.state = OpenWorldState.EXPLORE;
+            GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
             dialogBox.SetActive(false);
             currentline = 0;
             return;
         }
             
         dialogBox.SetActive(true);
-        name.text = characterName;
+        this.characterName.text = characterName;
         typingCoroutine = TypeDialog(dialog.Lines[currentline]);
         StartCoroutine(typingCoroutine);
         currentline++;
@@ -57,6 +59,30 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(1f / lettersPerSecond);
         }
         isTyping = false;
+        currentInformation = "";
     }
-            
+    
+    public void showDialog(string information)
+    {
+        if (isTyping)
+        {
+            StopCoroutine(typingCoroutine);
+            dialogText.text = currentInformation;
+            currentInformation = "";
+            isTyping = false;
+            return;
+        }
+        if (dialogBox.activeSelf)
+        {
+            GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
+            dialogBox.SetActive(false);
+            currentInformation = "";
+            return;
+        }
+
+        dialogBox.SetActive(true);
+        currentInformation = information;
+        typingCoroutine = TypeDialog(information);
+        StartCoroutine(typingCoroutine);
+    }
 }

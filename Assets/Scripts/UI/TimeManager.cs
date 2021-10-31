@@ -8,16 +8,16 @@ public class TimeManager : MonoBehaviour
 {
     public static Action OnMinuteChanged, OnHourChanged;
     public static Action OnDayChanged;
-    public static int minute { get; private set; }
-    public static int hour { get; private set; }
-    public static int day { get; private set; }
 
-    private static string[] season = { "Dry", "Rainy"};
+    public int minute;
+    public int hour;
+    public int day;
 
-    public static int seasonCounter;
+    public string season = "Dry";
 
-    [SerializeField]
-    private float secondToOneMinuteRT = 1f;
+    public static TimeManager Instance {get; private set;}
+
+    [SerializeField] private float secondToOneMinuteRT = 1f;
     private float timer;
 
     [SerializeField] Color nightTimeColor;
@@ -25,43 +25,26 @@ public class TimeManager : MonoBehaviour
     [SerializeField] Color dayTimeColor;
 
     [SerializeField] Light2D globalLight;
-    private void Start()
-    {
-        //set minute
-        if (PlayerData.minute == 0)
-            minute = 0;
-        else
-            minute = PlayerData.minute;
-        //set hour
-        if (PlayerData.hour == 0)
-            hour = 7;
-        else
-            hour = PlayerData.hour;
-        //set day
-        if (PlayerData.day == 0)
-            day = 1;
-        else
-            day = PlayerData.day;
 
-        seasonCounter = 0;
-        timer = secondToOneMinuteRT;
-    }
-
-    private void OnDestroy()
+    private void Awake()
     {
-        PlayerData.minute = minute;
-        PlayerData.hour = hour;
-        PlayerData.day = day;
-    }
-    public static string getSeason (int counter)
-    {
-        return season[counter];
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+            Instance = this;
     }
 
     private void Update()
     {
-        UpdateTime();
-        UpdateGlobalLight();
+        if (GameStateManager.Instance.EqualsState(OpenWorldState.EXPLORE) && GameStateManager.Instance.EqualsState(SceneState.OPENWORLD))
+            UpdateTime();
+        if (!GameStateManager.Instance.EqualsState(SceneState.OPENWORLD))
+            globalLight.color = dayTimeColor;
+        else
+            UpdateGlobalLight();
     }
 
     void UpdateGlobalLight()
@@ -75,11 +58,12 @@ public class TimeManager : MonoBehaviour
     void UpdateTime()
     {
         timer -= Time.deltaTime;
-        OnMinuteChanged?.Invoke();
+        
 
         if (timer <= 0)
         {
             minute++;
+            OnMinuteChanged?.Invoke();
             if (minute >= 60)
             {
                 hour++;
@@ -92,7 +76,10 @@ public class TimeManager : MonoBehaviour
                     if (day > 30)
                     {
                         day = 1;
-                        seasonCounter++;
+                        if (season == "Dry")
+                            season = "Rainy";
+                        else
+                            season = "Dry";
                     }
                 }
                 OnHourChanged?.Invoke();

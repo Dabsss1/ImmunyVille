@@ -6,7 +6,7 @@ public class PlayerSceneInformation : MonoBehaviour
 {
     public string previousScene = "";
 
-    public bool QuickSave = false;
+    public bool fromContinue = false;
 
     public static PlayerSceneInformation Instance { get; private set; }
 

@@ -6,11 +6,11 @@ using TMPro;
 
 public class ItemBlueprint : MonoBehaviour
 {
+    InventoryItem inventoryItem;
+
     public Image itemIcon;
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI quantity;
-
-    public string itemDescription;
 
     public void SetData (ItemSlot item)
     {
@@ -18,12 +18,12 @@ public class ItemBlueprint : MonoBehaviour
         itemName.text = item.item.itemName;
         quantity.text = $"X: {item.count}";
 
-        itemDescription = item.item.itemDescription;
-
+        inventoryItem = item.item;
     }
 
     public void SelectItem()
     {
-        InventoryUI.Instance.itemDescription.text = itemDescription;
+        InventoryUI.Instance.itemDescription.text = inventoryItem.itemDescription;
+        InventoryUI.Instance.selectedItem = inventoryItem;
     }
 }

@@ -6,8 +6,7 @@ public class SceneInitiator : MonoBehaviour
 {
     public string sceneName;
 
-    public string sceneState;
-
+    public SceneState state;
 
     public static SceneInitiator Instance { get; private set; }
 
@@ -21,27 +20,44 @@ public class SceneInitiator : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerSceneInformation.Instance.QuickSave)
-        {
-            LoadQuickSavePlayer();
-        }
+        GameStateManager.Instance.sceneState = state;
 
-        switch (sceneState)
+        if (PlayerSceneInformation.Instance.fromContinue)
         {
-            case "mainmenu":
-                break;
-            case "cutscene":
-                break;
-            case "openworld":
-                SpawnPlayerOpenWorld();
-                break;
-            case "minigame":
-                DestroyPlayerGameObject();
-                break;
-            default:
-                Debug.LogError("SceneInformation script Error: SceneState not set");
-                break;
+            LoadSavePlayer();
         }
+        else
+        {
+            switch (state)
+            {
+                case SceneState.MAINMENU:
+                    DestroyPlayerAndResetInfo();
+                    break;
+                case SceneState.CUTSCENE:
+                    break;
+                case SceneState.OPENWORLD:
+                    SpawnPlayerOpenWorld();
+                    break;
+                case SceneState.MINIGAME:
+                    DestroyPlayerGameObject();
+                    break;
+                default:
+                    Debug.LogError("SceneInformation script Error: SceneState not set");
+                    break;
+            }
+        }
+    }
+
+    void DestroyPlayerAndResetInfo()
+    {
+        if (Player.Instance != null)
+            Destroy(Player.Instance.gameObject);
+
+        PlayerDataManager.Instance.ResetData();
+        Inventory.Instance.ResetData();
+        Stats.Instance.ResetData();
+        Badges.Instance.ResetData();
+        HungerThirst.Instance.ResetData();
     }
 
     void SpawnPlayerOpenWorld()
@@ -51,12 +67,13 @@ public class SceneInitiator : MonoBehaviour
         else
             Spawner.Instance.RepositionPlayer();
 
-        changeState();
+        GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
     }
 
-    void LoadQuickSavePlayer()
+    void LoadSavePlayer()
     {
-        Spawner.Instance.LoadQuickSave();
+        Spawner.Instance.LoadSavePlayer();
+        PlayerSceneInformation.Instance.fromContinue = false;
     }
 
     void DestroyPlayerGameObject()
@@ -66,8 +83,4 @@ public class SceneInitiator : MonoBehaviour
         Destroy(Player.Instance.gameObject);
     }
 
-    static void changeState()
-    {
-        GameStateManager.state = OpenWorldState.EXPLORE;
-    }
 }

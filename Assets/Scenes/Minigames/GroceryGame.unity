@@ -2565,8 +2565,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1914687703}
-        m_TargetAssemblyTypeName: ResultsManager, Assembly-CSharp
+      - m_Target: {fileID: 1870911726}
+        m_TargetAssemblyTypeName: GroceryResults, Assembly-CSharp
         m_MethodName: GameFinish
         m_Mode: 1
         m_Arguments:
@@ -5154,6 +5154,10 @@ PrefabInstance:
       value: SceneInitiator
       objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: sceneName
       value: GroceryGame
       objectReference: {fileID: 0}
@@ -5959,6 +5963,7 @@ MonoBehaviour:
   badgePanel: {fileID: 18704003}
   badgeIcon: {fileID: 1586235005}
   badgeName: {fileID: 460761980}
+  portalDestination: Supermarket
 --- !u!4 &1887846697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1998903983383874038, guid: fe54369fbd7359644aacc87b0a15cfca, type: 3}
@@ -5975,7 +5980,6 @@ GameObject:
   - component: {fileID: 1914687700}
   - component: {fileID: 1914687702}
   - component: {fileID: 1914687701}
-  - component: {fileID: 1914687703}
   m_Layer: 5
   m_Name: Results
   m_TagString: Untagged
@@ -6044,19 +6048,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914687699}
   m_CullTransparentMesh: 1
---- !u!114 &1914687703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914687699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c91ce79a46fb2c4aad7e14ac30c4e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portalDestination: Supermarket
 --- !u!1001 &1924153645
 PrefabInstance:
   m_ObjectHideFlags: 0
