@@ -7,7 +7,7 @@ public class NpcController : MonoBehaviour, Interactable
 {
     public static Action OnInteractNpc;
 
-    [SerializeField] string characterName;
+    public string characterName;
     [SerializeField] Dialogs dialog;
 
     CharacterController characterController;

@@ -66,6 +66,7 @@ public class TimeManager : MonoBehaviour
             OnMinuteChanged?.Invoke();
             if (minute >= 60)
             {
+                minute = 0;
                 hour++;
                 if (hour == 24)
                 {
@@ -83,10 +84,17 @@ public class TimeManager : MonoBehaviour
                     }
                 }
                 OnHourChanged?.Invoke();
-                minute = 0;
             }
 
             timer = secondToOneMinuteRT;
         }
+    }
+
+    public void ResetData()
+    {
+        hour = 6;
+        minute = 0;
+        day = 1;
+        season = "Dry";
     }
 }

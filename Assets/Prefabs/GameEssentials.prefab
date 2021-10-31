@@ -1700,7 +1700,6 @@ GameObject:
   - component: {fileID: 1095409960042370425}
   - component: {fileID: 1095409960042370437}
   - component: {fileID: 2609948922987257604}
-  - component: {fileID: 4350814365258681403}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1750,7 +1749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 1095409961256274031}
   dialogText: {fileID: 1095409960599033296}
-  characterName: {fileID: 0}
+  characterName: {fileID: 5852635674775659819}
   lettersPerSecond: 50
 --- !u!114 &1095409960042370425
 MonoBehaviour:
@@ -1802,19 +1801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81de6c41be89b0f44bd0511629f1dbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4350814365258681403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095409960042370431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd9b97c07e266540b50658c3c3c63cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundMusic: 
 --- !u!1 &1095409960050984764
 GameObject:
   m_ObjectHideFlags: 0

@@ -947,8 +947,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1037973738}
   - component: {fileID: 1037973740}
-  - component: {fileID: 1037973739}
   - component: {fileID: 1037973741}
+  - component: {fileID: 1037973739}
   m_Layer: 0
   m_Name: Male_player
   m_TagString: Untagged
@@ -970,25 +970,38 @@ Transform:
   m_Father: {fileID: 1457940258}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1037973739
-Animator:
-  serializedVersion: 3
+--- !u!114 &1037973739
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037973737}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 281a654bc66714a4fb7398b8c1beca37, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0be326101fa34479d39db59e655579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkDownSprites:
+  - {fileID: 3550478659731401034, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: 8522783893308231555, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -2385537847850877802, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -4151746424180443248, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  walkUpSprites:
+  - {fileID: 2763344063256691171, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -4334842247549415917, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: 1669490802994296172, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -907165107475068221, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  walkLeftSprites:
+  - {fileID: 5938686213971763005, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -412750600415463062, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: 7336268429951909654, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: 9061637830415602737, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  walkRightSprites:
+  - {fileID: -870483855356132302, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -4040331351798126685, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -8149625303683863033, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
+  - {fileID: -7508299506994897228, guid: 4cb32a812e073624a92e2c0a27148743, type: 3}
 --- !u!212 &1037973740
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1054,7 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   isMoving: 0
-  animator: {fileID: 1037973739}
+  animator: {fileID: 0}
 --- !u!1 &1077404641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,8 +1462,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1573296075}
   - component: {fileID: 1573296076}
-  - component: {fileID: 1573296078}
   - component: {fileID: 1573296077}
+  - component: {fileID: 1573296078}
   m_Layer: 0
   m_Name: Female_player
   m_TagString: Untagged
@@ -1537,26 +1550,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   isMoving: 0
-  animator: {fileID: 1573296078}
---- !u!95 &1573296078
-Animator:
-  serializedVersion: 3
+  animator: {fileID: 0}
+--- !u!114 &1573296078
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573296074}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: b4b3800ab57a0c34aa8d1685d56d07d4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0be326101fa34479d39db59e655579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkDownSprites:
+  - {fileID: -4839792811747721765, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -3594520175846148518, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -4999844433309451460, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: 8329237189148276003, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  walkUpSprites:
+  - {fileID: 4764653900308131637, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: 854837199703971057, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -1379453624489552964, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -4483100182185454316, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  walkLeftSprites:
+  - {fileID: -8568162863711778120, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: 6209151099127966878, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -9019938397698801237, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: 7321024801930354091, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  walkRightSprites:
+  - {fileID: 2553484824275313085, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -2714657107975868129, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -2555192960223429481, guid: 8559efcdc70260844939c37a668fd077, type: 3}
+  - {fileID: -8505232830558452043, guid: 8559efcdc70260844939c37a668fd077, type: 3}
 --- !u!1 &1652646931
 GameObject:
   m_ObjectHideFlags: 0

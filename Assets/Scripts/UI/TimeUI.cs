@@ -22,6 +22,11 @@ public class TimeUI : MonoBehaviour
         TimeManager.OnHourChanged -= UpdateTime;
     }
 
+    private void Start()
+    {
+        UpdateTime();
+    }
+
     private void UpdateTime()
     {
         if (phoneDateTime.IsActive())

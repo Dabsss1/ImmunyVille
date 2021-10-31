@@ -23,16 +23,16 @@ public class CharacterCreationManager : MonoBehaviour
         {
             malePanel.SetActive(true);
             femalePanel.SetActive(false);
-            maleController.GetComponent<Animator>().SetBool("isMoving",true);
-            femaleController.GetComponent<Animator>().SetBool("isMoving", false);
+            maleController.GetComponent<CharacterController>().isMoving = true;
+            femaleController.GetComponent<CharacterController>().isMoving = false;
             gender = "male";
         }
         else if (button == "Circle")
         {
             malePanel.SetActive(false);
             femalePanel.SetActive(true);
-            maleController.GetComponent<Animator>().SetBool("isMoving", false);
-            femaleController.GetComponent<Animator>().SetBool("isMoving", true);
+            maleController.GetComponent<CharacterController>().isMoving = false;
+            femaleController.GetComponent<CharacterController>().isMoving = true;
             gender = "female";
         }
 

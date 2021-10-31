@@ -14,7 +14,7 @@ public class Bed : MonoBehaviour, Interactable
 
     public void NextDay()
     {
-        TimeManager.Instance.hour = 7;
+        TimeManager.Instance.hour = 6;
         TimeManager.Instance.minute = 0;
         TimeManager.Instance.day++;
 

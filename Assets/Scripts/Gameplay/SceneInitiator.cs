@@ -8,6 +8,8 @@ public class SceneInitiator : MonoBehaviour
 
     public SceneState state;
 
+    public string backgroundMusic;
+
     public static SceneInitiator Instance { get; private set; }
 
     private void Awake()
@@ -58,6 +60,8 @@ public class SceneInitiator : MonoBehaviour
         Stats.Instance.ResetData();
         Badges.Instance.ResetData();
         HungerThirst.Instance.ResetData();
+
+        TimeManager.Instance.ResetData();
     }
 
     void SpawnPlayerOpenWorld()
@@ -83,4 +87,13 @@ public class SceneInitiator : MonoBehaviour
         Destroy(Player.Instance.gameObject);
     }
 
+    private void OnEnable()
+    {
+        AudioManager.Instance.Play(backgroundMusic);
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.Instance.Stop(backgroundMusic);
+    }
 }

@@ -47,7 +47,9 @@ public class Player : MonoBehaviour
                     ChangeScenes();
             }
         }
-        character.animator.SetBool("isMoving", character.isMoving);
+        //character.animator.SetBool("isMoving", character.isMoving);
+
+        character.animator.IsMoving = character.isMoving;
     }
 
 
@@ -79,7 +81,8 @@ public class Player : MonoBehaviour
     void Interact (string button)
     {
         Debug.Log("Button Pressed");
-        Vector3 facingDir = new Vector3(character.animator.GetFloat("moveX"), character.animator.GetFloat("moveY"));
+        //Vector3 facingDir = new Vector3(character.animator.GetFloat("moveX"), character.animator.GetFloat("moveY"));
+        Vector3 facingDir = new Vector3(character.animator.MoveX, character.animator.MoveY);
         Vector3 interactPos = transform.position + facingDir;
         interactPos.y -= .5f;   
         Debug.Log(interactPos.x +"" + interactPos.y);
