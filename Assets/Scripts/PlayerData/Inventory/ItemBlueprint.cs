@@ -25,5 +25,7 @@ public class ItemBlueprint : MonoBehaviour
     {
         InventoryUI.Instance.itemDescription.text = inventoryItem.itemDescription;
         InventoryUI.Instance.selectedItem = inventoryItem;
+
+        InventoryUI.Instance.UpdateInventoryUI();
     }
 }

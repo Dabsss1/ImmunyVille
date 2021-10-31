@@ -10,6 +10,7 @@ public class InventoryUI : MonoBehaviour
     public ItemBlueprint itemBlueprint;
 
     public TextMeshProUGUI itemDescription;
+    [SerializeField] GameObject itemDescriptionPanel;
 
     public InventoryItem selectedItem;
 
@@ -47,10 +48,22 @@ public class InventoryUI : MonoBehaviour
             ItemBlueprint itemBlueprintSlot = Instantiate(itemBlueprint, contentGO.transform);
             itemBlueprintSlot.SetData(slot);
         }
+
+        if (selectedItem != null)
+            itemDescriptionPanel.SetActive(true);
+        else
+            itemDescriptionPanel.SetActive(false);
     }
 
     public void UseItem()
     {
         Inventory.Instance.ConsumeItem(selectedItem);
+
+        if (Inventory.Instance.IsEmpty(selectedItem))
+        {
+            selectedItem = null;
+        }
+
+        UpdateInventoryUI();
     }
 }

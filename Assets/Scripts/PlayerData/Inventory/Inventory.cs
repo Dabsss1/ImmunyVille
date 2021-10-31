@@ -35,7 +35,6 @@ public class Inventory : MonoBehaviour
                     return;
                 slot.count --;
                 DistributeStats(item);
-                InventoryUI.Instance.UpdateInventoryUI();
             }
         }
     }
@@ -49,6 +48,22 @@ public class Inventory : MonoBehaviour
 
         HungerThirst.Instance.IncreaseHunger(item.hunger);
         HungerThirst.Instance.IncreaseThirst(item.thirst);
+    }
+
+    public bool IsEmpty(InventoryItem item)
+    {
+        foreach (ItemSlot slot in slots)
+        {
+            if (item == slot.item)
+            {
+                if (slot.count <= 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
+        Debug.Log("CheckEmpty method error");
+        return false;
     }
 
     public void ResetData()

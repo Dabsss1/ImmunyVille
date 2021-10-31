@@ -8,13 +8,16 @@ public class ItemDispenser : MonoBehaviour, Interactable
     [SerializeField] int quantity = 1;
     [SerializeField] string prefix = "Obtained";
 
+    public bool obtained;
+
     public void Interact()
     {
-        if (GameStateManager.Instance.EqualsState(OpenWorldState.DIALOG))
+        if (!GameStateManager.Instance.EqualsState(OpenWorldState.DIALOG))
         {
-            Inventory.Instance.ObtainItem(item,quantity);
+            Inventory.Instance.ObtainItem(item, quantity);
         }
 
+        
         GameStateManager.Instance.ChangeGameState(OpenWorldState.DIALOG);
 
         string message = $"{prefix} {item.itemName} x{quantity}";

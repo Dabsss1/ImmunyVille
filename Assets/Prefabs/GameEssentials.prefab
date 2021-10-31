@@ -2753,6 +2753,7 @@ MonoBehaviour:
   contentGO: {fileID: 1095409959788202377}
   itemBlueprint: {fileID: 8518558172328712034, guid: 4f2287da57e663e47b3359e4d00ac604, type: 3}
   itemDescription: {fileID: 1095409959848020182}
+  itemDescriptionPanel: {fileID: 1095409960664832584}
   selectedItem: {fileID: 0}
 --- !u!1 &1095409960323478962
 GameObject:
@@ -7436,10 +7437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4561104d157a088418fa3435485ce0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 0}
+  playerName: {fileID: 1095409960916413736}
   maleSprite: {fileID: -6391975386555658387, guid: 20a769612bf75e546b897c830ad6eba9, type: 3}
   femaleSprite: {fileID: 4174159580012608774, guid: e81c35bf69828654aa49aa5ab163d638, type: 3}
-  AvatarDisplay: {fileID: 1095409960627467834}
+  AvatarDisplay: {fileID: 1095409960627467844}
 --- !u!1 &1095409961600013566
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class StatsUIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI playerName;
     [SerializeField] Sprite maleSprite, femaleSprite;
-    [SerializeField] GameObject AvatarDisplay;
+    [SerializeField] Image AvatarDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +17,11 @@ public class StatsUIManager : MonoBehaviour
 
         if(PlayerDataManager.Instance.gender == "male")
         {
-            AvatarDisplay.GetComponent<Image>().sprite = maleSprite;
-            //AvatarDisplay.GetComponent<SpriteRenderer>().sprite = maleSprite;
+            AvatarDisplay.sprite = maleSprite;
         }
         else if (PlayerDataManager.Instance.gender == "female")
         {
-            AvatarDisplay.GetComponent<Image>().sprite = femaleSprite;
-            //AvatarDisplay.GetComponent<SpriteRenderer>().sprite = femaleSprite;
+            AvatarDisplay.sprite = femaleSprite;
         }
     }
 }
