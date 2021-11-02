@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Energy Drink
+  m_EditorClassIdentifier: 
+  taskName: Trainer Pia's Request
+  taskInstructions:
+  - 
+  - Buy an energy drink in the supermarket
+  - Talk to trainer Pia
+  daysToRedo: 0
+  rewardItem: {fileID: 11400000, guid: a59a25d746b73c74780113879887992d, type: 2}
+  quantity: 5
+  questNpcs:
+  - 
+  - Carl
+  - Pia
+  questDialogs:
+  - lines:
+    - 'n:Hi cutie!  Can you buy me energy drink? I forgot to buy earlier, please! '
+    - 'p:Ok, no problem! '
+    - "n:Don\u2019t forget to buy for yourself too! "
+  - lines:
+    - n:How can I help you?
+    - p:Do you have energy drinks?
+    - 'n:Here you go! '
+    - s:*Energy Drink Acquired*
+  - lines:
+    - "p:Here\u2019s your energy drink."
+    - n:Thank you cutie! Energy drink can lessen mental fatigue and increase brain
+      function including memory, concentration, and reaction time.
+    - "p:You\u2019re Welcome! "

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Book of Immunity
+  m_EditorClassIdentifier: 
+  taskName: Mayor's Book of Immunity
+  taskInstructions:
+  - 
+  - Find Book of Immunity
+  daysToRedo: 0
+  rewardItem: {fileID: 0}
+  quantity: 0
+  questNpcs: []
+  questDialogs:
+  - lines:
+    - "n:it\u2019s been a while ***! "
+    - 'p:Glad to see you mayor! '
+    - n:I have a big problem right now! Can you help me?
+    - 'p:Sure! What is it? '
+    - "n:One of the oldest books of ImmunyVille is nowhere to be found. The book
+      titled \u201CBook of Immunity\u201D contains a lot of information about the
+      boosting immune system. This book helps ImmunyVille through the past decades
+      that\u2019s why it is really important to find that book. "
+    - "p:I\u2019m going to find that book mayor! "
+    - n:After you find that book you can return it to the library.
+    - p:OK!
+  - lines:
+    - s:Book Acquired

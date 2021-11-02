@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Clean T-Shirt
+  m_EditorClassIdentifier: 
+  taskName: Clean T-Shirt
+  taskInstructions: []
+  daysToRedo: 0
+  rewardItem: {fileID: 11400000, guid: 3daf3f4cd762ea945beca30e01056f7d, type: 2}
+  quantity: 1
+  questNpcs: []
+  questDialogs:
+  - lines:
+    - "n:Hey kid! You got wet by the rain. You\u2019ll catch a cold! "
+    - "n:Here\u2019s a clean T-shirt, hurry up and change! "
+    - s:* Clean T-shirt Acquired *
+    - 'p:Thanks for the help! '

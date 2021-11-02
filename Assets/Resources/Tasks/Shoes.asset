@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Shoes
+  m_EditorClassIdentifier: 
+  taskName: Mayor's Request
+  taskInstructions:
+  - 
+  - Find Francis
+  - Talk to Mayor
+  daysToRedo: 0
+  rewardItem: {fileID: 11400000, guid: f952811f878c4e1468ab9c57f66cc8e4, type: 2}
+  quantity: 1
+  questNpcs:
+  - 
+  - Francis
+  - Edwin Gomez
+  questDialogs:
+  - lines:
+    - 'p:Good day mayor! '
+    - n:Glad to see you! I heard you became friends with my son Francis. Did you
+      see my son today? If you find him, tell him he needs to go home right now because
+      his mother is worried.
+    - 'p:Yes mayor! '
+  - lines:
+    - p:Wassup!
+    - n:Ayee! Wassup ***!
+    - p:I talked to your father earlier and he asked me to find you!
+    - n:ehhhhhhhhh!
+    - p:Your father wants to tell you that your mother is worried. I think you need
+      to go home now.
+    - 'n:hmmm ok! See you later! '
+    - 'p:See you! '
+  - lines:
+    - n:How was it?
+    - p:Francis already went home.
+    - n:I see. Thanks for your help! Please accept this shoe as my gift.  Shoes can
+      prevent foot problems and infections
+    - s:*Shoes Acquired*
+    - 'p:Wow! Thank you, mayor! '
+    - "n:You\u2019re Welcome! "

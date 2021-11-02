@@ -619,6 +619,10 @@ PrefabInstance:
       propertyPath: sceneState
       value: minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: backgroundMusic
+      value: DumbellMinigame
+      objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358459, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -672,6 +676,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2989549169919216322, guid: d0e7585f58feb38478abe6fc36ead595, type: 3}
+      propertyPath: task
+      value: 
+      objectReference: {fileID: 11400000, guid: 30c62691d926cce4b8335358f0c3ef81, type: 2}
     - target: {fileID: 2989549169919216322, guid: d0e7585f58feb38478abe6fc36ead595, type: 3}
       propertyPath: badgeCounter
       value: 2

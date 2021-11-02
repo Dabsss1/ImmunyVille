@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Soap
+  m_EditorClassIdentifier: 
+  taskName: Mrs. Amara's Request
+  taskInstructions:
+  - 
+  - Buy Soap in the supermarket
+  - Talk to Mrs. Amara
+  daysToRedo: 0
+  rewardItem: {fileID: 11400000, guid: 4ee2ea561dbbea640aef56ce64c3f1f1, type: 2}
+  quantity: 1
+  questNpcs:
+  - 
+  - Carl
+  - Amara
+  questDialogs:
+  - lines:
+    - 'n:Hi ***! '
+    - 'p:Hello Ms. Amara! How can I help you? '
+    - "n:hmmm. Can you buy me a soap? I didn\u2019t notice that we don\u2019t have
+      a soap anymore."
+    - p:OK!
+  - lines:
+    - p:Do you have a soap?
+    - 'n:Yup! Here you go! '
+    - s:* Soap Acquired *
+    - 'p:Thank you! '
+  - lines:
+    - "p:Here\u2019s the soap Ms. Amara."
+    - 'n:ow thank you! '
+    - 'p:No problem! '

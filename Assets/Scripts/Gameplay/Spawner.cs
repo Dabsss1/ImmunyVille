@@ -21,11 +21,8 @@ public class Spawner : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        Debug.Log("called");
         foreach (GameObject i in spawnPoint)
         {
-            Debug.Log("called1");
-
             if (i.name == PlayerSceneInformation.Instance.previousScene)
             {
                 //get spawn point coordinates

@@ -6,11 +6,15 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds;
+    public Sound[] bgm;
+    public Sound[] sfx;
 
-    public AudioMixer audioMixer;
+    public AudioMixer bgmMixer;
+    public AudioMixerGroup bgmMixerGroup;
 
-    public AudioMixerGroup master;
+    public AudioMixer sfxMixer;
+    public AudioMixerGroup sfxMixerGroup;
+
     public static AudioManager Instance { get; private set; }
 
     private void Awake()
@@ -25,38 +29,93 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        foreach (Sound s in sounds)
+        foreach (Sound s in bgm)
         {
             s.source = gameObject.AddComponent<AudioSource>();
 
             s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
+            if(s.volume == 0)
+                s.source.volume = 1;
+            else
+                s.source.volume = s.volume;
+
+            if (s.pitch == 0)
+                s.source.pitch = 1;
+            else
+                s.source.pitch = s.pitch;
 
             s.source.loop = s.loop;;
 
-            s.source.outputAudioMixerGroup = master;
+            s.source.playOnAwake = false;
+
+            s.source.outputAudioMixerGroup = bgmMixerGroup;
+        }
+
+        foreach (Sound s in sfx)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+
+            s.source.clip = s.clip;
+
+            if (s.volume == 0)
+                s.source.volume = 1;
+            else
+                s.source.volume = s.volume;
+
+            if (s.pitch == 0)
+                s.source.pitch = 1;
+            else
+                s.source.pitch = s.pitch;
+
+            s.source.loop = s.loop; ;
+
+            s.source.playOnAwake = false;
+
+            s.source.outputAudioMixerGroup = sfxMixerGroup;
         }
     }
-
-    private void Start()
+    public void SetVolume(float bgmVol, float sfxVol)
     {
-        GamePreferencesManager.OnLoadSettings?.Invoke();
-        //SettingsMenu.OnVolumeLoad?.Invoke();
+        bgmMixer.SetFloat("volume", bgmVol);
+        sfxMixer.SetFloat("volume", sfxVol);
     }
+
     public void Play(string name)
     {
-        Sound s = Array.Find(sounds, sound=> sound.name == name);
+        
+        Sound s = Array.Find(bgm, sound=> sound.name == name);
+        
+        if (s == null)
+            return;
+        if (!s.source.isPlaying)
+        {
+            s.source.Play();
+        }
+        
+    }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(bgm, sound => sound.name == name);
+        if (s == null)
+            return;
+        if (s.source.isPlaying)
+            s.source.Stop();
+    }
+
+    public void PlaySfx(string name)
+    {
+        Sound s = Array.Find(sfx, sound => sound.name == name);
         if (s == null)
             return;
         if (!s.source.isPlaying)
             s.source.Play();
     }
 
-    public void Stop(string name)
+    public void StopSfx(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
+        Sound s = Array.Find(sfx, sound => sound.name == name);
         if (s == null)
             return;
         if (s.source.isPlaying)

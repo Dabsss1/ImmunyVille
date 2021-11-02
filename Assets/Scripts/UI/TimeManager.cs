@@ -17,7 +17,7 @@ public class TimeManager : MonoBehaviour
 
     public static TimeManager Instance {get; private set;}
 
-    [SerializeField] private float secondToOneMinuteRT = 1f;
+    [SerializeField] private float realtimeSecondsToIngameMinute = 1f;
     private float timer;
 
     [SerializeField] Color nightTimeColor;
@@ -43,6 +43,8 @@ public class TimeManager : MonoBehaviour
             UpdateTime();
         if (!GameStateManager.Instance.EqualsState(SceneState.OPENWORLD))
             globalLight.color = dayTimeColor;
+        else if (!SceneInitiator.Instance.outdoor)
+            globalLight.color = dayTimeColor;
         else
             UpdateGlobalLight();
     }
@@ -57,10 +59,10 @@ public class TimeManager : MonoBehaviour
 
     void UpdateTime()
     {
-        timer -= Time.deltaTime;
+        timer += Time.deltaTime;
         
 
-        if (timer <= 0)
+        if (timer >= realtimeSecondsToIngameMinute)
         {
             minute++;
             OnMinuteChanged?.Invoke();
@@ -68,6 +70,7 @@ public class TimeManager : MonoBehaviour
             {
                 minute = 0;
                 hour++;
+                OnHourChanged?.Invoke();
                 if (hour == 24)
                 {
                     hour = 0;
@@ -83,10 +86,8 @@ public class TimeManager : MonoBehaviour
                             season = "Dry";
                     }
                 }
-                OnHourChanged?.Invoke();
             }
-
-            timer = secondToOneMinuteRT;
+            timer = 0;
         }
     }
 

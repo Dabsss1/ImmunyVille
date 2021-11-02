@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Nutrition Bar
+  m_EditorClassIdentifier: 
+  taskName: Gym Owner Mike's Request
+  taskInstructions:
+  - 
+  - Ask Carl (Supermarket Owner) for a nutrition bar.
+  daysToRedo: 0
+  rewardItem: {fileID: 11400000, guid: f7203cd4347d2a54d8f2edc4c5ce2364, type: 2}
+  quantity: 5
+  questNpcs:
+  - 
+  - Carl
+  questDialogs:
+  - lines:
+    - n:Good day ***! As part of your physique improvement, I have a task for you.
+    - 'p:Yes, coach Mike! '
+    - 'n:Go to supermarket and talk to Carl. Ask Carl for the nutrition bar '
+    - n:Nutrition bar can help you stay energized during your workout or training
+      session.
+    - "p:I\u2019m off to buy a nutrition bar coach!"
+  - lines:
+    - p:Hello Carl! Do you have the nutrition bar that coach Mike asked?
+    - 'n:Oh! The nutrition bar. Yes, I have. Here you go! '
+    - s:*Nutrition Bar Acquired*
+    - 'p:Thank you! '
+    - 'n:Goodluck in your exercising! '

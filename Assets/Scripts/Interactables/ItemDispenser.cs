@@ -16,10 +16,6 @@ public class ItemDispenser : MonoBehaviour, Interactable
         {
             Inventory.Instance.ObtainItem(item, quantity);
         }
-
-        
-        GameStateManager.Instance.ChangeGameState(OpenWorldState.DIALOG);
-
         string message = $"{prefix} {item.itemName} x{quantity}";
 
         DialogManager.Instance.showDialog(message);

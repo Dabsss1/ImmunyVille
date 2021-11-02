@@ -29,8 +29,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4570238549767076392}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,10 +131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c6ced4358a9e4e8a2870cd8920683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Boy
+  characterName: Pia
   dialog:
     lines:
     - Hello
+  task: {fileID: 11400000, guid: a59a8909a9ea6f84a9dbfca35e4076de, type: 2}
+  taskProbability: 20
+  canBeInitiated: 0
 --- !u!114 &4570238549767076398
 MonoBehaviour:
   m_ObjectHideFlags: 0

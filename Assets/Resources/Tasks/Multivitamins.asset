@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Multivitamins
+  m_EditorClassIdentifier: 
+  taskName: Doctor Gregg's Request
+  taskInstructions:
+  - 
+  - Find Troy
+  - Talk to Doctor Greg
+  daysToRedo: 0
+  rewardItem: {fileID: 11400000, guid: 91695e2b8d055a341938184c981d5b5f, type: 2}
+  quantity: 5
+  questNpcs:
+  - 
+  - Troy
+  - Greg
+  questDialogs:
+  - lines:
+    - "n:Hi *** I have a request for you. Can you give this money to my son and tell
+      him that I can\u2019t go with him today? As you see I have a lot of patients
+      now. His name is Troy."
+  - lines:
+    - "p:Hello, are you the doctor\u2019s son?"
+    - n:Yes, I am. Are you one of his patients?
+    - "p:Yup! Your father wants to give this money to you, he said that he can\u2019t
+      go with you right now because he has a lot of patients."
+    - n:I see, Thank you ***
+  - lines:
+    - p:Hello Doc! I already tell him and give the money. Though he looks kinda sad.
+    - "n:AHHHHH!, Thanks for your help! There\u2019s something I want to give to
+      you"
+    - s:*Multivitamins Acquired*
+    - n:Multivitamins will help you in improving your memory and mood.
+    - p:Thanks Doc!

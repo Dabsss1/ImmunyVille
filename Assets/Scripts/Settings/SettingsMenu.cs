@@ -7,41 +7,32 @@ using System;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-
     public Slider musicSlider;
+    public Slider sfxSlider;
 
     //public static Action OnVolumeLoad;
 
-    private void Start()
-    {
-        Debug.Log("Loaded volume: " + PlayerPrefs.GetFloat("musicVol", 0));
-        musicSlider.value = PlayerPrefs.GetFloat("musicVol", 0);
-    }
-    /*
     private void OnEnable()
     {
-        OnVolumeLoad += SetSettingsDefault;
-    }
-    private void OnDisable()
-    {
-        OnVolumeLoad -= SetSettingsDefault;
+        musicSlider.value = Settings.Instance.musicVolume;
+        sfxSlider.value = Settings.Instance.sfxVolume;
     }
 
-    void SetSettingsDefault()
+    public void OnDisable()
     {
-        Debug.Log("Loaded volume: " + PlayerPrefs.GetFloat("musicVol", 0));
-        musicSlider.value = PlayerPrefs.GetFloat("musicVol", 0);
+        Settings.Instance.SaveSettings();
     }
-    */
-    public void SetVolume (float volume)
+
+    public void musicSetVolume (float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        AudioManager.Instance.bgmMixer.SetFloat("volume", volume);
+        Settings.Instance.musicVolume = volume;
     }
-    public void SaveSettings()
+
+    public void sfxSetVolume(float volume)
     {
-        float volume;
-        audioMixer.GetFloat("volume", out volume);
-        GamePreferencesManager.OnSaveSettings?.Invoke(volume);
+        AudioManager.Instance.sfxMixer.SetFloat("volume", volume);
+        Settings.Instance.sfxVolume = volume;
     }
+
 }

@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GroceryResults : MonoBehaviour
 {
+    [Header("Task")]
+    [SerializeField] TaskItem task;
+
     [Header("Settings")]
     [SerializeField] int oneStarRequirement;
     [SerializeField] int twoStarRequirement;
@@ -128,6 +131,8 @@ public class GroceryResults : MonoBehaviour
 
     public void GameFinish()
     {
+        Tasks.Instance.CompleteTask(task);
+
         TimeManager.Instance.hour++;
         HungerThirst.Instance.DecreaseHunger(30);
         HungerThirst.Instance.DecreaseThirst(50);

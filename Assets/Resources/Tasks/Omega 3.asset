@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0388efd5e7f9b30498e87a589f2543ec, type: 3}
+  m_Name: Omega 3
+  m_EditorClassIdentifier: 
+  taskName: Omega 3
+  taskInstructions: []
+  daysToRedo: 0
+  rewardItem: {fileID: 11400000, guid: fdf434c7877dc5c43bd69ea796acdc7c, type: 2}
+  quantity: 5
+  questNpcs: []
+  questDialogs:
+  - lines:
+    - "n:\u201CAre you the one who recently moved to ImmunyVille?\u201D"
+    - "p:\u201CYes sir, I\u2019m just wondering around\u201D "
+    - "n:\u201CI\u2019m one of the bodyguards of the mayor. Just tell me if you need
+      anything.\u201D"
+    - "p:\u201CWell, I\u2019m trying to improve my immune system. Do you have any
+      suggestions?\u201D"
+    - "n:\u201CI buy omega 3 fish oil because it can support the Cardiovascular,
+      Immune, and Nervous systems. Here take it!\u201D "
+    - s:*Omega 3 Acquired*
+    - "n:\u201CThank you!\u201D "

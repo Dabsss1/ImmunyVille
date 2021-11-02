@@ -2096,6 +2096,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &902067317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902067318}
+  m_Layer: 0
+  m_Name: CityHall2F
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &902067318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902067317}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2093775036}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &959392021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2240,6 +2270,10 @@ PrefabInstance:
     - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: sceneState
       value: openworld
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: backgroundMusic
+      value: CityHall
       objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358459, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: m_RootOrder
@@ -2562,6 +2596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalDestination: CityHall2F
+  sfx: Door
 --- !u!1 &1937077686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,6 +2783,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 3}
   m_EdgeRadius: 0
+--- !u!1 &2093775034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093775036}
+  - component: {fileID: 2093775035}
+  m_Layer: 0
+  m_Name: NpcScheduleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2093775035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093775034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6e91c1a46aeb343b77a138e26684fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outdoor: 0
+  doorPortal: {fileID: 902067318}
+  entrances: []
+  schedules:
+  - npc: {fileID: 4277790671835724862, guid: 27453fd5e25f6e549bf1a699688509b0, type: 3}
+    customEntrance: 
+    timeIn: 8
+    timeOut: 12
+    movement:
+    - {x: 0, y: 6}
+    - {x: 3, y: 0}
+    - {x: 0, y: 5}
+    - {x: 9, y: 0}
+    exitMovement: []
+    faceDir: {x: 0, y: 1}
+  - npc: {fileID: 1350397552969161579, guid: 31414801a60822747a8fce05b52039ee, type: 3}
+    customEntrance: 
+    timeIn: 8
+    timeOut: 12
+    movement:
+    - {x: 0, y: 6}
+    - {x: 3, y: 0}
+    - {x: 0, y: 9}
+    - {x: 5, y: 0}
+    exitMovement: []
+    faceDir: {x: 0, y: 1}
+  - npc: {fileID: 8035945943180721631, guid: a15a5b8f1c7ab0f408a9689eb1276ebc, type: 3}
+    customEntrance: 
+    timeIn: 17
+    timeOut: 19
+    movement:
+    - {x: 0, y: 7}
+    - {x: -8, y: 0}
+    exitMovement: []
+    faceDir: {x: 0, y: 1}
+  spawnedNpcs: []
+--- !u!4 &2093775036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093775034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 902067318}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &138027861288357847
 TilemapRenderer:
   m_ObjectHideFlags: 0

@@ -5,6 +5,9 @@ using TMPro;
 using UnityEngine.UI;
 public class CookingResults : MonoBehaviour
 {
+    [Header("Task")]
+    [SerializeField] TaskItem task;
+
     [Header("Data")]
     public string recipeName;
     public string pickingTimeLeft;
@@ -98,6 +101,8 @@ public class CookingResults : MonoBehaviour
 
     public void MinigameDone()
     {
+        Tasks.Instance.CompleteTask(task);
+
         TimeManager.Instance.hour++;
         HungerThirst.Instance.IncreaseHunger(100);
         HungerThirst.Instance.IncreaseThirst(100);

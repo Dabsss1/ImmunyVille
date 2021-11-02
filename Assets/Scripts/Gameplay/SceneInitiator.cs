@@ -7,6 +7,7 @@ public class SceneInitiator : MonoBehaviour
     public string sceneName;
 
     public SceneState state;
+    public bool outdoor;
 
     public string backgroundMusic;
 

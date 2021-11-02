@@ -22,7 +22,7 @@ public class Sound
     [HideInInspector]
     public AudioSource source;
 
-    public void setDefault()
+    public Sound()
     {
         volume = 1;
         pitch = 1;

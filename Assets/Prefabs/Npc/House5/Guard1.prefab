@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002076081323614001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,10 +131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c6ced4358a9e4e8a2870cd8920683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Boy
+  characterName: Vin
   dialog:
     lines:
     - Hello
+  task: {fileID: 11400000, guid: 624fc01c587c75d4694cb62332b9bc7a, type: 2}
+  taskProbability: 100
+  canBeInitiated: 0
 --- !u!114 &3511005919660521345
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1491,6 +1491,10 @@ PrefabInstance:
       propertyPath: sceneState
       value: minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: backgroundMusic
+      value: CookingGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358459, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2756,6 +2760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fe95b50cbd2be438c3c59187f16ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  task: {fileID: 11400000, guid: db5712b2663dc8547a67510897f122b0, type: 2}
   recipeName: 
   pickingTimeLeft: 
   mistakes: 0

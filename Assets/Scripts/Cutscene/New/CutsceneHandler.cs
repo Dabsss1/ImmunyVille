@@ -15,7 +15,7 @@ public class CutsceneHandler : MonoBehaviour
     {
         foreach (CutscenePart part in cutsceneParts)
         {
-            StartCoroutine(part.character.Move(new Vector2(part.movement[0].MoveX, part.movement[0].MoveY)));
+            StartCoroutine(part.character.Move(part.movement[0]));
 
             DialogManager.Instance.showDialog(part.dialog, part.character.GetComponent<NpcController>().characterName);
         }

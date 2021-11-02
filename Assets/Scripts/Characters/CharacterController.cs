@@ -49,6 +49,63 @@ public class CharacterController : MonoBehaviour
         isMoving = false;
     }
 
+    public IEnumerator MoveNpc(List<Vector2> moveVectors, Vector2 faceDir)
+    {
+        foreach(Vector2 moveVector in moveVectors)
+        {
+            animator.MoveX = Mathf.Clamp(moveVector.x, -1, 1);
+            animator.MoveY = Mathf.Clamp(moveVector.y, -1, 1);
+
+            Vector3 targetPos = transform.position;
+            targetPos.x += moveVector.x;
+            targetPos.y += moveVector.y;
+
+            //if (!IsWalkableNpc(targetPos))
+                //continue;
+
+            isMoving = true;
+
+            while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+                yield return null;
+            }
+            transform.position = targetPos;
+
+            isMoving = false;
+        }
+
+        setFaceDir(faceDir);
+    }
+
+    public IEnumerator MoveExit(List<Vector2> moveVectors)
+    {
+        foreach (Vector2 moveVector in moveVectors)
+        {
+            animator.MoveX = Mathf.Clamp(moveVector.x, -1, 1);
+            animator.MoveY = Mathf.Clamp(moveVector.y, -1, 1);
+
+            Vector3 targetPos = transform.position;
+            targetPos.x += moveVector.x;
+            targetPos.y += moveVector.y;
+
+            //if (!IsWalkableNpc(targetPos))
+                //continue;
+
+            isMoving = true;
+
+            while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+                yield return null;
+            }
+            transform.position = targetPos;
+
+            isMoving = false;
+        }
+
+        Destroy(gameObject);
+    }
 
     //check if tile is walkable
     public bool IsWalkable(Vector3 targetPos)
@@ -57,6 +114,17 @@ public class CharacterController : MonoBehaviour
         targetPos.y -= .5f;
 
         if (Physics2D.OverlapCircle(targetPos, .2f, GameLayers.Instance.SolidObjects | GameLayers.Instance.Interactable) != null)
+            return false;
+        else
+            return true;
+    }
+
+    public bool IsWalkableNpc(Vector3 targetPos)
+    {
+        //add offset
+        targetPos.y -= .5f;
+
+        if (Physics2D.OverlapCircle(targetPos, .2f, GameLayers.Instance.SolidObjects) != null)
             return false;
         else
             return true;
@@ -76,5 +144,14 @@ public class CharacterController : MonoBehaviour
 
         animator.MoveX = Mathf.Clamp(x, -1, 1);
         animator.MoveY = Mathf.Clamp(y, -1, 1);
+    }
+
+    public void setFaceDir(Vector2 faceDir)
+    {
+        //animator.SetFloat("moveX", Mathf.Clamp(x, -1, 1));
+        //animator.SetFloat("moveY", Mathf.Clamp(y, -1, 1));
+
+        animator.MoveX = Mathf.Clamp(faceDir.x, -1, 1);
+        animator.MoveY = Mathf.Clamp(faceDir.y, -1, 1);
     }
 }

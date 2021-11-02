@@ -13,7 +13,6 @@ public class GymManager : MonoBehaviour
     [SerializeField] float perfectRepValue;
     [SerializeField] int reps;
 
-
     [Header("UI")]
     [SerializeField] Slider barSlider;
     [SerializeField] Sprite highlightedIcon;

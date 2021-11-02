@@ -171,6 +171,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 239e6aa600e43e946a00bb51445bd4a6, type: 2}
   quantity: 5
   prefix: Obtained
+  obtained: 0
 --- !u!61 &21145074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -705,6 +706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameScene: CookingGame
+  task: {fileID: 11400000, guid: db5712b2663dc8547a67510897f122b0, type: 2}
+  doneMessage: I already have cooked for today
 --- !u!50 &452288222
 Rigidbody2D:
   serializedVersion: 4
@@ -782,6 +785,10 @@ PrefabInstance:
     - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: sceneState
       value: openworld
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: backgroundMusic
+      value: PlayerHouse
       objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358459, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: m_RootOrder
@@ -1317,6 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalDestination: PlayerHouse
+  sfx: Door
 --- !u!61 &1638939636
 BoxCollider2D:
   m_ObjectHideFlags: 0

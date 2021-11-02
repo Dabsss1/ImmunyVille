@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalDestination: Library
+  sfx: Door
 --- !u!61 &473723924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -785,6 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalDestination: CityHall
+  sfx: Door
 --- !u!61 &926793082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1828,6 +1830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalDestination: MayorOffice
+  sfx: Door
 --- !u!61 &1716943326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1913,6 +1916,10 @@ PrefabInstance:
     - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: sceneState
       value: openworld
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: backgroundMusic
+      value: CityHall
       objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358459, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: m_RootOrder

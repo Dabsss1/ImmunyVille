@@ -1263,6 +1263,10 @@ PrefabInstance:
       propertyPath: sceneState
       value: openworld
       objectReference: {fileID: 0}
+    - target: {fileID: 6947842934879358458, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: backgroundMusic
+      value: PlayerHouse
+      objectReference: {fileID: 0}
     - target: {fileID: 6947842934879358459, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1900,6 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalDestination: PlayerHouse
+  sfx: Door
 --- !u!19719996 &1887992062053409740
 TilemapCollider2D:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ using TMPro;
 
 public class GymResultsManager : MonoBehaviour
 {
+    [Header("Task")]
+    [SerializeField] TaskItem task;
+
     [Header("Data")]
     public int tier;
     public int perfectReps;
@@ -94,6 +97,9 @@ public class GymResultsManager : MonoBehaviour
         TimeManager.Instance.hour++;
         HungerThirst.Instance.DecreaseHunger(30);
         HungerThirst.Instance.DecreaseThirst(70);
+
+        Tasks.Instance.CompleteTask(task);
+
         PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }

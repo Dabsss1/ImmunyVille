@@ -50,7 +50,24 @@ public class Player : MonoBehaviour
         //character.animator.SetBool("isMoving", character.isMoving);
 
         character.animator.IsMoving = character.isMoving;
+        
+        if (character.animator.IsMoving)
+        {
+            if (SceneInitiator.Instance.outdoor)
+                AudioManager.Instance.PlaySfx("FootstepsOutdoor");
+            else
+                AudioManager.Instance.PlaySfx("FootstepsIndoor");
+        }
+        else
+        {
+            if (SceneInitiator.Instance.outdoor)
+                AudioManager.Instance.StopSfx("FootstepsOutdoor");
+            else
+                AudioManager.Instance.StopSfx("FootstepsIndoor");
+        }
+        
     }
+        
 
 
     public void IsPortal(Vector2 inputPos)
@@ -80,12 +97,10 @@ public class Player : MonoBehaviour
     //interact the tile on front
     void Interact (string button)
     {
-        Debug.Log("Button Pressed");
         //Vector3 facingDir = new Vector3(character.animator.GetFloat("moveX"), character.animator.GetFloat("moveY"));
         Vector3 facingDir = new Vector3(character.animator.MoveX, character.animator.MoveY);
         Vector3 interactPos = transform.position + facingDir;
-        interactPos.y -= .5f;   
-        Debug.Log(interactPos.x +"" + interactPos.y);
+        interactPos.y -= .5f;
 
         Collider2D collider = Physics2D.OverlapCircle(interactPos, 0.2f, GameLayers.Instance.Interactable);
         if (collider != null)
