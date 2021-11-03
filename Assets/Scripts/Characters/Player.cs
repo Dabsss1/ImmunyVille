@@ -60,9 +60,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (SceneInitiator.Instance.outdoor)
                 AudioManager.Instance.StopSfx("FootstepsOutdoor");
-            else
                 AudioManager.Instance.StopSfx("FootstepsIndoor");
         }
         
@@ -97,6 +95,9 @@ public class Player : MonoBehaviour
     //interact the tile on front
     void Interact (string button)
     {
+        if (GameStateManager.Instance.EqualsState(OpenWorldState.SETTINGS))
+            return;
+
         //Vector3 facingDir = new Vector3(character.animator.GetFloat("moveX"), character.animator.GetFloat("moveY"));
         Vector3 facingDir = new Vector3(character.animator.MoveX, character.animator.MoveY);
         Vector3 interactPos = transform.position + facingDir;

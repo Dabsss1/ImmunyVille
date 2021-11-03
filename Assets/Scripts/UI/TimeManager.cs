@@ -8,6 +8,7 @@ public class TimeManager : MonoBehaviour
 {
     public static Action OnMinuteChanged, OnHourChanged;
     public static Action OnDayChanged;
+    public static Action OnMidnight;
 
     public int minute;
     public int hour;
@@ -71,6 +72,10 @@ public class TimeManager : MonoBehaviour
                 minute = 0;
                 hour++;
                 OnHourChanged?.Invoke();
+
+                if (hour == 11)
+                    OnMidnight?.Invoke();
+
                 if (hour == 24)
                 {
                     hour = 0;

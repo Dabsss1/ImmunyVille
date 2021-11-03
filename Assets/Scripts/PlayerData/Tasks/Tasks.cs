@@ -136,6 +136,25 @@ public class Tasks : MonoBehaviour
             }
         }
     }
+
+    public void ResetData()
+    {
+        foreach (TaskSlot slot in taskSlots)
+        {
+            if (slot.repeatable)
+            {
+                slot.repeatTimer = 0;
+                slot.done = false;
+                slot.inProgress = true;
+            }
+            else
+            {
+                slot.done = false;
+                slot.inProgress = false;
+            }
+            slot.progressCounter = 0;
+        }
+    }
 }
 
 [System.Serializable]

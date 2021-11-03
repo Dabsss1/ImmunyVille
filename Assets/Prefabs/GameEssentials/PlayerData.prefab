@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acf131ad95950c4d850ae065fe932bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plants: []
   seedSlots:
   - seed: {fileID: 11400000, guid: eabb9fff926281c49ae7e998ca9acf91, type: 2}
     quantity: 0
@@ -321,3 +320,4 @@ MonoBehaviour:
     quantity: 0
   - seed: {fileID: 11400000, guid: 15e0cd79d5c6c684bb0daa016ad42efb, type: 2}
     quantity: 0
+  plantedSlots: []

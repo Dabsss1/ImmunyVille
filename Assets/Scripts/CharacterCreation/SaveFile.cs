@@ -30,6 +30,18 @@ public class SaveFile
     public float hunger = 0;
     public float thirst = 0;
 
+    public bool[] done = new bool[18];
+    public bool[] inProgress = new bool[18];
+    public int[] progressCounter = new int[18];
+    public int[] repeatTimer = new int[18];
+
+    public int[] seedQuantity = new int[7];
+    //plants
+    public bool isEmpty = false;
+    public string[] plantName = new string[1];
+    public float[] plantedSpot = new float[3];
+    public int[] daysLeftToGrow = new int[1];
+
     public SaveFile()
     {
         //profile
@@ -62,6 +74,51 @@ public class SaveFile
 
         hunger = HungerThirst.Instance.hungerStat;
         thirst = HungerThirst.Instance.thirstStat;
+
+        //tasks
+        for(int i = 0; i< done.Length; i++)
+        {
+            done[i] = Tasks.Instance.taskSlots[i].done;
+            inProgress[i] = Tasks.Instance.taskSlots[i].inProgress;
+            progressCounter[i] = Tasks.Instance.taskSlots[i].progressCounter;
+            repeatTimer[i] = Tasks.Instance.taskSlots[i].repeatTimer;
+        }
+
+        //seeds
+        for (int i = 0; i<seedQuantity.Length; i++)
+            seedQuantity[i] = Plants.Instance.seedSlots[i].quantity;
+
+        //Planted plants
+        if (Plants.Instance.plantedSlots.Count > 0)
+        {
+            int totalPlanted = Plants.Instance.plantedSlots.Count;
+            string[] plantName = new string[totalPlanted];
+            float[] plantedSpot = new float[totalPlanted * 3];
+            int[] daysLeftToGrow = new int[totalPlanted];
+
+            int plantedSpotCounter = 0;
+
+            isEmpty = false;
+            for (int i = 0; i < totalPlanted; i++)
+            {
+                plantName[i] = Plants.Instance.plantedSlots[i].slot.plantName;
+
+                plantedSpot[plantedSpotCounter] = Plants.Instance.plantedSlots[i].plantingSpot.x;
+                plantedSpotCounter++;
+                plantedSpot[plantedSpotCounter] = Plants.Instance.plantedSlots[i].plantingSpot.y;
+                plantedSpotCounter++;
+                plantedSpot[plantedSpotCounter] = Plants.Instance.plantedSlots[i].plantingSpot.z;
+                plantedSpotCounter++;
+
+                daysLeftToGrow[i] = Plants.Instance.plantedSlots[i].daysLeftToGrow;
+            }
+
+            this.plantName = plantName;
+            this.plantedSpot = plantedSpot;
+            this.daysLeftToGrow = daysLeftToGrow;
+        }
+        else
+            isEmpty = true;
     }
 
     public SaveFile(string emptyFile)
@@ -101,6 +158,37 @@ public class SaveFile
 
         HungerThirst.Instance.hungerStat = hunger;
         HungerThirst.Instance.thirstStat = thirst;
+
+        //pasteddddd-----------------------------------
+        //tasks
+        for (int i = 0; i < done.Length; i++)
+        {
+            Tasks.Instance.taskSlots[i].done = done[i];
+            Tasks.Instance.taskSlots[i].inProgress = inProgress[i];
+            Tasks.Instance.taskSlots[i].progressCounter = progressCounter[i];
+            Tasks.Instance.taskSlots[i].repeatTimer = repeatTimer[i];
+        }
+
+        //seeds
+        for (int i = 0; i < seedQuantity.Length; i++)
+            Plants.Instance.seedSlots[i].quantity = seedQuantity[i];
+
+        //Planted plants
+        if (!isEmpty)
+        {
+            int plantedSpotCounter = 0;
+            for (int i=0; i < plantName.Length; i++)
+            {
+                float posX = plantedSpot[plantedSpotCounter];
+                plantedSpotCounter++;
+                float posY = plantedSpot[plantedSpotCounter];
+                plantedSpotCounter++;
+                float posZ = plantedSpot[plantedSpotCounter];
+                plantedSpotCounter++;
+
+                Plants.Instance.AddPlant(plantName[i],posX,posY,posZ,daysLeftToGrow[i]);
+            }
+        }
 
         MainMenu.dataLoaded = true;
     }

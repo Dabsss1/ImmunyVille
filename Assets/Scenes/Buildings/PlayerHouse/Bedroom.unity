@@ -1241,12 +1241,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2982140871748051252, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: spawnPoint.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2982140871748051252, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: spawnPoint.Array.data[0]
       value: 
       objectReference: {fileID: 298605128}
+    - target: {fileID: 2982140871748051252, guid: d1531f44e94487845968fb8a8794c104, type: 3}
+      propertyPath: spawnPoint.Array.data[1]
+      value: 
+      objectReference: {fileID: 1246385712}
     - target: {fileID: 6947842934879358457, guid: d1531f44e94487845968fb8a8794c104, type: 3}
       propertyPath: m_Name
       value: SceneInitiator

@@ -10,6 +10,11 @@ public class StatsUIManager : MonoBehaviour
     [SerializeField] Sprite maleSprite, femaleSprite;
     [SerializeField] Image AvatarDisplay;
 
+    [SerializeField] Slider healthSlider;
+    [SerializeField] Slider bodySlider;
+    [SerializeField] Slider strengthSlider;
+    [SerializeField] Slider confidenceSlider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +28,20 @@ public class StatsUIManager : MonoBehaviour
         {
             AvatarDisplay.sprite = femaleSprite;
         }
+
+        UpdateStatsUI();
+    }
+
+    private void OnEnable()
+    {
+        UpdateStatsUI();
+    }
+
+    void UpdateStatsUI()
+    {
+        healthSlider.value = Stats.Instance.health;
+        bodySlider.value = Stats.Instance.body;
+        strengthSlider.value = Stats.Instance.strength;
+        confidenceSlider.value = Stats.Instance.confidence;
     }
 }

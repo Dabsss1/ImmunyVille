@@ -32,6 +32,26 @@ public class Plants : MonoBehaviour
         plantedSlots.Add(plantSlot);
     }
 
+    //from Save File
+    public void AddPlant(string plantName,float posX,float posY,float posZ,int daysLeftToGrow)
+    {
+        PlantedPlantSlot plant = new PlantedPlantSlot();
+
+        foreach(SeedSlot seed in seedSlots)
+        {
+            if (plantName == seed.seed.plantName)
+                plant.slot = seed.seed;
+        }
+
+        plant.plantingSpot.x = posX;
+        plant.plantingSpot.y = posY;
+        plant.plantingSpot.z = posZ;
+
+        plant.daysLeftToGrow = daysLeftToGrow;
+
+        plantedSlots.Add(plant);
+    }
+
     public void RemovePlant(PlantBlueprint plantedPlant)
     {
         foreach(PlantedPlantSlot plantSlot in plantedSlots)
@@ -42,6 +62,14 @@ public class Plants : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void ResetData()
+    {
+        foreach(SeedSlot slot in seedSlots)
+            slot.quantity = 0;
+
+        plantedSlots.Clear();
     }
 }
 [System.Serializable]
@@ -63,5 +91,10 @@ public class PlantedPlantSlot
         this.slot = plantedPlant.plant;
         this.plantingSpot = plantedPlant.plantingSpot;
         this.daysLeftToGrow = plantedPlant.daysLeftToGrow;
+    }
+
+    public PlantedPlantSlot()
+    {
+
     }
 }

@@ -61,6 +61,8 @@ public class SceneInitiator : MonoBehaviour
         Stats.Instance.ResetData();
         Badges.Instance.ResetData();
         HungerThirst.Instance.ResetData();
+        Tasks.Instance.ResetData();
+        Plants.Instance.ResetData();
 
         TimeManager.Instance.ResetData();
     }

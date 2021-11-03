@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bed : MonoBehaviour, Interactable
+public class DayResetter : MonoBehaviour
 {
-    public void Interact()
+    private void OnEnable()
     {
-        PlayerSceneInformation.Instance.previousScene = "Bedroom";
-        NextDay();
-        SceneLoaderManager.OnSceneLoad("Bedroom");
+        TimeManager.OnMidnight += NextDay;
     }
 
-    public void NextDay()
+    void NextDay()
     {
         TimeManager.Instance.hour = 6;
         TimeManager.Instance.minute = 0;
@@ -25,9 +23,9 @@ public class Bed : MonoBehaviour, Interactable
             plantSlot.daysLeftToGrow--;
         }
 
-        for(int i=0; i<4; i++)
+        for (int i = 0; i < 4; i++)
         {
-            if(Tasks.Instance.taskSlots[i].repeatTimer>0)
+            if (Tasks.Instance.taskSlots[i].repeatTimer > 0)
                 Tasks.Instance.taskSlots[i].repeatTimer--;
 
             if (Tasks.Instance.taskSlots[i].repeatTimer <= 0)
@@ -38,5 +36,8 @@ public class Bed : MonoBehaviour, Interactable
         }
 
         SaveSystem.SavePlayer();
+
+        SceneLoaderManager.OnSleepLoad("Bedroom");
     }
+    
 }

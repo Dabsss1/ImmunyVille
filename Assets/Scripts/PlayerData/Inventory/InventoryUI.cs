@@ -25,12 +25,14 @@ public class InventoryUI : MonoBehaviour
     private void OnEnable()
     {
         UpdateInventoryUI();
+        GameStateManager.Instance.ChangeGameState(OpenWorldState.SETTINGS);
     }
 
     private void OnDisable()
     {
         selectedItem = null;
         itemDescription.text = "";
+        GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
     }
 
     public void UpdateInventoryUI()

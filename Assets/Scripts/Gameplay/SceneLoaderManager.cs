@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderManager : MonoBehaviour
 {
-    public static Action<string> OnMinigameLoad,OnSceneLoad;
+    public static Action<string> OnMinigameLoad,OnSceneLoad,OnSleepLoad;
     public Animator sceneTransition;
 
     
@@ -30,17 +30,25 @@ public class SceneLoaderManager : MonoBehaviour
     {
         OnSceneLoad += LoadNextScene;
         OnMinigameLoad += AsyncLoadScene;
+        OnSleepLoad += LoadSleep;
     }
 
     private void OnDisable()
     {
         OnSceneLoad -= LoadNextScene;
         OnMinigameLoad -= AsyncLoadScene;
+        OnSleepLoad -= LoadSleep;
     }
 
     private void LoadNextScene(string sceneName)
     {
         PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
+        StartCoroutine(LoadScene(sceneName));
+    }
+
+    void LoadSleep(string sceneName)
+    {
+        PlayerSceneInformation.Instance.previousScene = "Bedroom";
         StartCoroutine(LoadScene(sceneName));
     }
 

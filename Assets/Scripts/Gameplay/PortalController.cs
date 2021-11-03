@@ -11,6 +11,8 @@ public class PortalController : MonoBehaviour
     public void OnInteractPortal()
     {
         AudioManager.Instance.PlaySfx(sfx);
+        AudioManager.Instance.StopSfx("FootstepsIndoor");
+        AudioManager.Instance.StopSfx("FootstepsOutdoor");
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
     }
 }

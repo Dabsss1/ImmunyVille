@@ -2649,7 +2649,7 @@ PrefabInstance:
     - target: {fileID: 3758739973920128466, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
       propertyPath: plantedSlots.Array.data[0].slot
       value: 
-      objectReference: {fileID: 11400000, guid: 4df7c84a4d728d0468f5a44f52043d54, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3758739973920128466, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
       propertyPath: plantedSlots.Array.data[1].slot
       value: 
@@ -2672,15 +2672,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758739973920128466, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
       propertyPath: plantedSlots.Array.data[0].daysLeftToGrow
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758739973920128466, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
       propertyPath: plantedSlots.Array.data[0].plantingSpot.x
-      value: 3.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758739973920128466, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
       propertyPath: plantedSlots.Array.data[0].plantingSpot.y
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758739973920128466, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
       propertyPath: plantedSlots.Array.data[1].daysLeftToGrow
