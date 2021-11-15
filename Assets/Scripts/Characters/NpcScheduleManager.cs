@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -85,10 +85,13 @@ public class NpcScheduleManager : MonoBehaviour
                 {
                     if(entrance.gameObject.name == schedule.customEntrance)
                     {
-                        SpawnedNpc spawnedNpc = new SpawnedNpc(schedule,schedule.exitMovement);
+                        SpawnedNpc spawnedNpc = new SpawnedNpc(schedule);
+                        if(schedule.customExit)
+                            spawnedNpc = new SpawnedNpc(schedule,schedule.exitMovement);
+                        else
+                            spawnedNpc = new SpawnedNpc(schedule);
 
                         spawnedNpc.npc = Instantiate(spawnedNpc.npc, entrance);
-
                         spawnedNpcs.Add(spawnedNpc);
 
                         StartCoroutine(spawnedNpc.npc.MoveNpc(schedule.movement, schedule.faceDir));
@@ -102,6 +105,7 @@ public class NpcScheduleManager : MonoBehaviour
         {
             if (npc.timeOut == TimeManager.Instance.hour)
             {
+                
                 StartCoroutine(npc.npc.MoveExit(npc.movement));
                 yield return null;
             }
@@ -110,20 +114,62 @@ public class NpcScheduleManager : MonoBehaviour
 
     private void Start()
     {
-        foreach(NpcSchedule schedule in schedules)
+        if (outdoor)
         {
-            if (TimeManager.Instance.hour >= schedule.timeIn && TimeManager.Instance.hour < schedule.timeOut)
+            foreach (NpcSchedule schedule in schedules)
             {
-                SpawnedNpc spawnedNpc = new SpawnedNpc(schedule);
+                if (TimeManager.Instance.hour >= schedule.timeIn && TimeManager.Instance.hour < schedule.timeOut)
+                {
+                    foreach (Transform entrance in entrances)
+                    {
+                        if (entrance.gameObject.name == schedule.customEntrance)
+                        {
+                            SpawnedNpc spawnedNpc = new SpawnedNpc(schedule);
+                            if (schedule.customExit)
+                                spawnedNpc = new SpawnedNpc(schedule, schedule.exitMovement);
+                            else
+                                spawnedNpc = new SpawnedNpc(schedule);
 
-                spawnedNpc.npc = Instantiate(spawnedNpc.npc, doorPortal);
+                            spawnedNpc.npc = Instantiate(spawnedNpc.npc, entrance);
 
-                spawnedNpc.npc.transform.localPosition = schedule.TargetPosition();
-                spawnedNpc.npc.setFaceDir(schedule.faceDir);
+                            spawnedNpc.npc.transform.localPosition = schedule.TargetPosition();
+                            spawnedNpc.npc.setFaceDir(schedule.faceDir);
 
-                spawnedNpcs.Add(spawnedNpc);
+                            spawnedNpcs.Add(spawnedNpc);
+                        }
+                    }
+                }
             }
         }
+        else
+        {
+            foreach (NpcSchedule schedule in schedules)
+            {
+                if (TimeManager.Instance.hour >= schedule.timeIn && TimeManager.Instance.hour < schedule.timeOut)
+                {
+                    SpawnedNpc spawnedNpc = new SpawnedNpc(schedule);
+
+                    spawnedNpc.npc = Instantiate(spawnedNpc.npc, doorPortal);
+
+                    spawnedNpc.npc.transform.localPosition = schedule.TargetPosition();
+                    spawnedNpc.npc.setFaceDir(schedule.faceDir);
+
+                    spawnedNpcs.Add(spawnedNpc);
+                }
+            }
+        }
+    }
+
+    public List<Vector2> ReverseMove(List<Vector2> movement)
+    {
+        List<Vector2> reversedMovement = new List<Vector2>();
+
+        foreach (Vector2 move in movement)
+        {
+            reversedMovement.Insert(0, new Vector2(move.x * -1, move.y * -1));
+        }
+
+        return reversedMovement;
     }
 }
 
@@ -136,6 +182,7 @@ public class NpcSchedule
     public int timeIn;
     public int timeOut;
     public List<Vector2> movement;
+    public bool customExit;
     public List<Vector2> exitMovement;
     public Vector2 faceDir;
 
@@ -159,7 +206,6 @@ public class SpawnedNpc
 {
     public CharacterController npc;
     public int timeOut;
-
     public List<Vector2> movement;
 
     public SpawnedNpc(NpcSchedule schedule)

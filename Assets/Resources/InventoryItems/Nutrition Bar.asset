@@ -16,6 +16,7 @@ MonoBehaviour:
   itemDescription: The protein and added carbohydrates in the bar can help you stay
     energized during your workout or training session.
   itemIcon: {fileID: 21300000, guid: 615d8ce688cb81f4e8135532629bad70, type: 3}
+  itemPrice: 50
   consumable: 1
   health: 2
   body: 0

@@ -27,6 +27,8 @@ public class PlantBlueprint : MonoBehaviour, Interactable
         if (daysLeftToGrow <= 0)
         {
             Plants.Instance.RemovePlant(this);
+            Inventory.Instance.gold += plant.goldAmount;
+            PopupIndicator.OnObtain?.Invoke("money",$"+{plant.goldAmount}");
             Destroy(gameObject);
         }
     }

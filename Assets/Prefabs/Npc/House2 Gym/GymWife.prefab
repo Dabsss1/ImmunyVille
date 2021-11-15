@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Jessica
   dialog:
     lines:
-    - Hello
+    - Eat plenty of fruits and vegetables.
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Yumi
   dialog:
     lines:
-    - Hello
+    - "Don\u2019t smoke or use drugs, and only drink in moderation."
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

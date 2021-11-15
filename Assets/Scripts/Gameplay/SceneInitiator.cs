@@ -37,6 +37,7 @@ public class SceneInitiator : MonoBehaviour
                     DestroyPlayerAndResetInfo();
                     break;
                 case SceneState.CUTSCENE:
+                    DestroyPlayerGameObject();
                     break;
                 case SceneState.OPENWORLD:
                     SpawnPlayerOpenWorld();
@@ -48,6 +49,12 @@ public class SceneInitiator : MonoBehaviour
                     Debug.LogError("SceneInformation script Error: SceneState not set");
                     break;
             }
+        }
+
+        if (outdoor)
+        {
+            if(!TimeManager.Instance.raining)
+                RainGenerator.Instance.gameObject.SetActive(false);
         }
     }
 
@@ -74,11 +81,15 @@ public class SceneInitiator : MonoBehaviour
         else
             Spawner.Instance.RepositionPlayer();
 
+        if(sceneName!="Mountain")
+            Spawner.Instance.SpawnDog();
+
         GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
     }
 
     void LoadSavePlayer()
     {
+        GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
         Spawner.Instance.LoadSavePlayer();
         PlayerSceneInformation.Instance.fromContinue = false;
     }

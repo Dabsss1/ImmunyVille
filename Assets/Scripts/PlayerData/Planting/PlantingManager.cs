@@ -47,6 +47,17 @@ public class PlantingManager : MonoBehaviour
 
     public void InteractWithDirt()
     {
-        seedSelectionUI.SetActive(true);
+        if (Tasks.Instance.taskSlots[7].done)
+            seedSelectionUI.SetActive(true);
+    }
+
+    public void ExitSound()
+    {
+        AudioManager.Instance.PlaySfx("Exit");
+    }
+
+    public void InteractSound()
+    {
+        AudioManager.Instance.PlaySfx("Interact");
     }
 }

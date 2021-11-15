@@ -154,16 +154,40 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: FootstepsOutdoor
-    clip: {fileID: 8300000, guid: ee1babb34fb9a8742912a5cffcdac8a7, type: 3}
+    clip: {fileID: 8300000, guid: 7107e1e0f0968b347ba8ec9cf277384c, type: 3}
     volume: 0
     pitch: 0
     loop: 1
     source: {fileID: 0}
   - name: FootstepsIndoor
-    clip: {fileID: 8300000, guid: c1a8e64dd518ddd4082b59c5b4f59091, type: 3}
+    clip: {fileID: 8300000, guid: f36516eea5d4d224488724c08078df11, type: 3}
     volume: 0
     pitch: 0
     loop: 1
+    source: {fileID: 0}
+  - name: Book
+    clip: {fileID: 8300000, guid: f73489584c33a874a8e2c6c335b1a718, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Minigame
+    clip: {fileID: 8300000, guid: a9d69823690a3754989a4ed3b2cd5c82, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Exit
+    clip: {fileID: 8300000, guid: 08989c1423b3abc4582dd3cba916a3e5, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Interact
+    clip: {fileID: 8300000, guid: 47c1bc8539da46c4eb2987a1ad1e2438, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
     source: {fileID: 0}
   bgmMixer: {fileID: 24100000, guid: 4a2aa8678b60a1c4caa1545a5e80f222, type: 2}
   bgmMixerGroup: {fileID: 24300002, guid: 4a2aa8678b60a1c4caa1545a5e80f222, type: 2}

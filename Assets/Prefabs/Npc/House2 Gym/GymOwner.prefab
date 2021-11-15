@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Golfy
   dialog:
     lines:
-    - Hello
+    - Difficult Weights Lead to Beautiful Gains
   task: {fileID: 11400000, guid: a85dae8cd38b44e44b368691e922e623, type: 2}
   taskProbability: 20
   canBeInitiated: 0

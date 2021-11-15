@@ -44,6 +44,7 @@ public class SceneLoaderManager : MonoBehaviour
     {
         PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         StartCoroutine(LoadScene(sceneName));
+
     }
 
     void LoadSleep(string sceneName)

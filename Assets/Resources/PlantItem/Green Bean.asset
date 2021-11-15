@@ -15,4 +15,6 @@ MonoBehaviour:
   plant: {fileID: 21300000, guid: 9e3e14ea1ec993947b6c76650ba97ec4, type: 3}
   seed: {fileID: 21300000, guid: ffae85983e7512e409d21e0c4c315dc8, type: 3}
   plantName: Green Bean
-  daysToGrow: 3
+  daysToGrow: 2
+  goldAmount: 100
+  seedPrice: 50

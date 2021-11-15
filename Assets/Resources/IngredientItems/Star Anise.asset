@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExtraItem: 0
   icon: {fileID: 21300000, guid: 373e3bfab2c677545808f5139c2e2f27, type: 3}
-  ingredientName: Start Anise
+  ingredientName: Star Anise
   ingredientDescription: star anise is steeped in water to make a tea used to treat
     respiratory infections, nausea, constipation and other digestive issues.

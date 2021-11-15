@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Joan
   dialog:
     lines:
-    - Hello
+    - Adult humans are 60 percent water, and our blood is 90 percent water.
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

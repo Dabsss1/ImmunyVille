@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Penelope
   dialog:
     lines:
-    - Hello
+    - An apple a day keeps the doctor away
   task: {fileID: 11400000, guid: 653fb8bc830499b409e0c11ecd69fe59, type: 2}
   taskProbability: 0
   canBeInitiated: 0

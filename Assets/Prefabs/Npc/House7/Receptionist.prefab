@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Liza
   dialog:
     lines:
-    - Hello
+    - ' good day!!! how may I help you?'
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

@@ -34,11 +34,14 @@ public class DialogManager : MonoBehaviour
             isTyping = false;
             return;
         }
+        //dialog2 
         if (currentline>=dialog.Lines.Count)
         {
             GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
             dialogBox.SetActive(false);
             currentline = 0;
+            CutsceneHandler.OnFinishDialog?.Invoke();
+            EndingManager.OnFinishDialog?.Invoke();
             return;
         }
         GameStateManager.Instance.ChangeGameState(OpenWorldState.DIALOG);
@@ -177,5 +180,14 @@ public class DialogManager : MonoBehaviour
         if (line.Contains("***"))
             line = line.Replace("***",PlayerDataManager.Instance.playerName);
         return line;
+    }
+
+    //player open dialog but interacting to nothing
+    public void CloseDialog()
+    {
+        GameStateManager.Instance.ChangeGameState(OpenWorldState.EXPLORE);
+        dialogBox.SetActive(false);
+        currentline = 0;
+        return;
     }
 }

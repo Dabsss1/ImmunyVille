@@ -7,6 +7,8 @@ using TMPro;
 public enum gymState { COUNTDOWN, PLAYING, DONE}
 public class GymManager : MonoBehaviour
 {
+    [SerializeField] GameObject howToPlayCanvas;
+
     [Header("Settings")]
     [SerializeField] float sliderSpeed;
     [SerializeField] float goodRepValue;
@@ -39,6 +41,9 @@ public class GymManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (howToPlayCanvas.activeSelf)
+            return;
+
         if (remainingReps <= 0)
             return;
         MoveSlider();

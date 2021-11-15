@@ -132,6 +132,8 @@ public class GroceryResults : MonoBehaviour
     public void GameFinish()
     {
         Tasks.Instance.CompleteTask(task);
+        Stats.Instance.body += 50;
+        Stats.Instance.confidence += 30;
 
         TimeManager.Instance.hour++;
         HungerThirst.Instance.DecreaseHunger(30);

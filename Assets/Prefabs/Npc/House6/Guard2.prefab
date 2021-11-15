@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Dwayne
   dialog:
     lines:
-    - Hello
+    - ' I am the security guard'
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

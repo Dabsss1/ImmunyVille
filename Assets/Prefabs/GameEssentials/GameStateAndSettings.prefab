@@ -63,8 +63,9 @@ MonoBehaviour:
   minute: 0
   hour: 7
   day: 1
+  raining: 0
   season: Dry
-  realtimeSecondsToIngameMinute: 0.5
+  realtimeSecondsToIngameMinute: 1.5
   nightTimeColor: {r: 0.23921569, g: 0.24705882, b: 0.4745098, a: 0}
   nightTimeCurve:
     serializedVersion: 2

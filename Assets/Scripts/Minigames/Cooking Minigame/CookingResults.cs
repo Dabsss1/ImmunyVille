@@ -101,7 +101,13 @@ public class CookingResults : MonoBehaviour
 
     public void MinigameDone()
     {
-        Tasks.Instance.CompleteTask(task);
+        if (!Tasks.Instance.TaskDone(task))
+        {
+            Stats.Instance.health += 20;
+            Stats.Instance.body += 10;
+            Tasks.Instance.CompleteTask(task);
+        }
+            
 
         TimeManager.Instance.hour++;
         HungerThirst.Instance.IncreaseHunger(100);

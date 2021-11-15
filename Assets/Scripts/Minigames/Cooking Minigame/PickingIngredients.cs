@@ -252,6 +252,8 @@ public class PickingIngredients : MonoBehaviour
                 //time penalty
                 DeductTimePenalty();
             }
+
+            AudioManager.Instance.PlaySfx("Minigame");
         }
         else //if not put into the tray
         {

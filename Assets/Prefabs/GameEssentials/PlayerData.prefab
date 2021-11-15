@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7264762120736395646}
   - component: {fileID: 2630224571173278689}
   - component: {fileID: 3758739973920128466}
+  - component: {fileID: 842957610286589945}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -66,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gender: 
   playerName: 
+  totalDays: 1
   savedScene: 
   position:
   - 0
@@ -83,14 +85,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5ec60456ebd714fbdf91802921bb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: 0
   slots:
   - item: {fileID: 11400000, guid: 3daf3f4cd762ea945beca30e01056f7d, type: 2}
     count: 0
   - item: {fileID: 11400000, guid: a59a25d746b73c74780113879887992d, type: 2}
     count: 0
-  - item: {fileID: 11400000, guid: faadbae68b975974f840a2d52f57d527, type: 2}
-    count: 0
   - item: {fileID: 11400000, guid: cb36981c7a3bcbe439ebace0bbff6b34, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: faadbae68b975974f840a2d52f57d527, type: 2}
     count: 0
   - item: {fileID: 11400000, guid: 91695e2b8d055a341938184c981d5b5f, type: 2}
     count: 0
@@ -108,6 +111,12 @@ MonoBehaviour:
     count: 0
   - item: {fileID: 11400000, guid: 239e6aa600e43e946a00bb51445bd4a6, type: 2}
     count: 0
+  - item: {fileID: 11400000, guid: da969050f3a589445932929866e51d45, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 48c968f8beb194e4cb36091adc152a0c, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 6dfe0dc9346cd814d8f1fdecb3021386, type: 2}
+    count: 0
 --- !u!114 &2616019510915465961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +133,7 @@ MonoBehaviour:
   confidence: 0
   strength: 0
   body: 0
+  maxStats: 1500
 --- !u!114 &416019968017682493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +181,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerStat: 100
   thirstStat: 100
-  defaultValue: 0
+  defaultValue: 30
+  thirstCollapseLimit: 240
+  hungerCollapseLimit: 240
 --- !u!114 &2630224571173278689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,3 +333,22 @@ MonoBehaviour:
   - seed: {fileID: 11400000, guid: 15e0cd79d5c6c684bb0daa016ad42efb, type: 2}
     quantity: 0
   plantedSlots: []
+--- !u!114 &842957610286589945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2596789140476371228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f37f04969b3d3f49857fffb31bc2866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCounters:
+  - taskName: HandGrip
+    counter: 0
+    maxCounter: 10
+  seedRewards: {fileID: 11400000, guid: 4df7c84a4d728d0468f5a44f52043d54, type: 2}
+  seedRewardQuantity: 5
+  waterObtained: 0

@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Marie
   dialog:
     lines:
-    - Hello
+    - Do not skip breakfast!
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

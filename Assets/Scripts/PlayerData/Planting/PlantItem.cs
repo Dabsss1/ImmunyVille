@@ -10,5 +10,7 @@ public class PlantItem : ScriptableObject
     public Sprite seed;
     public string plantName;
     public int daysToGrow;
-    
+
+    public float goldAmount;
+    public float seedPrice;
 }

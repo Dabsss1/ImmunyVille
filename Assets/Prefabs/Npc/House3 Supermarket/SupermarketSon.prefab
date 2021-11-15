@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Paul
   dialog:
     lines:
-    - Hello
+    - Water is essential for the kidneys and other bodily functions.
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Vitamin E
   itemDescription: Vitamin E is key for strong immunity and healthy skin and eyes.
   itemIcon: {fileID: 21300000, guid: 5b346cb505005744b880682c83b5d402, type: 3}
+  itemPrice: 70
   consumable: 1
   health: 3
   body: 3

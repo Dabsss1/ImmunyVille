@@ -17,17 +17,15 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        UIInputManager.OnSquareButton += DisplayPhonePanel;
         OnScreenLoad += DisableUI;
     }
 
     private void OnDisable()
     {
-        UIInputManager.OnSquareButton -= DisplayPhonePanel;
         OnScreenLoad -= DisableUI;
     }
 
-    void DisplayPhonePanel(string button)
+    public void DisplayPhonePanel()
     {
         if (inventoryPanel.activeSelf || tutorialPanel.activeSelf)
             return;
@@ -103,5 +101,15 @@ public class UIManager : MonoBehaviour
         prompt.SetActive(true);
         yield return new WaitForSeconds(1f);
         prompt.SetActive(false);
+    }
+
+    public void InteractSound()
+    {
+        AudioManager.Instance.PlaySfx("Interact");
+    }
+
+    public void ExitSound()
+    {
+        AudioManager.Instance.PlaySfx("Exit");
     }
 }

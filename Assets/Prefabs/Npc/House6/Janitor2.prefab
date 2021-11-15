@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Anne
   dialog:
     lines:
-    - Hello
+    - All parts of an egg are good for you and packed with nutrition.
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

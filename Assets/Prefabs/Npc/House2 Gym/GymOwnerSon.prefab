@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Ken
   dialog:
     lines:
-    - Hello
+    - Exercise has been known to cause Health and Happiness.
   task: {fileID: 11400000, guid: 98bfdfbeab453714c8273926b904a8bb, type: 2}
   taskProbability: 100
   canBeInitiated: 0

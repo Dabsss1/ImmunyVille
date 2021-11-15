@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Jover
   dialog:
     lines:
-    - Hello
+    - Stress can make allergy symptoms worse.
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

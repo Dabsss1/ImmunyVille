@@ -10,6 +10,8 @@ public class InventoryItem : ScriptableObject
     public string itemDescription;
     public Sprite itemIcon;
 
+    public float itemPrice;
+
     public bool consumable;
 
     [Header("Stats")]

@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Troy
   dialog:
     lines:
-    - Hello
+    - There are more bacteria in your mouth than there are people in the world.
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

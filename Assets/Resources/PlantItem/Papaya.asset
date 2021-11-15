@@ -15,4 +15,6 @@ MonoBehaviour:
   plant: {fileID: 21300000, guid: ccb631a5b11b45142bc9d700260c97da, type: 3}
   seed: {fileID: 21300000, guid: 764119525bfe8c9439b69981ab05f71f, type: 3}
   plantName: Papaya
-  daysToGrow: 3
+  daysToGrow: 4
+  goldAmount: 225
+  seedPrice: 100

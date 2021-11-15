@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Vin
   dialog:
     lines:
-    - Hello
+    - Good day, come in.....
   task: {fileID: 11400000, guid: 624fc01c587c75d4694cb62332b9bc7a, type: 2}
   taskProbability: 100
   canBeInitiated: 0

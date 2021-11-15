@@ -10,7 +10,7 @@ public static class SaveSystem
     public static void SavePlayer ()
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.imv";
+        string path = Application.persistentDataPath + "/immunyVille.imv";
         FileStream stream = new FileStream(path, FileMode.Create);
         try
         {
@@ -28,7 +28,7 @@ public static class SaveSystem
 
     public static void LoadPlayer ()
     {
-        string path = Application.persistentDataPath + "/player.imv";
+        string path = Application.persistentDataPath + "/immunyVille.imv";
         if (File.Exists(path))
         {
             SaveFile data = new SaveFile("empty");

@@ -7,12 +7,21 @@ public class PortalController : MonoBehaviour
     [SerializeField] string portalDestination;
     [SerializeField] string sfx;
 
+    [SerializeField] bool customPortal;
+    [SerializeField] string previousDest;
 
     public void OnInteractPortal()
     {
-        AudioManager.Instance.PlaySfx(sfx);
-        AudioManager.Instance.StopSfx("FootstepsIndoor");
         AudioManager.Instance.StopSfx("FootstepsOutdoor");
+        AudioManager.Instance.StopSfx("FootstepsIndoor");
+
+
+        AudioManager.Instance.PlaySfx(sfx);
+        if (customPortal)
+        {
+            SceneInitiator.Instance.sceneName = previousDest;
+        }
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
+
     }
 }

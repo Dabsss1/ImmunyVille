@@ -28,6 +28,9 @@ public class GameStateManager : MonoBehaviour
     public void ChangeGameState(OpenWorldState state)
     {
         openWorldState = state;
+
+        AudioManager.Instance.StopSfx("FootstepsOutdoor");
+        AudioManager.Instance.StopSfx("FootstepsIndoor");
     }
 
     public void ChangeGameState(SceneState state)

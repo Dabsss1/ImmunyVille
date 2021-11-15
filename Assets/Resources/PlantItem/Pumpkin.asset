@@ -15,4 +15,6 @@ MonoBehaviour:
   plant: {fileID: 21300000, guid: 850ef75645bda0449b226e36d41a8025, type: 3}
   seed: {fileID: 21300000, guid: a405230f3d71b624381d1a647e6ef088, type: 3}
   plantName: Pumpkin
-  daysToGrow: 3
+  daysToGrow: 5
+  goldAmount: 300
+  seedPrice: 125

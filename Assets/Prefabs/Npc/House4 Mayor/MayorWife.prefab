@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Sophia
   dialog:
     lines:
-    - Hello
+    - Soap + water = lives saved
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

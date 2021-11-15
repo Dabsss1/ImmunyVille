@@ -17,6 +17,7 @@ MonoBehaviour:
     against immune system deficiencies, cardiovascular disease, prenatal health problems,
     eye disease, and even skin wrinkling.
   itemIcon: {fileID: 21300000, guid: 0c68729d7eb01534fb807c5c3482122f, type: 3}
+  itemPrice: 50
   consumable: 1
   health: 3
   body: 0

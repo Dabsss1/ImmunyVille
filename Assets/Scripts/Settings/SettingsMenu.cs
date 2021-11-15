@@ -18,7 +18,7 @@ public class SettingsMenu : MonoBehaviour
         sfxSlider.value = Settings.Instance.sfxVolume;
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         Settings.Instance.SaveSettings();
     }
@@ -35,4 +35,8 @@ public class SettingsMenu : MonoBehaviour
         Settings.Instance.sfxVolume = volume;
     }
 
+    public void ExitSound()
+    {
+        AudioManager.Instance.PlaySfx("Exit");
+    }
 }

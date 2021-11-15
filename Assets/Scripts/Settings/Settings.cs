@@ -18,8 +18,10 @@ public class Settings : MonoBehaviour
         if (Instance == null)
             Instance = this;
 
+        QualitySettings.vSyncCount = 1;
         musicVolume = PlayerPrefs.GetFloat(MusicVolKey);
         sfxVolume = PlayerPrefs.GetFloat(SfxVolKey);
+
     }
 
     public void SaveSettings()

@@ -6,12 +6,13 @@ public class MinigameLoader : MonoBehaviour, Interactable
 {
     [SerializeField] string minigameScene;
     [SerializeField] TaskItem task;
+    [SerializeField] bool noLimit;
 
     [SerializeField] string doneMessage;
     // Start is called before the first frame update
     public void Interact()
     {
-        if (!Tasks.Instance.TaskDone(task))
+        if ((!Tasks.Instance.TaskDone(task)) || noLimit)
         {
             GameStateManager.Instance.ChangeGameState(OpenWorldState.SCENECHANGING);
             SceneLoaderManager.OnMinigameLoad?.Invoke(minigameScene);

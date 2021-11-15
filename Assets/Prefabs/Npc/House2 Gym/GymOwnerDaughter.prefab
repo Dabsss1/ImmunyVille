@@ -134,7 +134,8 @@ MonoBehaviour:
   characterName: Pia
   dialog:
     lines:
-    - Hello
+    - "Exercising when you\u2019re young will improve your brain function when you\u2019re
+      older."
   task: {fileID: 11400000, guid: a59a8909a9ea6f84a9dbfca35e4076de, type: 2}
   taskProbability: 20
   canBeInitiated: 0

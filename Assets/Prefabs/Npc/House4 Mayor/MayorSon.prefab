@@ -134,7 +134,8 @@ MonoBehaviour:
   characterName: Francis
   dialog:
     lines:
-    - Hello
+    - "Good hygiene and wearing shoes is a child\u2019s best defense against life-threatening
+      parasites."
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

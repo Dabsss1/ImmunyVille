@@ -83,9 +83,7 @@ public class CutsceneDialogManager : MonoBehaviour
 
     string replaceNames(string line)
     {
-        Debug.Log("old line: " + line);
         line = line.Replace("playerName", PlayerDataManager.Instance.playerName);
-        Debug.Log("new line: " + line);
         if (PlayerDataManager.Instance.gender == "female")
             line = line.Replace("partner", "Billy");
         else if(PlayerDataManager.Instance.gender == "male")

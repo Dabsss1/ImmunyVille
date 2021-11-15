@@ -26,6 +26,17 @@ public class Plants : MonoBehaviour
         }
     }
 
+    public void ObtainSeed(PlantItem seed, int quantity)
+    {
+        foreach(SeedSlot seedSlot in seedSlots)
+        {
+            if(seedSlot.seed == seed)
+            {
+                seedSlot.quantity += quantity;
+            }
+        }
+    }
+
     public void AddPlant(PlantBlueprint plantedPlant)
     {
         PlantedPlantSlot plantSlot = new PlantedPlantSlot(plantedPlant);

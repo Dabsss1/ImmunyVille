@@ -40,9 +40,10 @@ public class Player : MonoBehaviour
             if (inputPos != Vector2.zero)
             {
                 IsPortal(inputPos);
+                DogController.OnPlayerMove?.Invoke(new Vector2(transform.position.x,transform.position.y));
 
-                StartCoroutine(character.Move(inputPos));
-
+                StartCoroutine(character.Move(inputPos));      
+                
                 if (!GameStateManager.Instance.EqualsState(OpenWorldState.SCENECHANGING))
                     ChangeScenes();
             }
@@ -51,19 +52,21 @@ public class Player : MonoBehaviour
 
         character.animator.IsMoving = character.isMoving;
         
-        if (character.animator.IsMoving)
+        if (GameStateManager.Instance.EqualsState(OpenWorldState.EXPLORE))
         {
-            if (SceneInitiator.Instance.outdoor)
-                AudioManager.Instance.PlaySfx("FootstepsOutdoor");
+            if (character.animator.IsMoving)
+            {
+                if (SceneInitiator.Instance.outdoor)
+                    AudioManager.Instance.PlaySfx("FootstepsOutdoor");
+                else
+                    AudioManager.Instance.PlaySfx("FootstepsIndoor");
+            }
             else
-                AudioManager.Instance.PlaySfx("FootstepsIndoor");
-        }
-        else
-        {
+            {
                 AudioManager.Instance.StopSfx("FootstepsOutdoor");
                 AudioManager.Instance.StopSfx("FootstepsIndoor");
+            }
         }
-        
     }
         
 
@@ -93,7 +96,7 @@ public class Player : MonoBehaviour
 
 
     //interact the tile on front
-    void Interact (string button)
+    void Interact ()
     {
         if (GameStateManager.Instance.EqualsState(OpenWorldState.SETTINGS))
             return;
@@ -108,6 +111,10 @@ public class Player : MonoBehaviour
         {
             //call the interact function on the interactable
             collider.GetComponent<Interactable>()?.Interact();
+        }
+        else if (GameStateManager.Instance.EqualsState(OpenWorldState.DIALOG))
+        {
+            DialogManager.Instance.CloseDialog();
         }
     }
     
@@ -129,7 +136,7 @@ public class Player : MonoBehaviour
         UIInputManager.OnDpadLeft += MoveInput;
         UIInputManager.OnDpadRight += MoveInput;
 
-        UIInputManager.OnCrossButton += Interact;
+        InteractButton.OnInteract += Interact;
 
         UIInputManager.OnDpadCancelled += MoveInput;
 
@@ -142,7 +149,7 @@ public class Player : MonoBehaviour
         UIInputManager.OnDpadLeft -= MoveInput;
         UIInputManager.OnDpadRight -= MoveInput;
 
-        UIInputManager.OnCrossButton -= Interact;
+        InteractButton.OnInteract -= Interact;
 
         UIInputManager.OnDpadCancelled -= MoveInput;
 

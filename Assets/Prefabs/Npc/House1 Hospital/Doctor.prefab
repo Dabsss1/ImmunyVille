@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Greg
   dialog:
     lines:
-    - Hello
+    - Can I help you?
   task: {fileID: 11400000, guid: b77fdb968aaf81b4abb72a04c11682c7, type: 2}
   taskProbability: 20
   canBeInitiated: 0

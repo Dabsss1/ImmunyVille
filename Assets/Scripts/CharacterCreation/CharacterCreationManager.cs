@@ -17,9 +17,9 @@ public class CharacterCreationManager : MonoBehaviour
     public string nextScene = "Introduction";
 
 
-    void setActivePanel(string button)
+    public void setActivePanel(string button)
     {
-        if (button == "Square")
+        if (button == "male")
         {
             malePanel.SetActive(true);
             femalePanel.SetActive(false);
@@ -27,7 +27,7 @@ public class CharacterCreationManager : MonoBehaviour
             femaleController.GetComponent<CharacterController>().isMoving = false;
             gender = "male";
         }
-        else if (button == "Circle")
+        else if (button == "female")
         {
             malePanel.SetActive(false);
             femalePanel.SetActive(true);
@@ -38,7 +38,7 @@ public class CharacterCreationManager : MonoBehaviour
 
     }
 
-    void confirm(string button)
+    public void confirm()
     {
         playerName = nameField.text;
         if (gender == "")
@@ -59,20 +59,6 @@ public class CharacterCreationManager : MonoBehaviour
             PlayerDataManager.Instance.playerName = playerName;
             SceneLoaderManager.OnSceneLoad(nextScene);
         }
-    }
-
-    private void OnEnable()
-    {
-        UIInputManager.OnSquareButton += setActivePanel;
-        UIInputManager.OnCircleButton += setActivePanel;
-        UIInputManager.OnStartButton += confirm;
-    }
-
-    private void OnDisable()
-    {
-        UIInputManager.OnSquareButton -= setActivePanel;
-        UIInputManager.OnCircleButton -= setActivePanel;
-        UIInputManager.OnStartButton -= confirm;
     }
 
     public void Return()

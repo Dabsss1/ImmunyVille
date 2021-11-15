@@ -40,8 +40,7 @@ public class SupermarketManager : MonoBehaviour
 
     private void Start()
     {
-        state = GameState.START;
-        StartCoroutine(StartCountdownTimer(5f));
+        
     }
 
     
@@ -62,10 +61,16 @@ public class SupermarketManager : MonoBehaviour
                 {
                     SupermarketTimer.OnWrongTouch?.Invoke(fingerPosition);
                 }
+                PlayMinigameSound();
             }
         }
     }
 
+    public void StartGame()
+    {
+        state = GameState.START;
+        StartCoroutine(StartCountdownTimer(5f));
+    }
 
     IEnumerator StartCountdownTimer(float seconds)
     {
@@ -84,5 +89,10 @@ public class SupermarketManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         countdownTimer.SetActive(false);
         state = GameState.PLAYING;
+    }
+
+    public void PlayMinigameSound()
+    {
+        AudioManager.Instance.PlaySfx("Minigame");
     }
 }

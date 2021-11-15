@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Helen
   dialog:
     lines:
-    - Hello
+    - Life can only be understood backwards; but it must be lived forwards
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

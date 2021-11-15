@@ -16,3 +16,5 @@ MonoBehaviour:
   seed: {fileID: 21300000, guid: 837610086b898f047bcccf837cde28a0, type: 3}
   plantName: Spinach
   daysToGrow: 3
+  goldAmount: 150
+  seedPrice: 70

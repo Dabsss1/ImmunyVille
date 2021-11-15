@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Renzo
   dialog:
     lines:
-    - Hello
+    - Surround yourself with positive energy
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

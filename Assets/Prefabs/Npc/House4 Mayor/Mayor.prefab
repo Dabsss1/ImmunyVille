@@ -134,7 +134,8 @@ MonoBehaviour:
   characterName: Edwin Gomez
   dialog:
     lines:
-    - Hello
+    - Enjoy the little things in life for one day you'll look back and realize they
+      were the big things.
   task: {fileID: 11400000, guid: 8a763ed4b543cbe46ba6627426e12098, type: 2}
   taskProbability: 20
   canBeInitiated: 0

@@ -36,9 +36,14 @@ MonoBehaviour:
       and it would be a waste if I just let it go. I am currently looking for someone
       to take care of my farm. Are you interested?
     - p:Yes!
-    - n:You can find and plant seeds scattered around the ImmunyVille. These seeds
-      will grow and help you to strengthen your immune system!
+    - n:I'll give you 5 green bean seeds to help you get started. Just plant these
+      seeds anywhere in the mountain plots.
+    - n:I'll water those plants for you so you don't have to water them everyday.
+      Just check the crops after a few days if they're ready to harvest.
+    - n:Harvesting a plant will earn you gold which you can use to buy seeds and
+      items in the supermarket.
     - s:*Farm Acquired*
+    - s:*5 Grean Bean seeds acquired*
     - n:My dog seems liking you. He will be going to follow you around ImmunyVille.
     - s:*Dog Acquired*
     - p:Thank you for your help, Lola Helen!

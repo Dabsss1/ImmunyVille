@@ -5,11 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class CutscenePart
 {
-    public CharacterController character;
+    public NpcController character;
 
-    [Header("Movement")]
-    public List<Vector2> movement;
+    public bool isNpc;
 
-    [Header("Dialog")]
     public Dialogs dialog;
 }

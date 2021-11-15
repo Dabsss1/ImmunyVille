@@ -20,7 +20,7 @@ public class Tasks : MonoBehaviour
     {
         foreach (TaskSlot slot in taskSlots)
         {
-            if (slot.task == taskItem)
+            if (slot.task.taskName == taskItem.taskName)
             {
                 if (slot.progressCounter + 1 >= slot.task.taskInstructions.Count)
                 {
@@ -34,11 +34,18 @@ public class Tasks : MonoBehaviour
                     {
                         slot.repeatTimer = slot.task.daysToRedo;
                     }
+
+                    if(slot.task.taskName == "Farm and Dog")
+                    {
+                        SpecialCounters.Instance.ObtainFarmAndDog();
+                    }
                 }
                 else
                 {
                     slot.progressCounter++;
                 }
+
+                return;
             }
         }
     }
@@ -81,6 +88,22 @@ public class Tasks : MonoBehaviour
         return false;
     }
 
+    public bool TaskInProgress(TaskItem taskItem)
+    {
+        foreach (TaskSlot slot in taskSlots)
+        {
+            if (slot.task == taskItem)
+            {
+                if (slot.inProgress)
+                    return true;
+                else
+                    return false;
+            }
+        }
+        Debug.Log("Task not found!");
+        return false;
+    }
+
     public bool TaskNotStartedNorDone(TaskItem taskItem)
     {
         foreach (TaskSlot slot in taskSlots)
@@ -113,6 +136,8 @@ public class Tasks : MonoBehaviour
     {
         foreach(TaskSlot slot in taskSlots)
         {
+            if (slot.task.questNpcs == null || slot.task.questNpcs.Count == 0)
+                continue;
             if (slot.repeatable)
                 continue;
             if (slot.inProgress && slot.task.questNpcs[slot.progressCounter] == npcName && (!slot.done))

@@ -8,6 +8,7 @@ public class SaveFile
     //player profile
     public string gender;
     public string playerName;
+    public float totalDays;
 
     //quicksave
     public string savedScene = "";
@@ -18,7 +19,10 @@ public class SaveFile
     public string season;
 
     //player data
-    public int[] inventory = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+    public int[] inventory = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public float gold = 0;
+
 
     public float health = 0;
     public float confidence = 0;
@@ -42,11 +46,15 @@ public class SaveFile
     public float[] plantedSpot = new float[3];
     public int[] daysLeftToGrow = new int[1];
 
+    //special counters
+    public int HandgripCounter = 0;
+    public bool waterObtained;
     public SaveFile()
     {
         //profile
         gender = PlayerDataManager.Instance.gender;
         playerName = PlayerDataManager.Instance.playerName;
+        totalDays = PlayerDataManager.Instance.totalDays;
 
         //game data
         hour = TimeManager.Instance.hour;
@@ -63,6 +71,9 @@ public class SaveFile
         //player data
         for (int i = 0; i < inventory.Length; i++)
             inventory[i] = Inventory.Instance.slots[i].count;
+            
+
+        gold = Inventory.Instance.gold;
 
         health = Stats.Instance.health;
         confidence = Stats.Instance.confidence;
@@ -70,7 +81,7 @@ public class SaveFile
         body = Stats.Instance.body;
 
         for (int i = 0; i < badge.Length; i++)
-            inventory[i] = Badges.Instance.badgeSlots[i].tier;
+            badge[i] = Badges.Instance.badgeSlots[i].tier;
 
         hunger = HungerThirst.Instance.hungerStat;
         thirst = HungerThirst.Instance.thirstStat;
@@ -104,11 +115,11 @@ public class SaveFile
                 plantName[i] = Plants.Instance.plantedSlots[i].slot.plantName;
 
                 plantedSpot[plantedSpotCounter] = Plants.Instance.plantedSlots[i].plantingSpot.x;
-                plantedSpotCounter++;
+                plantedSpotCounter += 1;
                 plantedSpot[plantedSpotCounter] = Plants.Instance.plantedSlots[i].plantingSpot.y;
-                plantedSpotCounter++;
+                plantedSpotCounter += 1;
                 plantedSpot[plantedSpotCounter] = Plants.Instance.plantedSlots[i].plantingSpot.z;
-                plantedSpotCounter++;
+                plantedSpotCounter += 1;
 
                 daysLeftToGrow[i] = Plants.Instance.plantedSlots[i].daysLeftToGrow;
             }
@@ -119,6 +130,9 @@ public class SaveFile
         }
         else
             isEmpty = true;
+
+        HandgripCounter = SpecialCounters.Instance.playerCounters[0].counter;
+        waterObtained = SpecialCounters.Instance.waterObtained;
     }
 
     public SaveFile(string emptyFile)
@@ -131,6 +145,7 @@ public class SaveFile
         //profile
         PlayerDataManager.Instance.gender = gender;
         PlayerDataManager.Instance.playerName = playerName;
+        PlayerDataManager.Instance.totalDays = totalDays;
 
         //game data
         TimeManager.Instance.hour = hour;
@@ -147,6 +162,9 @@ public class SaveFile
         //player data
         for (int i = 0; i < inventory.Length; i++)
             Inventory.Instance.slots[i].count = inventory[i];
+            
+
+        Inventory.Instance.gold = gold;
 
         Stats.Instance.health = health;
         Stats.Instance.confidence= confidence;
@@ -154,12 +172,11 @@ public class SaveFile
         Stats.Instance.body = body;
 
         for (int i = 0; i < badge.Length; i++)
-            Badges.Instance.badgeSlots[i].tier = inventory[i];
+            Badges.Instance.badgeSlots[i].tier = badge[i];
 
         HungerThirst.Instance.hungerStat = hunger;
         HungerThirst.Instance.thirstStat = thirst;
 
-        //pasteddddd-----------------------------------
         //tasks
         for (int i = 0; i < done.Length; i++)
         {
@@ -180,15 +197,17 @@ public class SaveFile
             for (int i=0; i < plantName.Length; i++)
             {
                 float posX = plantedSpot[plantedSpotCounter];
-                plantedSpotCounter++;
+                plantedSpotCounter += 1;
                 float posY = plantedSpot[plantedSpotCounter];
-                plantedSpotCounter++;
+                plantedSpotCounter += 1;
                 float posZ = plantedSpot[plantedSpotCounter];
-                plantedSpotCounter++;
+                plantedSpotCounter += 1;
 
                 Plants.Instance.AddPlant(plantName[i],posX,posY,posZ,daysLeftToGrow[i]);
             }
         }
+        SpecialCounters.Instance.playerCounters[0].counter = HandgripCounter;
+        SpecialCounters.Instance.waterObtained = waterObtained;
 
         MainMenu.dataLoaded = true;
     }

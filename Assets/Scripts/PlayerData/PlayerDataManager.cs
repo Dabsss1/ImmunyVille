@@ -6,6 +6,7 @@ public class PlayerDataManager : MonoBehaviour
 {
     public string gender = "";
     public string playerName = "";
+    public float totalDays = 0;
 
     public string savedScene = "";
     public float[] position = { 0,0,0};
@@ -34,6 +35,7 @@ public class PlayerDataManager : MonoBehaviour
         position[0] = 0;
         position[1] = 0;
         position[2] = 0;
+        totalDays = 1;
     }
 
 }

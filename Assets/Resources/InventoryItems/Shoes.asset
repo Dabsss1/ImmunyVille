@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Shoes
   itemDescription: Shoes can prevent foot problems and infections
   itemIcon: {fileID: 21300000, guid: a6ca91f0bc2db51449e2b3b8163890d1, type: 3}
+  itemPrice: 125
   consumable: 0
   health: 0
   body: 3

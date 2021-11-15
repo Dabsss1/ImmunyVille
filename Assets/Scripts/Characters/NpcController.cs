@@ -40,16 +40,25 @@ public class NpcController : MonoBehaviour, Interactable
 
     public void Interact()
     {
+        if (characterController.isMoving)
+            return;
+
         if (canBeInitiated && (!Tasks.Instance.TaskDone(task)) && Tasks.Instance.TaskProgressCounter(task) == 0)
         {
             Tasks.Instance.ShowTaskDialog(task,characterName);
+            if (GameStateManager.Instance.EqualsState(OpenWorldState.EXPLORE) && GameStateManager.Instance.EqualsState(SceneState.OPENWORLD))
+                PopupIndicator.OnObtain?.Invoke("task", "New task");
         }
         else if(Tasks.Instance.IsQuestNpc(characterName))
         {
             //Tasks.Instance.PlayQuestNpc(characterName);
         }
         else
+        {
+            if (GameStateManager.Instance.EqualsState(OpenWorldState.EXPLORE) && GameStateManager.Instance.EqualsState(SceneState.OPENWORLD))
+                Stats.Instance.confidence += 2;
             DialogManager.Instance.showDialog(dialog, characterName);
+        }
 
         FacePlayerCharacter();
     }

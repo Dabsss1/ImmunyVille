@@ -15,8 +15,8 @@ MonoBehaviour:
   taskName: Zinc Gummies
   taskInstructions: []
   daysToRedo: 0
-  rewardItem: {fileID: 0}
-  quantity: 0
+  rewardItem: {fileID: 11400000, guid: 48c968f8beb194e4cb36091adc152a0c, type: 2}
+  quantity: 5
   questNpcs: []
   questDialogs:
   - lines:

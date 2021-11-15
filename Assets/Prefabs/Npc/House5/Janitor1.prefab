@@ -134,7 +134,8 @@ MonoBehaviour:
   characterName: Dominic
   dialog:
     lines:
-    - Hello
+    - "Exercising when you\u2019re young will improve your brain function when you\u2019re
+      older."
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

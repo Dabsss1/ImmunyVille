@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public float gold;
+
     public List<ItemSlot> slots;
 
     public static Inventory Instance { get; private set; }
@@ -20,7 +22,9 @@ public class Inventory : MonoBehaviour
         {
             if (item == slot.item)
             {
+                PopupIndicator.OnObtain?.Invoke("inventory","Obtained item");
                 slot.count += quantity;
+                return;
             }
         }
     }
@@ -35,6 +39,7 @@ public class Inventory : MonoBehaviour
                     return;
                 slot.count --;
                 DistributeStats(item);
+                return;
             }
         }
     }
@@ -68,6 +73,8 @@ public class Inventory : MonoBehaviour
 
     public void ResetData()
     {
+        gold = 1000;
+
         foreach (ItemSlot slot in slots)
         {
             slot.count = 0;

@@ -8,6 +8,7 @@ public class GymResultsManager : MonoBehaviour
 {
     [Header("Task")]
     [SerializeField] TaskItem task;
+    [SerializeField] TaskItem specialTask;
 
     [Header("Data")]
     public int tier;
@@ -97,10 +98,24 @@ public class GymResultsManager : MonoBehaviour
         TimeManager.Instance.hour++;
         HungerThirst.Instance.DecreaseHunger(30);
         HungerThirst.Instance.DecreaseThirst(70);
-
+        Stats.Instance.strength += 23f;
+        Stats.Instance.body += 10f;
         Tasks.Instance.CompleteTask(task);
+
+        if (Tasks.Instance.TaskInProgress(specialTask))
+        {
+            if (SpecialCounters.Instance.IncreaseCounterAndCheck("HandGrip"))
+            {
+                Tasks.Instance.CompleteTask(specialTask);
+            }
+        }
 
         PlayerSceneInformation.Instance.previousScene = SceneInitiator.Instance.sceneName;
         SceneLoaderManager.OnSceneLoad?.Invoke(portalDestination);
+    }
+
+    public void PlayMinigameSound()
+    {
+        AudioManager.Instance.PlaySfx("Minigame");
     }
 }

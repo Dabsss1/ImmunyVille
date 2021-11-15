@@ -7,6 +7,8 @@ public class Spawner : MonoBehaviour
     public GameObject malePlayer;
     public GameObject femalePlayer;
 
+    public GameObject dog;
+
     public GameObject[] spawnPoint;
 
     public static Spawner Instance { get; private set; }
@@ -63,11 +65,11 @@ public class Spawner : MonoBehaviour
     {
         Vector3 spawnPosition = new Vector3(PlayerDataManager.Instance.position[0], PlayerDataManager.Instance.position[1], PlayerDataManager.Instance.position[2]);
         spawnCharacter(spawnPosition);
+        SpawnDog();
     }
 
    public void RepositionPlayer()
     {
-        Debug.Log("repositioning from "+ PlayerSceneInformation.Instance.previousScene);
         foreach (GameObject i in spawnPoint)
         {
             if (i.name == PlayerSceneInformation.Instance.previousScene)
@@ -78,6 +80,14 @@ public class Spawner : MonoBehaviour
 
                 return;
             }
+        }
+    }
+
+    public void SpawnDog()
+    {
+        if (Tasks.Instance.taskSlots[7].done)
+        {
+            Instantiate(dog);
         }
     }
 }

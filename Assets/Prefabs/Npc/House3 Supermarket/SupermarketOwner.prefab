@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Carl
   dialog:
     lines:
-    - Hello
+    - How may I help you?
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

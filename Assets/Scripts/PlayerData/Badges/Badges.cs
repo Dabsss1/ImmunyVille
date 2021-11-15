@@ -21,6 +21,18 @@ public class Badges : MonoBehaviour
             slot.tier = 0;
         }
     }
+
+    public void ObtainBadge(string badgeName, int tier)
+    {
+        foreach (BadgeSlot badgeSlot in badgeSlots)
+        {
+            if (badgeSlot.badge.badgeName == badgeName)
+            {
+                badgeSlot.tier = tier;
+                return;
+            }
+        }
+    }
 }
 
 [System.Serializable]

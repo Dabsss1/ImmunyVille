@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Amara
   dialog:
     lines:
-    - Hello
+    - Stay hydrated!
   task: {fileID: 11400000, guid: 3a025114a2fc0bf41b1b5be255188254, type: 2}
   taskProbability: 20
   canBeInitiated: 0

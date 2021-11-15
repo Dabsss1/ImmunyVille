@@ -14,6 +14,8 @@ public class TimeManager : MonoBehaviour
     public int hour;
     public int day;
 
+    public bool raining;
+
     public string season = "Dry";
 
     public static TimeManager Instance {get; private set;}
@@ -38,16 +40,36 @@ public class TimeManager : MonoBehaviour
             Instance = this;
     }
 
+    private void OnEnable()
+    {
+        //StreetlightController.TurnOnLights += 
+    }
+
     private void Update()
     {
         if (GameStateManager.Instance.EqualsState(OpenWorldState.EXPLORE) && GameStateManager.Instance.EqualsState(SceneState.OPENWORLD))
             UpdateTime();
+
         if (!GameStateManager.Instance.EqualsState(SceneState.OPENWORLD))
             globalLight.color = dayTimeColor;
         else if (!SceneInitiator.Instance.outdoor)
             globalLight.color = dayTimeColor;
+        else if (raining)
+            globalLight.color = nightTimeColor;
         else
+        {
             UpdateGlobalLight();
+
+            if (StreetlightController.Instance != null)
+            {
+                if (hour >= StreetlightController.Instance.timeOn)
+                    StreetlightController.Instance.gameObject.SetActive(true);
+                else
+                    StreetlightController.Instance.gameObject.SetActive(false);
+            }
+            
+        }
+            
     }
 
     void UpdateGlobalLight()
@@ -61,7 +83,6 @@ public class TimeManager : MonoBehaviour
     void UpdateTime()
     {
         timer += Time.deltaTime;
-        
 
         if (timer >= realtimeSecondsToIngameMinute)
         {
@@ -73,8 +94,6 @@ public class TimeManager : MonoBehaviour
                 hour++;
                 OnHourChanged?.Invoke();
 
-                if (hour == 11)
-                    OnMidnight?.Invoke();
 
                 if (hour == 24)
                 {
@@ -93,6 +112,28 @@ public class TimeManager : MonoBehaviour
                 }
             }
             timer = 0;
+        }
+
+        if (hour >= 23)
+            OnMidnight?.Invoke();
+    }
+    public void SetRain()
+    {
+        if (season == "Dry")
+        {
+            int rnd = UnityEngine.Random.Range(0,100);
+            if (rnd < 10)
+                raining = true;
+            else
+                raining = false;
+        }
+        else
+        {
+            int rnd = UnityEngine.Random.Range(0, 100);
+            if (rnd < 60)
+                raining = true;
+            else
+                raining = false;
         }
     }
 

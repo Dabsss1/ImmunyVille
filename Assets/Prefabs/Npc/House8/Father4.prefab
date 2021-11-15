@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Leo
   dialog:
     lines:
-    - Hello
+    - Sitting 11 hours or more each day leads to an earlier death.
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

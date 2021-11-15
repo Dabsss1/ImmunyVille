@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Irene
   dialog:
     lines:
-    - Hello
+    - Be conscious in your diet!
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

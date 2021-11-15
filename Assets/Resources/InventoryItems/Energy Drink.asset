@@ -16,6 +16,7 @@ MonoBehaviour:
   itemDescription: Energy drinks can lessen mental fatigue and increase brain function
     including memory, concentration, and reaction time.
   itemIcon: {fileID: 21300000, guid: 9a52da87fd351e44a87e36f74eb4ac26, type: 3}
+  itemPrice: 50
   consumable: 1
   health: 0
   body: 3

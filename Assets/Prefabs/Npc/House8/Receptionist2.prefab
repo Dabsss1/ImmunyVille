@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Jenny
   dialog:
     lines:
-    - Hello
+    - good day, manager!!
   task: {fileID: 11400000, guid: a9dd93cb6922c16448688cfb4e28189a, type: 2}
   taskProbability: 0
   canBeInitiated: 0

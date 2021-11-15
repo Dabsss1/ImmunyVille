@@ -134,7 +134,7 @@ MonoBehaviour:
   characterName: Letty
   dialog:
     lines:
-    - Hello
+    - Let food be thy medicine and medicine be thy food.
   task: {fileID: 11400000, guid: e1f38d689d9e26741aa47eabbb20abcc, type: 2}
   taskProbability: 20
   canBeInitiated: 0

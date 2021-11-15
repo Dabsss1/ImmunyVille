@@ -131,10 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c6ced4358a9e4e8a2870cd8920683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Rendon
+  characterName: Arthemus
   dialog:
     lines:
-    - Hello
+    - Tra Azie
+    - You are powerless!!!
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

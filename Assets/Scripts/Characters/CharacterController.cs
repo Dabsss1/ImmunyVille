@@ -10,13 +10,11 @@ public class CharacterController : MonoBehaviour
     public bool isMoving;
 
     [HideInInspector]
-    //public Animator animator;
     public CharacterAnimator animator;
 
     public void Awake()
     {
         animator = GetComponent<CharacterAnimator>();
-        //animator.SetFloat("moveY",-1);
     }
 
 
@@ -24,8 +22,6 @@ public class CharacterController : MonoBehaviour
     //move character
     public IEnumerator Move(Vector2 moveVector)
     {
-        //animator.SetFloat("moveX", Mathf.Clamp(moveVector.x, -1, 1));
-        //animator.SetFloat("moveY", Mathf.Clamp(moveVector.y, -1, 1));
 
         animator.MoveX = Mathf.Clamp(moveVector.x, -1, 1);
         animator.MoveY = Mathf.Clamp(moveVector.y, -1, 1);
@@ -76,6 +72,7 @@ public class CharacterController : MonoBehaviour
         }
 
         setFaceDir(faceDir);
+
     }
 
     public IEnumerator MoveExit(List<Vector2> moveVectors)
@@ -132,15 +129,12 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        //animator.SetBool("isMoving", isMoving);
 
         animator.IsMoving = isMoving;
     }
 
     public void setFaceDir(int x, int y)
     {
-        //animator.SetFloat("moveX", Mathf.Clamp(x, -1, 1));
-        //animator.SetFloat("moveY", Mathf.Clamp(y, -1, 1));
 
         animator.MoveX = Mathf.Clamp(x, -1, 1);
         animator.MoveY = Mathf.Clamp(y, -1, 1);
@@ -148,8 +142,6 @@ public class CharacterController : MonoBehaviour
 
     public void setFaceDir(Vector2 faceDir)
     {
-        //animator.SetFloat("moveX", Mathf.Clamp(x, -1, 1));
-        //animator.SetFloat("moveY", Mathf.Clamp(y, -1, 1));
 
         animator.MoveX = Mathf.Clamp(faceDir.x, -1, 1);
         animator.MoveY = Mathf.Clamp(faceDir.y, -1, 1);

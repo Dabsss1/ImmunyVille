@@ -16,3 +16,5 @@ MonoBehaviour:
   seed: {fileID: 21300000, guid: 84582392f02fcbb41a99c64a2bceb5b2, type: 3}
   plantName: Ampalaya
   daysToGrow: 3
+  goldAmount: 175
+  seedPrice: 50

@@ -15,4 +15,6 @@ MonoBehaviour:
   plant: {fileID: 21300000, guid: fb697ea98d3195541ae5b8f78a5c1bcf, type: 3}
   seed: {fileID: 21300000, guid: 176ee983dd91c1942ac8bf2968a9743a, type: 3}
   plantName: Tamarind
-  daysToGrow: 3
+  daysToGrow: 4
+  goldAmount: 150
+  seedPrice: 80
