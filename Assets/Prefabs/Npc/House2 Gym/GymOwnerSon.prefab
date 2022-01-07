@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Exercise has been known to cause Health and Happiness.
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: 98bfdfbeab453714c8273926b904a8bb, type: 2}
   taskProbability: 100
   canBeInitiated: 0

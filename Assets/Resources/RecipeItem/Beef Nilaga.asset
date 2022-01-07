@@ -14,10 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Beef Nilaga
   ingredients:
-  - {fileID: 11400000, guid: c0bd8616f0a390c48890bb5f8825c3cd, type: 2}
-  - {fileID: 11400000, guid: 1be093efaec7d284c810b43f17619a63, type: 2}
-  - {fileID: 11400000, guid: 0e02c9507327d464d9f8e625dcee732f, type: 2}
-  - {fileID: 11400000, guid: 5526a56e47d90704dad8490dae7076f8, type: 2}
-  - {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
-  - {fileID: 11400000, guid: d9840b690a75e5247b26bf3307727525, type: 2}
-  - {fileID: 11400000, guid: e8aef1c218987394dadee3df87b3d5e7, type: 2}
+  - ingredient: {fileID: 11400000, guid: c0bd8616f0a390c48890bb5f8825c3cd, type: 2}
+    measurement: 3lbs.
+  - ingredient: {fileID: 11400000, guid: 1be093efaec7d284c810b43f17619a63, type: 2}
+    measurement: 6ounces
+  - ingredient: {fileID: 11400000, guid: 26154a789e3b5194eaa16dbd9e13fb6c, type: 2}
+    measurement: 2cups
+  - ingredient: {fileID: 11400000, guid: 0e02c9507327d464d9f8e625dcee732f, type: 2}
+    measurement: 4pcs
+  - ingredient: {fileID: 11400000, guid: 5526a56e47d90704dad8490dae7076f8, type: 2}
+    measurement: 2pcs
+  - ingredient: {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
+    measurement: 1pc
+  - ingredient: {fileID: 11400000, guid: d9840b690a75e5247b26bf3307727525, type: 2}
+    measurement: 4stacks
+  - ingredient: {fileID: 11400000, guid: e8aef1c218987394dadee3df87b3d5e7, type: 2}
+    measurement: 1pc

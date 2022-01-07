@@ -24,6 +24,11 @@ public class DayResetter : MonoBehaviour
             return;
         GameStateManager.Instance.ChangeGameState(OpenWorldState.SCENECHANGING);
 
+        if (TimeManager.Instance.hour >= 21)
+        {
+            Stats.Instance.DeductStats(20,20,20,20);
+        }
+
         TimeManager.Instance.hour = 6;
         TimeManager.Instance.minute = 0;
         TimeManager.Instance.day += 1;
@@ -47,7 +52,7 @@ public class DayResetter : MonoBehaviour
             plantSlot.daysLeftToGrow -= 1;
         }
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 7; i++)
         {
             if (Tasks.Instance.taskSlots[i].repeatTimer > 0)
                 Tasks.Instance.taskSlots[i].repeatTimer -= 1;
@@ -60,8 +65,12 @@ public class DayResetter : MonoBehaviour
         }
 
         SpecialCounters.Instance.waterObtained = false;
+        SpecialCounters.Instance.walk = 0;
+        SpecialCounters.Instance.ResetCounter("DrinkWater");
 
         SaveSystem.SavePlayer();
+
+        Tasks.Instance.walkdone = false;
 
         if (PlayerDataManager.Instance.totalDays >= 60)
         {

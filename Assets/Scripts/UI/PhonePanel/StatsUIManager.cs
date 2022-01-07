@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StatsUIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI playerName;
+    [SerializeField] TextMeshProUGUI statusCondition;
     [SerializeField] Sprite maleSprite, femaleSprite;
     [SerializeField] Image AvatarDisplay;
 
@@ -39,6 +40,17 @@ public class StatsUIManager : MonoBehaviour
 
     void UpdateStatsUI()
     {
+        if (Stats.Instance.goodCondition)
+        {
+            statusCondition.text = "Status: Good";
+            statusCondition.color = Color.green;
+        }
+        else
+        {
+            statusCondition.text = "Status: Sick";
+            statusCondition.color = Color.red;
+        }
+
         healthSlider.value = Stats.Instance.health;
         bodySlider.value = Stats.Instance.body;
         strengthSlider.value = Stats.Instance.strength;

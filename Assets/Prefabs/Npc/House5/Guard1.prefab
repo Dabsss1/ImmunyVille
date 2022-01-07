@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Good day, come in.....
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: 624fc01c587c75d4694cb62332b9bc7a, type: 2}
   taskProbability: 100
   canBeInitiated: 0

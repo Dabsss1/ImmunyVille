@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Hello
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: 9b4d3c5bb529cb844a7d37aa6b3b97e9, type: 2}
   taskProbability: 100
   canBeInitiated: 0

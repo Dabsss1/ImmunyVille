@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Fish Sinigang
   ingredients:
-  - {fileID: 11400000, guid: bb89487ba5228324992486a1239d2948, type: 2}
-  - {fileID: 11400000, guid: da2ee172680689a498d48ed26954a1a7, type: 2}
-  - {fileID: 11400000, guid: 43be835adc7cb614abaa016aa773e168, type: 2}
-  - {fileID: 11400000, guid: b8de83bedfaafa046aaa40b993f5e850, type: 2}
-  - {fileID: 11400000, guid: bb99853cfaf76a44c9b34d6739581845, type: 2}
-  - {fileID: 11400000, guid: 12bf3f28166423342a128522d8b722c0, type: 2}
-  - {fileID: 11400000, guid: f89672cac44b6884087ddbbaebc669a5, type: 2}
-  - {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
+  - ingredient: {fileID: 11400000, guid: bb89487ba5228324992486a1239d2948, type: 2}
+    measurement: 2lbs
+  - ingredient: {fileID: 11400000, guid: f89672cac44b6884087ddbbaebc669a5, type: 2}
+    measurement: 2pcs
+  - ingredient: {fileID: 11400000, guid: 43be835adc7cb614abaa016aa773e168, type: 2}
+    measurement: 1cup
+  - ingredient: {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
+    measurement: 1pc
+  - ingredient: {fileID: 11400000, guid: da2ee172680689a498d48ed26954a1a7, type: 2}
+    measurement: 3cups
+  - ingredient: {fileID: 11400000, guid: b8de83bedfaafa046aaa40b993f5e850, type: 2}
+    measurement: 10pcs

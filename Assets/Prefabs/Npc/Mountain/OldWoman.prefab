@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Life can only be understood backwards; but it must be lived forwards
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

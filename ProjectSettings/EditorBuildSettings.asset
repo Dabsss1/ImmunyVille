@@ -80,4 +80,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: fd2c9032d3aee00418c7c774483e08f5
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House1.unity
+    guid: 676ac079e7628eb49b4c65a701342f24
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House2.unity
+    guid: 2459eb44612906945981def681f109ce
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House3.unity
+    guid: 1d1710e200142b94f9890460197c3dd8
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House4.unity
+    guid: 3c8c3ca3f7d80344d8d5beed2c2e3126
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House5.unity
+    guid: d67c7ea1981a3054b984a107ec7ab8c1
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House6.unity
+    guid: b30439c573be158439a944acd948a013
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House7.unity
+    guid: 31fa01db06780d04d841b00558663f61
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House8.unity
+    guid: 0c1bc85c150adb644b1a8b0963a5de2f
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/House9.unity
+    guid: 7466d7c49384371468b213ef91bdfcf9
+  - enabled: 1
+    path: Assets/Scenes/Buildings/NPCHouses/MountainHouse.unity
+    guid: 86529244423ec6d4795b5bf5fc8dd4dd
+  - enabled: 1
+    path: Assets/Scenes/OpenWorld/TSQuizBee.unity
+    guid: d676a740887c86d4989370f759826c35
   m_configObjects: {}

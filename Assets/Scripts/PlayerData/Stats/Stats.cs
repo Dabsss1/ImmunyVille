@@ -8,6 +8,7 @@ public class Stats : MonoBehaviour
     public float confidence;
     public float strength;
     public float body;
+    public bool goodCondition;
 
     public float maxStats;
 
@@ -37,6 +38,7 @@ public class Stats : MonoBehaviour
         confidence = 0;
         strength = 0;
         body = 0;
+        goodCondition = true;
     }
 
     public bool ZeroStats()
@@ -70,6 +72,29 @@ public class Stats : MonoBehaviour
 
         if (body > 0)
             body -= 0.083f;
+        else
+            body = 0;
+    }
+
+    public void DeductStats(float h, float c, float s, float b)
+    {
+        if (health > h)
+            health -= h;
+        else
+            health = 0;
+
+        if (strength > s)
+            strength -= s;
+        else
+            strength = 0;
+
+        if (confidence > c)
+            confidence -= c;
+        else
+            confidence = 0;
+
+        if (body > b)
+            body -= b;
         else
             body = 0;
     }

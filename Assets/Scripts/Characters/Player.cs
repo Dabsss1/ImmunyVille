@@ -42,7 +42,8 @@ public class Player : MonoBehaviour
                 IsPortal(inputPos);
                 DogController.OnPlayerMove?.Invoke(new Vector2(transform.position.x,transform.position.y));
 
-                StartCoroutine(character.Move(inputPos));      
+                SpecialCounters.Instance.IncreaseWalkCounter();
+                StartCoroutine(character.Move(inputPos));
                 
                 if (!GameStateManager.Instance.EqualsState(OpenWorldState.SCENECHANGING))
                     ChangeScenes();

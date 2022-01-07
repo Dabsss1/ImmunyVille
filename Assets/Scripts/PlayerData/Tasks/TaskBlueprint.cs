@@ -26,6 +26,16 @@ public class TaskBlueprint : MonoBehaviour
         {
             taskProgress.color = Color.red;
             taskProgress.text = "In Progress";
+
+            if(slot.task.taskName == "Drink Water")
+            {
+                taskProgress.text = $"{SpecialCounters.Instance.MaxCounter("DrinkWater") - SpecialCounters.Instance.CurrentCounter("DrinkWater")} left";
+            }
+
+            if (slot.task.taskName == "Walk 500steps")
+            {
+                taskProgress.text = $"{SpecialCounters.Instance.walkTargetSteps - SpecialCounters.Instance.walk} left";
+            }
         }
     }
 }

@@ -131,10 +131,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c6ced4358a9e4e8a2870cd8920683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Boy
+  characterName: Roger
   dialog:
     lines:
-    - Hello
+    - How are you?
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
+  task: {fileID: 0}
+  taskProbability: 0
+  canBeInitiated: 0
 --- !u!114 &8522684573964259543
 MonoBehaviour:
   m_ObjectHideFlags: 0

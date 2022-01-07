@@ -428,6 +428,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerData
       objectReference: {fileID: 0}
+    - target: {fileID: 5933562955728121480, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
+      propertyPath: gender
+      value: male
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933562955728121480, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
+      propertyPath: playerName
+      value: roger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea150eb8e6367d341a0c39aad4a5e065, type: 3}
 --- !u!1001 &1374418283
@@ -8670,6 +8678,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Hello
+  nutritionTips: {fileID: 0}
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Can I help you?
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: b77fdb968aaf81b4abb72a04c11682c7, type: 2}
   taskProbability: 20
   canBeInitiated: 0

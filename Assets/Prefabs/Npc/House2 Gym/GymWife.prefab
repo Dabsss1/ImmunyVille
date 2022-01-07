@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Eat plenty of fruits and vegetables.
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

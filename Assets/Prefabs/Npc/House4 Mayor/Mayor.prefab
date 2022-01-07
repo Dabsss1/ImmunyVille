@@ -136,6 +136,7 @@ MonoBehaviour:
     lines:
     - Enjoy the little things in life for one day you'll look back and realize they
       were the big things.
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: 8a763ed4b543cbe46ba6627426e12098, type: 2}
   taskProbability: 20
   canBeInitiated: 0

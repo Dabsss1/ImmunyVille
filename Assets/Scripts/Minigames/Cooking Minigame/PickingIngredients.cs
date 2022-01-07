@@ -36,7 +36,7 @@ public class PickingIngredients : MonoBehaviour
     [Header("Ingredients")]
     //extra ingredients List (main recipe ingredients will be removed at start)
     [SerializeField] List<IngredientItem> extraIngredients = new List<IngredientItem>();
-    List<IngredientItem> recipeIngredientsCopy;
+    List<RecipeIngredient> recipeIngredientsCopy;
 
     [SerializeField] CookingIngredientBlueprint ingredientBluePrint;
 
@@ -105,7 +105,7 @@ public class PickingIngredients : MonoBehaviour
         Shuffle(extraIngredients);
 
         //shuffle main ingredients
-        Shuffle(recipeIngredientsCopy);
+        //Shuffle(recipeIngredientsCopy);
 
         //spawn 1st 3 ingredients
         SpawnIngredients();
@@ -152,15 +152,15 @@ public class PickingIngredients : MonoBehaviour
         //Display Recipe Ingredients
         for (int i=0; i<recipe.ingredients.Count; i++)
         {
-            recipeInfoText.text += "\n" + recipe.ingredients[i].ingredientName;
+            recipeInfoText.text += "\n" + recipe.ingredients[i].ingredient.ingredientName + " " + recipe.ingredients[i].measurement;
         }
         
     }
     void RemoveMainRecipeIngredients()
     {
-        foreach (IngredientItem i in recipe.ingredients)
+        foreach (RecipeIngredient i in recipe.ingredients)
         {
-            extraIngredients.Remove(i);
+            extraIngredients.Remove(i.ingredient);
         }
     }
     void SpawnIngredients()
@@ -194,7 +194,7 @@ public class PickingIngredients : MonoBehaviour
             }
             else
             {
-                spawnedIngredient.SetData(recipeIngredientsCopy[ingredientCounter]);
+                spawnedIngredient.SetData(recipeIngredientsCopy[ingredientCounter].ingredient);
                 currentMainIngredient = spawnedIngredient;
                 ingredientCounter++;
             }
@@ -333,6 +333,18 @@ public class PickingIngredients : MonoBehaviour
         }
     }
     
+    public void Shuffle(List<RecipeIngredient> item)
+    {
+        IngredientItem temp;
+
+        for (int i = 0; i < item.Count; i++)
+        {
+            int rnd = UnityEngine.Random.Range(0, item.Count);
+            temp = item[rnd].ingredient;
+            item[rnd] = item[i];
+            item[i].ingredient = temp;
+        }
+    }
     public void SendResults()
     {
         CookingResults.Instance.pickingTimeLeft = $"{minutes}:{seconds:00}";

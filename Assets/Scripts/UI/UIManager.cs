@@ -13,16 +13,20 @@ public class UIManager : MonoBehaviour
 
     public GameObject[] panels;
 
-    public static Action OnScreenLoad;
+    public static Action OnScreenLoad,OnStartQuizBee,OnEndQuizBee;
 
     private void OnEnable()
     {
         OnScreenLoad += DisableUI;
+        OnStartQuizBee += DisableUI;
+        OnEndQuizBee += EnableUI;
     }
 
     private void OnDisable()
     {
         OnScreenLoad -= DisableUI;
+        OnStartQuizBee -= DisableUI;
+        OnEndQuizBee -= EnableUI;
     }
 
     public void DisplayPhonePanel()
@@ -83,6 +87,11 @@ public class UIManager : MonoBehaviour
     void DisableUI()
     {
         allUI.SetActive(false);
+    }
+
+    void EnableUI()
+    {
+        allUI.SetActive(true);
     }
 
     public void QuickSave(GameObject prompt)

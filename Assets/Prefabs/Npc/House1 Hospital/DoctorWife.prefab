@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Stay hydrated!
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: 3a025114a2fc0bf41b1b5be255188254, type: 2}
   taskProbability: 20
   canBeInitiated: 0

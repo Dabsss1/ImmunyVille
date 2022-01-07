@@ -555,8 +555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1073.689}
-  m_SizeDelta: {x: 1014.8425, y: 913.5654}
+  m_AnchoredPosition: {x: 0, y: -1122.9568}
+  m_SizeDelta: {x: 1014.843, y: 1012.102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &591708476
 GameObject:
@@ -592,8 +592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 253.71, y: -388.53998}
-  m_SizeDelta: {x: 507.43, y: 776.18994}
+  m_AnchoredPosition: {x: 253.71, y: -457.52}
+  m_SizeDelta: {x: 507.43, y: 914.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &591708478
 MonoBehaviour:
@@ -619,6 +619,13 @@ MonoBehaviour:
 
     Jason Aguilar
 
+    Renen Paul Viado
+
+    Alyssa Vicente
+
+    Edison
+    Feranil
+
 
 
 
@@ -626,12 +633,12 @@ MonoBehaviour:
 
 
 
-    Arthemus
-    John Nonay
+    Arthemus John Nonay
 
 
 
-    Wilfred Joshua Dabu
+    Wilfred Joshua
+    Dabu
 
 
     John Carl Dela Cruz
@@ -996,8 +1003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -253.71, y: -388.53998}
-  m_SizeDelta: {x: 507.42, y: 776.18994}
+  m_AnchoredPosition: {x: -253.71, y: -457.52}
+  m_SizeDelta: {x: 507.42, y: 914.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1755978274
 MonoBehaviour:
@@ -1020,6 +1027,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Advisers
+
+
+
 
 
 
@@ -1232,8 +1242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0000095493, y: 68.900024}
-  m_SizeDelta: {x: 1014.9, y: 136.93}
+  m_AnchoredPosition: {x: -0.02852, y: 50.729004}
+  m_SizeDelta: {x: 1014.9, y: 93.575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966049583
 MonoBehaviour:

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8045748689232e24fb22db994c91d863, type: 3}
+  m_Name: NutritionTips
+  m_EditorClassIdentifier: 
+  tips:
+  - Choose good carbs, not no carbs. Whole grains are your best bet.
+  - Pay attention to the protein package. Fish, poultry, nuts, and beans are the
+    best choices.
+  - Choose foods with healthy fats, limit foods high in saturated fat, and avoid
+    foods with trans fat. Plant oils, nuts, and fish are the healthiest sources.
+  - Choose a fiber-filled diet, rich in whole grains, vegetables, and fruits.
+  - "Eat more vegetables and fruits. Go for color and variety\u2014dark green, yellow,
+    orange, and red."
+  - "Calcium is important. But milk isn\u2019t the only, or even best, source."
+  - 'Water is best to quench your thirst. Skip the sugary drinks, and go easy on
+    the milk and juice.  '
+  - "Eating less salt is good for everyone\u2019s health. Choose more fresh foods
+    and fewer processed foods."
+  - " Moderate drinking can be healthy\u2014but not for everyone. You must weigh
+    the benefits and risks."
+  - A daily multivitamin is a great nutrition insurance policy. Some extra vitamin
+    D may add an extra health boost.

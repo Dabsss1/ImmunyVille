@@ -31,7 +31,7 @@ public class IngredientsManager : MonoBehaviour
 
     private void Start()
     {
-        Shuffle(ingredientItems);
+        //Shuffle(ingredientItems);
 
         SpawnIngredients();
 

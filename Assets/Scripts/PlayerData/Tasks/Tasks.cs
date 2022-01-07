@@ -6,6 +6,8 @@ public class Tasks : MonoBehaviour
 {
     public List<TaskSlot> taskSlots;
 
+    public bool walkdone = false;
+
     public static Tasks Instance { get; private set; }
 
     private void Awake()
@@ -38,6 +40,27 @@ public class Tasks : MonoBehaviour
                     if(slot.task.taskName == "Farm and Dog")
                     {
                         SpecialCounters.Instance.ObtainFarmAndDog();
+                    }
+
+                    if (slot.task.taskName == "Drink Water")
+                    {
+                        Stats.Instance.body += 30;
+                        Stats.Instance.health += 30;
+                    }
+
+                    if (slot.task.taskName == "Walk 500steps")
+                    {
+                        if (walkdone)
+                            return;
+                        else
+                        {
+                            Stats.Instance.body += 30;
+                            Stats.Instance.health += 30;
+                            Stats.Instance.strength += 30;
+                            Stats.Instance.confidence += 30;
+                            walkdone = true;
+                        }
+                        
                     }
                 }
                 else

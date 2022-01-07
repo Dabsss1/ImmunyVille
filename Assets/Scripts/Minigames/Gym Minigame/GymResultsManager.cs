@@ -96,8 +96,8 @@ public class GymResultsManager : MonoBehaviour
     public void MinigameDone()
     {
         TimeManager.Instance.hour++;
-        HungerThirst.Instance.DecreaseHunger(30);
-        HungerThirst.Instance.DecreaseThirst(70);
+        HungerThirst.Instance.DecreaseHunger(20);
+        HungerThirst.Instance.DecreaseThirst(20);
         Stats.Instance.strength += 23f;
         Stats.Instance.body += 10f;
         Tasks.Instance.CompleteTask(task);

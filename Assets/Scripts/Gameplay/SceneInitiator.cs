@@ -70,6 +70,7 @@ public class SceneInitiator : MonoBehaviour
         HungerThirst.Instance.ResetData();
         Tasks.Instance.ResetData();
         Plants.Instance.ResetData();
+        SpecialCounters.Instance.ResetData();
 
         TimeManager.Instance.ResetData();
     }

@@ -117,6 +117,7 @@ MonoBehaviour:
     count: 0
   - item: {fileID: 11400000, guid: 6dfe0dc9346cd814d8f1fdecb3021386, type: 2}
     count: 0
+  drinkWater: {fileID: 11400000, guid: e44d6fd98b549f7448b6f01f317b1993, type: 2}
 --- !u!114 &2616019510915465961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   confidence: 0
   strength: 0
   body: 0
+  goodCondition: 0
   maxStats: 1500
 --- !u!114 &416019968017682493
 MonoBehaviour:
@@ -216,6 +218,24 @@ MonoBehaviour:
     repeatable: 1
     repeatTimer: 0
   - task: {fileID: 11400000, guid: f54214de26785844884e42daed0af38f, type: 2}
+    done: 0
+    inProgress: 1
+    progressCounter: 0
+    repeatable: 1
+    repeatTimer: 0
+  - task: {fileID: 11400000, guid: 7bb2cda3040be104797933a9fce3f729, type: 2}
+    done: 0
+    inProgress: 1
+    progressCounter: 0
+    repeatable: 1
+    repeatTimer: 0
+  - task: {fileID: 11400000, guid: e44d6fd98b549f7448b6f01f317b1993, type: 2}
+    done: 0
+    inProgress: 1
+    progressCounter: 0
+    repeatable: 1
+    repeatTimer: 1
+  - task: {fileID: 11400000, guid: 505bd0ff98da6f64fb99af49e1c13f2c, type: 2}
     done: 0
     inProgress: 1
     progressCounter: 0
@@ -349,6 +369,15 @@ MonoBehaviour:
   - taskName: HandGrip
     counter: 0
     maxCounter: 10
+  - taskName: DrinkWater
+    counter: 0
+    maxCounter: 8
+  - taskName: Walk
+    counter: 0
+    maxCounter: 500
   seedRewards: {fileID: 11400000, guid: 4df7c84a4d728d0468f5a44f52043d54, type: 2}
   seedRewardQuantity: 5
   waterObtained: 0
+  walk: 0
+  walkTargetSteps: 500
+  walkTask: {fileID: 11400000, guid: 7bb2cda3040be104797933a9fce3f729, type: 2}

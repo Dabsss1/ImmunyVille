@@ -17,6 +17,13 @@ public class PortalController : MonoBehaviour
 
 
         AudioManager.Instance.PlaySfx(sfx);
+
+        if(TimeManager.Instance.day == 20)
+        {
+            if (portalDestination == "TownSquare")
+                portalDestination = "TSQuizBee";
+        }
+            
         if (customPortal)
         {
             SceneInitiator.Instance.sceneName = previousDest;

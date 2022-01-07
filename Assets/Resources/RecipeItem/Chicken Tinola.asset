@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Chicken Tinola
   ingredients:
-  - {fileID: 11400000, guid: a37b64b5b7caaef41875bbe17e4e44a1, type: 2}
-  - {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
-  - {fileID: 11400000, guid: f89b92a1a17750d428b9a92b7ff0155d, type: 2}
-  - {fileID: 11400000, guid: f05690ce21f845f4dbd4b7745ff4e733, type: 2}
-  - {fileID: 11400000, guid: 8dac148eaec300040aec56a6af4e14c1, type: 2}
+  - ingredient: {fileID: 11400000, guid: f89b92a1a17750d428b9a92b7ff0155d, type: 2}
+    measurement: 1whole
+  - ingredient: {fileID: 11400000, guid: f05690ce21f845f4dbd4b7745ff4e733, type: 2}
+    measurement: 1/2pc
+  - ingredient: {fileID: 11400000, guid: 8dac148eaec300040aec56a6af4e14c1, type: 2}
+    measurement: 1tbsp
+  - ingredient: {fileID: 11400000, guid: 7016361deaf023c4590536a00bbd2716, type: 2}
+    measurement: 1pc
+  - ingredient: {fileID: 11400000, guid: a37b64b5b7caaef41875bbe17e4e44a1, type: 2}
+    measurement: 1thumb

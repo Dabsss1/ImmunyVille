@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - An apple a day keeps the doctor away
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: 653fb8bc830499b409e0c11ecd69fe59, type: 2}
   taskProbability: 0
   canBeInitiated: 0

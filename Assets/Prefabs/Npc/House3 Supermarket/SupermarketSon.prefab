@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Water is essential for the kidneys and other bodily functions.
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

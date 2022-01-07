@@ -136,6 +136,7 @@ MonoBehaviour:
     lines:
     - "Exercising when you\u2019re young will improve your brain function when you\u2019re
       older."
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 0}
   taskProbability: 0
   canBeInitiated: 0

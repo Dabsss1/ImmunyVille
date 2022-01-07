@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
 
     public List<ItemSlot> slots;
 
+    public TaskItem drinkWater;
+
     public static Inventory Instance { get; private set; }
 
     private void Awake()
@@ -39,6 +41,14 @@ public class Inventory : MonoBehaviour
                     return;
                 slot.count --;
                 DistributeStats(item);
+
+                if(slot.item.itemName == "Water")
+                {
+                    if (SpecialCounters.Instance.IncreaseCounterAndCheck("DrinkWater"))
+                    {
+                        Tasks.Instance.CompleteTask(drinkWater);
+                    }
+                }
                 return;
             }
         }

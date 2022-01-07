@@ -23,7 +23,7 @@ public class SaveFile
     public int[] inventory = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public float gold = 0;
 
-
+    public bool goodCondition = true;
     public float health = 0;
     public float confidence = 0;
     public float strength = 0;
@@ -75,6 +75,7 @@ public class SaveFile
 
         gold = Inventory.Instance.gold;
 
+        goodCondition = Stats.Instance.goodCondition;
         health = Stats.Instance.health;
         confidence = Stats.Instance.confidence;
         strength = Stats.Instance.strength;
@@ -166,6 +167,7 @@ public class SaveFile
 
         Inventory.Instance.gold = gold;
 
+        Stats.Instance.goodCondition = goodCondition;
         Stats.Instance.health = health;
         Stats.Instance.confidence= confidence;
         Stats.Instance.strength = strength;

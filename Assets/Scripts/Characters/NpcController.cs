@@ -9,6 +9,9 @@ public class NpcController : MonoBehaviour, Interactable
     public string characterName;
     [SerializeField] Dialogs dialog;
 
+    [Header("Events")]
+    [SerializeField] InformationTipsItem nutritionTips;
+
     [Header("Npc Quests")]
     public TaskItem task;
     public int taskProbability;
@@ -42,6 +45,13 @@ public class NpcController : MonoBehaviour, Interactable
     {
         if (characterController.isMoving)
             return;
+
+        if (TimeManager.Instance.day == 15)
+        {
+            int rnd = UnityEngine.Random.Range(0, nutritionTips.tips.Count);
+            DialogManager.Instance.showDialog("Happy Nutrition Day! "+nutritionTips.tips[rnd]);
+            return;
+        }
 
         if (canBeInitiated && (!Tasks.Instance.TaskDone(task)) && Tasks.Instance.TaskProgressCounter(task) == 0)
         {

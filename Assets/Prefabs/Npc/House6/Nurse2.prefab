@@ -135,6 +135,7 @@ MonoBehaviour:
   dialog:
     lines:
     - Let food be thy medicine and medicine be thy food.
+  nutritionTips: {fileID: 11400000, guid: 23daff0a19ce6444d988cfaf50e7076d, type: 2}
   task: {fileID: 11400000, guid: e1f38d689d9e26741aa47eabbb20abcc, type: 2}
   taskProbability: 20
   canBeInitiated: 0
