@@ -27,7 +27,7 @@ public class DogController : MonoBehaviour
     {
         animator = GetComponent<CharacterAnimator>();
 
-        if (Tasks.Instance.taskSlots[7].inProgress || Tasks.Instance.taskSlots[7].done)
+        if (Tasks.Instance.taskSlots[10].inProgress || Tasks.Instance.taskSlots[10].done)
         {
             StartCoroutine(SetDogPosition());
         }
@@ -49,7 +49,7 @@ public class DogController : MonoBehaviour
 
     public void MoveDog(Vector2 playerPos)
     {
-        if (Tasks.Instance.taskSlots[7].inProgress || Tasks.Instance.taskSlots[7].done)
+        if (Tasks.Instance.taskSlots[10].inProgress || Tasks.Instance.taskSlots[10].done)
         {
             if (!isMoving)
                 StartCoroutine(Move(playerPos));

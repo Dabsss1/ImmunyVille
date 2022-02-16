@@ -47,7 +47,7 @@ public class PlantingManager : MonoBehaviour
 
     public void InteractWithDirt()
     {
-        if (Tasks.Instance.taskSlots[7].done)
+        if (Tasks.Instance.taskSlots[10].done)
             seedSelectionUI.SetActive(true);
     }
 
