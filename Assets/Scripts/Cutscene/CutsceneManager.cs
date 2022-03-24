@@ -70,6 +70,7 @@ public class CutsceneManager : MonoBehaviour
             partner = Instantiate(npcMale, npcSpawn, Quaternion.identity);
         }
         PlaySound("IntroStart");
+        currentSound = "IntroStart";
         nurse.GetComponent<CharacterController>().setFaceDir(1,0);
         state = CutsceneState.DIALOG;
 

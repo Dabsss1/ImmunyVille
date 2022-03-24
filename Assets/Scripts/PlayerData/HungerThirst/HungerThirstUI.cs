@@ -8,6 +8,9 @@ public class HungerThirstUI : MonoBehaviour
     public float hungerCount;
     public float thirstCount;
 
+    float initialHungerCount;
+    float initialThirstCount;
+
     public GameObject hungerContentGO;
     public GameObject thirstContentGO;
 
@@ -15,12 +18,22 @@ public class HungerThirstUI : MonoBehaviour
 
     public GameObject htIcon;
 
+    private void Start()
+    {
+        initialHungerCount = HungerThirst.Instance.hungerStat / 10;
+        initialThirstCount = HungerThirst.Instance.thirstStat / 10;
+    }
     private void Update()
     {
         hungerCount = HungerThirst.Instance.hungerStat / 10;                                                                                                                           
         thirstCount = HungerThirst.Instance.thirstStat / 10;
 
-        UpdateHungerThirstUI();
+        if (hungerCount != initialHungerCount || thirstCount != initialThirstCount)
+        {
+            UpdateHungerThirstUI();
+            initialHungerCount = hungerCount;
+            initialThirstCount = thirstCount;
+        }
     }
 
     void UpdateHungerThirstUI()
