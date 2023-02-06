@@ -5,8 +5,11 @@ An android game application developed as a capstone project to promote having a 
 Play Store: https://play.google.com/store/apps/details?id=com.TigerTech.ImmunyVille
 
 Role: Developer - Capstone Project
+
 Language: C#
+
 Developed using Unity and Visual Studio Code
+
 Agile Development
 
 # Game Features
